@@ -13,10 +13,29 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var date: NSDate = NSDate() //乗車日時保存用
+    var stnType = 0 //駅設定用
+    
+    //列車の種類
+    let trainType = ["東海道・山陽・九州新幹線", "東海道新幹線(こだま)", "東北・秋田・山形新幹線", "上越・長野新幹線", "在来線列車"]
+    
+    /*
+     *  Postする情報
+     */
+    var month = ""
+    var day = ""
+    var hour = ""
+    var minute = ""
+    var type = "5"
+    var dep_stn = "高松"
+    var dep_push = "7000"
+    var arr_stn = "東京"
+    var arr_push = "4000"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        //データ読み込み
+        TrainData.read()
         return true
     }
 
