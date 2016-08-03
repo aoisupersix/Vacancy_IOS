@@ -27,6 +27,15 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
     @IBOutlet var startVacancyButton: UIButton!
     @IBOutlet var arrStnLabel: UILabel!
     
+    /*
+     *  設定画面へ
+     */
+    @IBAction func goSetting(sender: AnyObject) {
+        let settingView = self.storyboard!.instantiateViewControllerWithIdentifier("SettingView") as! UINavigationController
+        settingView.modalTransitionStyle = .CoverVertical
+        self.presentViewController(settingView, animated: true, completion: nil)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         /*
@@ -64,7 +73,7 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         case 2:
             //出発駅
             let stnView = self.storyboard!.instantiateViewControllerWithIdentifier("StnView") as! UINavigationController
-            stnView.modalTransitionStyle = .CrossDissolve
+            stnView.modalTransitionStyle = .CoverVertical
             app.stnType = 1
             self.presentViewController(stnView, animated: true, completion: nil)
             //self.navigationController?.pushViewController(StnViewController(), animated: true)
@@ -72,7 +81,7 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         case 3:
             //到着駅
             let stnView = self.storyboard!.instantiateViewControllerWithIdentifier("StnView") as! UINavigationController
-            stnView.modalTransitionStyle = .CrossDissolve
+            stnView.modalTransitionStyle = .CoverVertical
             app.stnType = 2
             self.presentViewController(stnView, animated: true, completion: nil)
             break
@@ -161,7 +170,7 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
                     break
                 case 1:
                     //時間外
-                    self.showAlert("照会結果", mes: "受付時間外です。06:30~22:30の間照会可能です。")
+                    self.showAlert("照会結果", mes: "受付時間外です。\n06:30~22:30の間照会可能です。")
                     break
                 case 2:
                     //該当列車なし

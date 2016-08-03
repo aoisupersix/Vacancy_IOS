@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vacancy.png" translatesAutoresizingMaskIntoConstraints="NO" id="KiW-tg-3ji">
-                                <rect key="frame" x="123" y="274" width="128" height="120"/>
+                                <rect key="frame" x="127" y="274" width="120" height="120"/>
                                 <color key="backgroundColor" red="0.13725490196078433" green="0.62745098039215685" blue="0.16862745098039217" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="cCY-s1-Vx4"/>
@@ -34,10 +33,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.14804933597030853" green="0.67727100657016726" blue="0.18638348474781269" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="KiW-tg-3ji" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="254" id="H6d-Fj-QF9"/>
-                            <constraint firstItem="KiW-tg-3ji" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="107" id="goq-Va-KbR"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="KiW-tg-3ji" secondAttribute="bottom" constant="273" id="jdX-ty-rUF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KiW-tg-3ji" secondAttribute="trailing" constant="108" id="xlp-He-j14"/>
+                            <constraint firstItem="KiW-tg-3ji" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="22t-jA-zPA"/>
+                            <constraint firstItem="KiW-tg-3ji" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="yne-D5-a2M"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
