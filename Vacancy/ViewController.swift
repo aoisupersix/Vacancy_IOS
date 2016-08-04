@@ -34,7 +34,6 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         let settingView = self.storyboard!.instantiateViewControllerWithIdentifier("SettingView") as! UINavigationController
         settingView.modalTransitionStyle = .CoverVertical
         self.presentViewController(settingView, animated: true, completion: nil)
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -148,12 +147,16 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
      *  Post送信
      */
     @IBAction func postVacancy(sender: AnyObject) {
-        let urlString = "http://www1.jr.cyberstation.ne.jp/csws/Vacancy.do?script=0&month=\(app.month)&day=\(app.day)&hour=\(app.hour)&minute=\(app.minute)&train=\(app.type)&dep_stn=\(app.dep_stn)&arr_stn=\(app.arr_stn)&dep_stnpb=\(app.dep_push)&arr_stnpb=\(app.arr_push)"
+        //カッコは削除
+        let dep_stn = deleteKakko(app.dep_stn)
+        let arr_stn = deleteKakko(app.arr_stn)
+        let urlString = "http://www1.jr.cyberstation.ne.jp/csws/Vacancy.do?script=0&month=\(app.month)&day=\(app.day)&hour=\(app.hour)&minute=\(app.minute)&train=\(app.type)&dep_stn=\(dep_stn)&arr_stn=\(arr_stn)&dep_stnpb=\(app.dep_push)&arr_stnpb=\(app.arr_push)"
         let request = NSMutableURLRequest(URL: NSURL(string: urlString.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLFragmentAllowedCharacterSet() )!)!)
         //設定
         print(urlString.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLFragmentAllowedCharacterSet() )!)
         request.HTTPMethod = "POST"
         request.addValue("http://www1.jr.cyberstation.ne.jp/csws/Vacancy.do", forHTTPHeaderField: "Referer")
+        app.url = request.URL
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
             if (error == nil) {
@@ -190,6 +193,16 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
             }
         })
         task.resume()
+    }
+    /*
+     *  駅名のカッコを削除
+     */
+    func deleteKakko(stn: String) -> String {
+        var change = stn
+        if (stn.rangeOfString("(") != nil) {
+            change = stn.substringToIndex(stn.endIndex.advancedBy(-3))
+        }
+        return change
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

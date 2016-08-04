@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var date: NSDate = NSDate() //乗車日時保存用
     var stnType = 0 //駅設定用
+    var url: NSURL? //URL
     
     //列車の種類
     let trainType = ["東海道・山陽・九州新幹線", "東海道新幹線(こだま)", "東北・秋田・山形新幹線", "上越・長野新幹線", "在来線列車"]

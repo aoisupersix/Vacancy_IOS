@@ -39,5 +39,14 @@ public class ResultView: UITableViewController {
         cell.granNonSmokeImage.image = UIImage(named: TrainData.grnNoSmoke[cellForRowAtIndexPath.row])
         return cell
     }
+    /*
+     *  URLを開く
+     */
+    @IBAction func sendUrl(sender: AnyObject) {
+        let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        if UIApplication.sharedApplication().canOpenURL(app.url!){
+            UIApplication.sharedApplication().openURL(app.url!)
+        }
+    }
     
 }

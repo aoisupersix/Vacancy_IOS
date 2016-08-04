@@ -433,6 +433,11 @@
                                 <action selector="goBack:" destination="1Wb-xc-ju8" id="QAw-wJ-e6d"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="F6k-wB-jwj">
+                            <connections>
+                                <action selector="sendUrl:" destination="1Wb-xc-ju8" id="phG-GO-Pol"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
