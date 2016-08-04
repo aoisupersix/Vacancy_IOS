@@ -147,6 +147,9 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
      *  Post送信
      */
     @IBAction func postVacancy(sender: AnyObject) {
+        post()
+    }
+    func post() {
         //カッコは削除
         let dep_stn = deleteKakko(app.dep_stn)
         let arr_stn = deleteKakko(app.arr_stn)
@@ -167,9 +170,14 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
                 switch(TrainData.documentType){
                 case 0:
                     //照会結果あり
-                    let resultView = self.storyboard!.instantiateViewControllerWithIdentifier("ResultView") as! UINavigationController
-                    resultView.modalTransitionStyle = .FlipHorizontal
-                    self.presentViewController(resultView, animated: true, completion: nil)
+                    if self.title == "空席照会" {
+                        let resultView = self.storyboard!.instantiateViewControllerWithIdentifier("ResultView") as! UINavigationController
+                        resultView.modalTransitionStyle = .FlipHorizontal
+                        self.presentViewController(resultView, animated: true, completion: nil)
+                    }else if self.title == "照会結果" {
+                        self.loadView()
+                        self.viewDidLoad()
+                    }
                     break
                 case 1:
                     //時間外
@@ -193,6 +201,7 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
             }
         })
         task.resume()
+
     }
     /*
      *  駅名のカッコを削除

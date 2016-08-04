@@ -40,13 +40,10 @@ public class ResultView: UITableViewController {
         return cell
     }
     /*
-     *  URLを開く
+     *  再度読み込み
      */
     @IBAction func sendUrl(sender: AnyObject) {
-        let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        if UIApplication.sharedApplication().canOpenURL(app.url!){
-            UIApplication.sharedApplication().openURL(app.url!)
-        }
+        ViewController().post()
     }
     
 }
