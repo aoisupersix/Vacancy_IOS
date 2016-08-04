@@ -23,7 +23,7 @@ class PopUpPickerView: PopUpPickerViewBase {
     var segmentedControl: UISegmentedControl?
     private var initSegementedControl: Bool = false
     private let segementedControlHeight: CGFloat = 29
-    private let segementedControlSuperViewHeight: CGFloat = 29 + 16
+    private let segementedControlSuperViewHeight: CGFloat = 0
 
     var delegate: PopUpPickerViewDelegate? {
         didSet {
