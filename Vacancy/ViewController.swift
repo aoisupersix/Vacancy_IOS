@@ -202,6 +202,10 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
                     //時間エラー
                     self.showAlert("照会結果", mes: "ご希望の乗車日の照会はできません。")
                     break
+                case 4:
+                    //時間エラー2(?)
+                    self.showAlert("照会結果", mes: "ご希望の情報はお取り扱いできません。")
+                    break
                 default:
                     break
                 }

@@ -25,6 +25,7 @@ class TrainData {
      *  1: 受付時間外
      *  2: 列車なし
      *  3: 時間エラー
+     *  4: 時間エラー2(?)
      */
     static var documentType: Int = 0
     
@@ -83,6 +84,8 @@ class TrainData {
             documentType = 2
         }else if res.containsString("ご希望の乗車日の空席状況は照会できません。") {
             documentType = 3
+        }else if res.containsString("ご希望の情報はお取り扱いできません。") {
+            documentType = 4
         }else {
             documentType = 0
             checkHtml()
