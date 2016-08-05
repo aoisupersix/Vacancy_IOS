@@ -16,7 +16,8 @@ class StnViewController: UITableViewController, UISearchBarDelegate{
     @IBOutlet var stnListTableView: UITableView!
     
     //TableViewの中身
-    var list = [""]
+    var list: [String] = []
+    
     //AppDelegate
     let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     

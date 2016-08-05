@@ -45,5 +45,32 @@ public class ResultView: UITableViewController {
     @IBAction func sendUrl(sender: AnyObject) {
         ViewController().post()
     }
+    /* 
+     *  時間変更
+     */
+    @IBAction func before_day(sender: AnyObject) {
+        let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        app.date = NSDate(timeInterval: -60*60*24, sinceDate: app.date)
+        ViewController().updateDate()
+        ViewController().post()
+    }
+    @IBAction func before_hour(sender: AnyObject) {
+        let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        app.date = NSDate(timeInterval: -60*60, sinceDate: app.date)
+        ViewController().updateDate()
+        ViewController().post()
+    }
+    @IBAction func after_hour(sender: AnyObject) {
+        let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        app.date = NSDate(timeInterval: 60*60*24, sinceDate: app.date)
+        ViewController().updateDate()
+        ViewController().post()
+    }
+    @IBAction func after_day(sender: AnyObject) {
+        let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        app.date = NSDate(timeInterval: 60*60, sinceDate: app.date)
+        ViewController().updateDate()
+        ViewController().post()
+    }
     
 }
