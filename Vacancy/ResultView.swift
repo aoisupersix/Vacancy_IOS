@@ -53,24 +53,36 @@ public class ResultView: UITableViewController {
         app.date = NSDate(timeInterval: -60*60*24, sinceDate: app.date)
         ViewController().updateDate()
         ViewController().post()
+        
+        self.loadView()
+        self.viewDidLoad()
     }
     @IBAction func before_hour(sender: AnyObject) {
         let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         app.date = NSDate(timeInterval: -60*60, sinceDate: app.date)
         ViewController().updateDate()
         ViewController().post()
+        
+        self.loadView()
+        self.viewDidLoad()
     }
     @IBAction func after_hour(sender: AnyObject) {
         let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         app.date = NSDate(timeInterval: 60*60*24, sinceDate: app.date)
         ViewController().updateDate()
         ViewController().post()
+        
+        self.loadView()
+        self.viewDidLoad()
     }
     @IBAction func after_day(sender: AnyObject) {
         let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         app.date = NSDate(timeInterval: 60*60, sinceDate: app.date)
         ViewController().updateDate()
         ViewController().post()
+        
+        self.loadView()
+        self.viewDidLoad()
     }
     
 }

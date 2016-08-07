@@ -12,21 +12,30 @@
 		E101EABD1D40E712003789A5 /* TrainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E101EABC1D40E712003789A5 /* TrainData.swift */; };
 		E101EABF1D40EE98003789A5 /* StnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E101EABE1D40EE98003789A5 /* StnViewController.swift */; };
 		E116C34D1D486F240001A231 /* vacancy.png in Resources */ = {isa = PBXBuildFile; fileRef = E116C34C1D486F240001A231 /* vacancy.png */; };
-		E144E11F1D45F250002FADAA /* batsu.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E1131D45F250002FADAA /* batsu.png */; };
 		E144E1201D45F250002FADAA /* granclass.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E1141D45F250002FADAA /* granclass.png */; };
 		E144E1211D45F250002FADAA /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E1151D45F250002FADAA /* green.png */; };
 		E144E1221D45F250002FADAA /* ltdexp.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E1161D45F250002FADAA /* ltdexp.png */; };
-		E144E1231D45F250002FADAA /* maru.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E1171D45F250002FADAA /* maru.png */; };
-		E144E1241D45F250002FADAA /* nashi.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E1181D45F250002FADAA /* nashi.png */; };
-		E144E1251D45F250002FADAA /* nonsmoking.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E1191D45F250002FADAA /* nonsmoking.png */; };
+		E144E1251D45F250002FADAA /* nonsmoke.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E1191D45F250002FADAA /* nonsmoke.png */; };
 		E144E1261D45F250002FADAA /* rapid.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E11A1D45F250002FADAA /* rapid.png */; };
 		E144E1271D45F250002FADAA /* reserved.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E11B1D45F250002FADAA /* reserved.png */; };
-		E144E1281D45F250002FADAA /* sankaku.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E11C1D45F250002FADAA /* sankaku.png */; };
 		E144E1291D45F250002FADAA /* smoking.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E11D1D45F250002FADAA /* smoking.png */; };
 		E144E12A1D45F250002FADAA /* superexpress.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E11E1D45F250002FADAA /* superexpress.png */; };
 		E144E12C1D462412002FADAA /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E144E12B1D462412002FADAA /* ResultCell.swift */; };
 		E144E12E1D4628B7002FADAA /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E144E12D1D4628B7002FADAA /* ResultView.swift */; };
 		E1586E791D5214E200F62B44 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1586E781D5214E200F62B44 /* SettingViewController.swift */; };
+		E1686C771D574799001F3AA4 /* nashi.png in Resources */ = {isa = PBXBuildFile; fileRef = E1686C761D574799001F3AA4 /* nashi.png */; };
+		E1686C791D5747C0001F3AA4 /* greenW.png in Resources */ = {isa = PBXBuildFile; fileRef = E1686C781D5747C0001F3AA4 /* greenW.png */; };
+		E1686C7B1D5747C9001F3AA4 /* maruW.png in Resources */ = {isa = PBXBuildFile; fileRef = E1686C7A1D5747C9001F3AA4 /* maruW.png */; };
+		E1686C7D1D5747D1001F3AA4 /* reservedW.png in Resources */ = {isa = PBXBuildFile; fileRef = E1686C7C1D5747D0001F3AA4 /* reservedW.png */; };
+		E1686C821D5747DF001F3AA4 /* granclassW.png in Resources */ = {isa = PBXBuildFile; fileRef = E1686C7E1D5747DF001F3AA4 /* granclassW.png */; };
+		E1686C831D5747DF001F3AA4 /* nashiW.png in Resources */ = {isa = PBXBuildFile; fileRef = E1686C7F1D5747DF001F3AA4 /* nashiW.png */; };
+		E1686C841D5747DF001F3AA4 /* sankakuW.png in Resources */ = {isa = PBXBuildFile; fileRef = E1686C801D5747DF001F3AA4 /* sankakuW.png */; };
+		E1686C851D5747DF001F3AA4 /* smokeW.png in Resources */ = {isa = PBXBuildFile; fileRef = E1686C811D5747DF001F3AA4 /* smokeW.png */; };
+		E1686C871D57489F001F3AA4 /* nonsmokeW.png in Resources */ = {isa = PBXBuildFile; fileRef = E1686C861D57489F001F3AA4 /* nonsmokeW.png */; };
+		E1686C891D5749BD001F3AA4 /* batsuW.png in Resources */ = {isa = PBXBuildFile; fileRef = E1686C881D5749BD001F3AA4 /* batsuW.png */; };
+		E1686C8B1D5749C7001F3AA4 /* maru.png in Resources */ = {isa = PBXBuildFile; fileRef = E1686C8A1D5749C7001F3AA4 /* maru.png */; };
+		E1686C8D1D5749CF001F3AA4 /* batsu.png in Resources */ = {isa = PBXBuildFile; fileRef = E1686C8C1D5749CF001F3AA4 /* batsu.png */; };
+		E1686C8F1D5749DA001F3AA4 /* sankaku.png in Resources */ = {isa = PBXBuildFile; fileRef = E1686C8E1D5749DA001F3AA4 /* sankaku.png */; };
 		E17B02881D3D92CE009A41D1 /* EastStaList.txt in Resources */ = {isa = PBXBuildFile; fileRef = E17B02811D3D92CE009A41D1 /* EastStaList.txt */; };
 		E17B02891D3D92CE009A41D1 /* Group2StaList.txt in Resources */ = {isa = PBXBuildFile; fileRef = E17B02821D3D92CE009A41D1 /* Group2StaList.txt */; };
 		E17B028A1D3D92CE009A41D1 /* LtdExpList.txt in Resources */ = {isa = PBXBuildFile; fileRef = E17B02831D3D92CE009A41D1 /* LtdExpList.txt */; };
@@ -74,21 +83,30 @@
 		E101EABE1D40EE98003789A5 /* StnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnViewController.swift; sourceTree = "<group>"; };
 		E101EAC41D44B9DB003789A5 /* Vacancy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Vacancy.entitlements; sourceTree = "<group>"; };
 		E116C34C1D486F240001A231 /* vacancy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vacancy.png; path = Assets.xcassets/AppIcon.appiconset/vacancy.png; sourceTree = "<group>"; };
-		E144E1131D45F250002FADAA /* batsu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batsu.png; sourceTree = "<group>"; };
 		E144E1141D45F250002FADAA /* granclass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = granclass.png; sourceTree = "<group>"; };
 		E144E1151D45F250002FADAA /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		E144E1161D45F250002FADAA /* ltdexp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ltdexp.png; sourceTree = "<group>"; };
-		E144E1171D45F250002FADAA /* maru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maru.png; sourceTree = "<group>"; };
-		E144E1181D45F250002FADAA /* nashi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nashi.png; sourceTree = "<group>"; };
-		E144E1191D45F250002FADAA /* nonsmoking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nonsmoking.png; sourceTree = "<group>"; };
+		E144E1191D45F250002FADAA /* nonsmoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nonsmoke.png; sourceTree = "<group>"; };
 		E144E11A1D45F250002FADAA /* rapid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rapid.png; sourceTree = "<group>"; };
 		E144E11B1D45F250002FADAA /* reserved.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reserved.png; sourceTree = "<group>"; };
-		E144E11C1D45F250002FADAA /* sankaku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sankaku.png; sourceTree = "<group>"; };
 		E144E11D1D45F250002FADAA /* smoking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smoking.png; sourceTree = "<group>"; };
 		E144E11E1D45F250002FADAA /* superexpress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = superexpress.png; sourceTree = "<group>"; };
 		E144E12B1D462412002FADAA /* ResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		E144E12D1D4628B7002FADAA /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		E1586E781D5214E200F62B44 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		E1686C761D574799001F3AA4 /* nashi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nashi.png; sourceTree = "<group>"; };
+		E1686C781D5747C0001F3AA4 /* greenW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenW.png; sourceTree = "<group>"; };
+		E1686C7A1D5747C9001F3AA4 /* maruW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maruW.png; sourceTree = "<group>"; };
+		E1686C7C1D5747D0001F3AA4 /* reservedW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reservedW.png; sourceTree = "<group>"; };
+		E1686C7E1D5747DF001F3AA4 /* granclassW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = granclassW.png; sourceTree = "<group>"; };
+		E1686C7F1D5747DF001F3AA4 /* nashiW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nashiW.png; sourceTree = "<group>"; };
+		E1686C801D5747DF001F3AA4 /* sankakuW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sankakuW.png; sourceTree = "<group>"; };
+		E1686C811D5747DF001F3AA4 /* smokeW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smokeW.png; sourceTree = "<group>"; };
+		E1686C861D57489F001F3AA4 /* nonsmokeW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nonsmokeW.png; sourceTree = "<group>"; };
+		E1686C881D5749BD001F3AA4 /* batsuW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batsuW.png; sourceTree = "<group>"; };
+		E1686C8A1D5749C7001F3AA4 /* maru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maru.png; sourceTree = "<group>"; };
+		E1686C8C1D5749CF001F3AA4 /* batsu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batsu.png; sourceTree = "<group>"; };
+		E1686C8E1D5749DA001F3AA4 /* sankaku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sankaku.png; sourceTree = "<group>"; };
 		E17B02811D3D92CE009A41D1 /* EastStaList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EastStaList.txt; sourceTree = "<group>"; };
 		E17B02821D3D92CE009A41D1 /* Group2StaList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Group2StaList.txt; sourceTree = "<group>"; };
 		E17B02831D3D92CE009A41D1 /* LtdExpList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LtdExpList.txt; sourceTree = "<group>"; };
@@ -166,17 +184,26 @@
 		E144E1121D45EFB7002FADAA /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E1686C8E1D5749DA001F3AA4 /* sankaku.png */,
+				E1686C8C1D5749CF001F3AA4 /* batsu.png */,
+				E1686C8A1D5749C7001F3AA4 /* maru.png */,
+				E1686C881D5749BD001F3AA4 /* batsuW.png */,
+				E1686C861D57489F001F3AA4 /* nonsmokeW.png */,
+				E1686C7E1D5747DF001F3AA4 /* granclassW.png */,
+				E1686C7F1D5747DF001F3AA4 /* nashiW.png */,
+				E1686C801D5747DF001F3AA4 /* sankakuW.png */,
+				E1686C811D5747DF001F3AA4 /* smokeW.png */,
+				E1686C7C1D5747D0001F3AA4 /* reservedW.png */,
+				E1686C7A1D5747C9001F3AA4 /* maruW.png */,
+				E1686C781D5747C0001F3AA4 /* greenW.png */,
+				E1686C761D574799001F3AA4 /* nashi.png */,
 				E116C34C1D486F240001A231 /* vacancy.png */,
-				E144E1131D45F250002FADAA /* batsu.png */,
 				E144E1141D45F250002FADAA /* granclass.png */,
 				E144E1151D45F250002FADAA /* green.png */,
 				E144E1161D45F250002FADAA /* ltdexp.png */,
-				E144E1171D45F250002FADAA /* maru.png */,
-				E144E1181D45F250002FADAA /* nashi.png */,
-				E144E1191D45F250002FADAA /* nonsmoking.png */,
+				E144E1191D45F250002FADAA /* nonsmoke.png */,
 				E144E11A1D45F250002FADAA /* rapid.png */,
 				E144E11B1D45F250002FADAA /* reserved.png */,
-				E144E11C1D45F250002FADAA /* sankaku.png */,
 				E144E11D1D45F250002FADAA /* smoking.png */,
 				E144E11E1D45F250002FADAA /* superexpress.png */,
 			);
@@ -380,29 +407,38 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E144E1281D45F250002FADAA /* sankaku.png in Resources */,
-				E144E1251D45F250002FADAA /* nonsmoking.png in Resources */,
+				E144E1251D45F250002FADAA /* nonsmoke.png in Resources */,
 				E144E1221D45F250002FADAA /* ltdexp.png in Resources */,
+				E1686C7B1D5747C9001F3AA4 /* maruW.png in Resources */,
 				E17B028B1D3D92CE009A41D1 /* NaganoStaList.txt in Resources */,
-				E144E11F1D45F250002FADAA /* batsu.png in Resources */,
 				E144E1201D45F250002FADAA /* granclass.png in Resources */,
+				E1686C871D57489F001F3AA4 /* nonsmokeW.png in Resources */,
 				E17B028C1D3D92CE009A41D1 /* pushcode.csv in Resources */,
+				E1686C791D5747C0001F3AA4 /* greenW.png in Resources */,
 				E1C92E631D3B8C8B000FC366 /* LaunchScreen.storyboard in Resources */,
 				E144E12A1D45F250002FADAA /* superexpress.png in Resources */,
 				E1C92E601D3B8C8B000FC366 /* Assets.xcassets in Resources */,
 				E17B02881D3D92CE009A41D1 /* EastStaList.txt in Resources */,
+				E1686C8F1D5749DA001F3AA4 /* sankaku.png in Resources */,
 				E1C92E5B1D3B8C8B000FC366 /* Main.storyboard in Resources */,
+				E1686C8D1D5749CF001F3AA4 /* batsu.png in Resources */,
+				E1686C7D1D5747D1001F3AA4 /* reservedW.png in Resources */,
 				E144E1261D45F250002FADAA /* rapid.png in Resources */,
 				E17B028E1D3D92CE009A41D1 /* TokaiStaList.txt in Resources */,
 				E144E1291D45F250002FADAA /* smoking.png in Resources */,
 				E144E1211D45F250002FADAA /* green.png in Resources */,
 				E116C34D1D486F240001A231 /* vacancy.png in Resources */,
+				E1686C771D574799001F3AA4 /* nashi.png in Resources */,
 				E144E1271D45F250002FADAA /* reserved.png in Resources */,
-				E144E1231D45F250002FADAA /* maru.png in Resources */,
+				E1686C891D5749BD001F3AA4 /* batsuW.png in Resources */,
+				E1686C831D5747DF001F3AA4 /* nashiW.png in Resources */,
 				E17B02891D3D92CE009A41D1 /* Group2StaList.txt in Resources */,
 				E17B028D1D3D92CE009A41D1 /* SuperExpList.txt in Resources */,
+				E1686C851D5747DF001F3AA4 /* smokeW.png in Resources */,
+				E1686C8B1D5749C7001F3AA4 /* maru.png in Resources */,
+				E1686C821D5747DF001F3AA4 /* granclassW.png in Resources */,
+				E1686C841D5747DF001F3AA4 /* sankakuW.png in Resources */,
 				E17B028A1D3D92CE009A41D1 /* LtdExpList.txt in Resources */,
-				E144E1241D45F250002FADAA /* nashi.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

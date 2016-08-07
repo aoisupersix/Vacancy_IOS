@@ -181,13 +181,11 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
                 switch(TrainData.documentType){
                 case 0:
                     //照会結果あり
+                    print(self.title)
                     if self.title == "空席照会" {
                         let resultView = self.storyboard!.instantiateViewControllerWithIdentifier("ResultView") as! UINavigationController
                         resultView.modalTransitionStyle = .FlipHorizontal
                         self.presentViewController(resultView, animated: true, completion: nil)
-                    }else if self.title == "照会結果" {
-                        self.loadView()
-                        self.viewDidLoad()
                     }
                     break
                 case 1:

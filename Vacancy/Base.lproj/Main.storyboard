@@ -265,26 +265,23 @@
                                         <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8UT-Zq-V6G">
                                             <rect key="frame" x="27" y="109" width="320" height="64"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reserved.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hfs-33-Nl4">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reservedW.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hfs-33-Nl4">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="64"/>
-                                                    <color key="backgroundColor" red="0.69449873220000002" green="1" blue="0.95473539699999999" alpha="0.43362145390070922" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Hfs-33-Nl4" secondAttribute="height" multiplier="2:1" id="2GY-1v-MCA"/>
                                                         <constraint firstAttribute="height" constant="64" id="I5a-J9-aKY"/>
                                                         <constraint firstAttribute="width" constant="128" id="jMO-Pj-mBA"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green.png" translatesAutoresizingMaskIntoConstraints="NO" id="z7y-It-P6U">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenW.png" translatesAutoresizingMaskIntoConstraints="NO" id="z7y-It-P6U">
                                                     <rect key="frame" x="128" y="0.0" width="128" height="64"/>
-                                                    <color key="backgroundColor" red="0.79398080500000001" green="1" blue="0.79914041960000004" alpha="0.56590757978723405" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="64" id="aFW-Bh-y83"/>
                                                         <constraint firstAttribute="width" constant="128" id="qEr-LB-ZHq"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="granclass.png" translatesAutoresizingMaskIntoConstraints="NO" id="YL8-TW-o70">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="granclassW.png" translatesAutoresizingMaskIntoConstraints="NO" id="YL8-TW-o70">
                                                     <rect key="frame" x="256" y="0.0" width="64" height="64"/>
-                                                    <color key="backgroundColor" red="1" green="0.67206667846462009" blue="0.7445896465908417" alpha="0.38760527483546092" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="YL8-TW-o70" secondAttribute="height" multiplier="1:1" id="IOV-oU-ati"/>
                                                         <constraint firstAttribute="height" constant="64" id="YCg-cj-RqK"/>
@@ -297,45 +294,40 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5FV-yV-G95">
                                             <rect key="frame" x="27" y="173" width="320" height="64"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nonsmoking.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lk7-dl-Ler">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nonsmokeW.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lk7-dl-Ler">
                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
-                                                    <color key="backgroundColor" red="0.98657269603030784" green="0.76044525067091739" blue="1" alpha="0.39935172872340424" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="64" id="AZT-sO-WWh"/>
                                                         <constraint firstAttribute="width" secondItem="Lk7-dl-Ler" secondAttribute="height" multiplier="1:1" id="JK2-EC-BjV"/>
                                                         <constraint firstAttribute="width" constant="64" id="wDh-As-a7a"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smoking.png" translatesAutoresizingMaskIntoConstraints="NO" id="YMu-tg-zFp">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smokeW.png" translatesAutoresizingMaskIntoConstraints="NO" id="YMu-tg-zFp">
                                                     <rect key="frame" x="64" y="0.0" width="64" height="64"/>
-                                                    <color key="backgroundColor" red="1" green="0.94748534395938699" blue="0.69579073261227986" alpha="0.2188885195035461" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="64" id="BfF-Dz-VcQ"/>
                                                         <constraint firstAttribute="width" constant="64" id="H6b-Zx-Jgl"/>
                                                         <constraint firstAttribute="width" secondItem="YMu-tg-zFp" secondAttribute="height" multiplier="1:1" id="oc8-fT-k5k"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nonsmoking.png" translatesAutoresizingMaskIntoConstraints="NO" id="szl-4Q-seW">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nonsmokeW.png" translatesAutoresizingMaskIntoConstraints="NO" id="szl-4Q-seW">
                                                     <rect key="frame" x="128" y="0.0" width="64" height="64"/>
-                                                    <color key="backgroundColor" red="0.98657269599999997" green="0.76044525070000002" blue="1" alpha="0.39935172870000002" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="szl-4Q-seW" secondAttribute="height" multiplier="1:1" id="JCo-bM-Etx"/>
                                                         <constraint firstAttribute="width" constant="64" id="S9G-XX-4rM"/>
                                                         <constraint firstAttribute="height" constant="64" id="yme-Ud-O3h"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smoking.png" translatesAutoresizingMaskIntoConstraints="NO" id="WBM-f7-RwA">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smokeW.png" translatesAutoresizingMaskIntoConstraints="NO" id="WBM-f7-RwA">
                                                     <rect key="frame" x="192" y="0.0" width="64" height="64"/>
-                                                    <color key="backgroundColor" red="1" green="0.94748534399999995" blue="0.69579073260000002" alpha="0.21888851949999999" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="WBM-f7-RwA" secondAttribute="height" multiplier="1:1" id="bOa-yv-3Eq"/>
                                                         <constraint firstAttribute="width" constant="64" id="eLS-G9-mcF"/>
                                                         <constraint firstAttribute="height" constant="64" id="o4Q-uj-iUs"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nonsmoking.png" translatesAutoresizingMaskIntoConstraints="NO" id="8NU-ho-WnJ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nonsmokeW.png" translatesAutoresizingMaskIntoConstraints="NO" id="8NU-ho-WnJ">
                                                     <rect key="frame" x="256" y="0.0" width="64" height="64"/>
-                                                    <color key="backgroundColor" red="0.98657269599999997" green="0.76044525070000002" blue="1" alpha="0.39935172870000002" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="64" id="IKl-mn-7AW"/>
                                                         <constraint firstAttribute="height" constant="64" id="V9P-wK-PtB"/>
@@ -347,45 +339,40 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xHD-Ww-HBv">
                                             <rect key="frame" x="27" y="237" width="320" height="64"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sankaku.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xf6-1i-VsX">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sankakuW.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xf6-1i-VsX">
                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
-                                                    <color key="backgroundColor" red="0.76439276930700173" green="1" blue="0.76972496521763345" alpha="0.24753435283687944" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="64" id="62c-IH-HU4"/>
                                                         <constraint firstAttribute="width" secondItem="Xf6-1i-VsX" secondAttribute="height" multiplier="1:1" id="Qz2-vW-hek"/>
                                                         <constraint firstAttribute="height" constant="64" id="rZU-RW-qNT"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nashi.png" translatesAutoresizingMaskIntoConstraints="NO" id="ene-of-b4v">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nashiW.png" translatesAutoresizingMaskIntoConstraints="NO" id="ene-of-b4v">
                                                     <rect key="frame" x="64" y="0.0" width="64" height="64"/>
-                                                    <color key="backgroundColor" red="0.7643927693" green="1" blue="0.7697249652" alpha="0.2475343528" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="64" id="NcC-G3-EBb"/>
                                                         <constraint firstAttribute="height" constant="64" id="cIr-6x-5qm"/>
                                                         <constraint firstAttribute="width" secondItem="ene-of-b4v" secondAttribute="height" multiplier="1:1" id="r0k-k1-7Sp"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nashi.png" translatesAutoresizingMaskIntoConstraints="NO" id="IsQ-La-IBy">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nashiW.png" translatesAutoresizingMaskIntoConstraints="NO" id="IsQ-La-IBy">
                                                     <rect key="frame" x="128" y="0.0" width="64" height="64"/>
-                                                    <color key="backgroundColor" red="0.7643927693" green="1" blue="0.7697249652" alpha="0.2475343528" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="64" id="8T4-53-6xH"/>
                                                         <constraint firstAttribute="height" constant="64" id="CYQ-Fc-oaa"/>
                                                         <constraint firstAttribute="width" secondItem="IsQ-La-IBy" secondAttribute="height" multiplier="1:1" id="USe-nd-4jU"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nashi.png" translatesAutoresizingMaskIntoConstraints="NO" id="HRi-fH-Ute">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nashiW.png" translatesAutoresizingMaskIntoConstraints="NO" id="HRi-fH-Ute">
                                                     <rect key="frame" x="192" y="0.0" width="64" height="64"/>
-                                                    <color key="backgroundColor" red="0.7643927693" green="1" blue="0.7697249652" alpha="0.2475343528" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="HRi-fH-Ute" secondAttribute="height" multiplier="1:1" id="Cxw-UM-ihz"/>
                                                         <constraint firstAttribute="height" constant="64" id="Jxc-Ll-qID"/>
                                                         <constraint firstAttribute="width" constant="64" id="VUb-Gp-F2H"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nashi.png" translatesAutoresizingMaskIntoConstraints="NO" id="CbR-h8-gpv">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nashiW.png" translatesAutoresizingMaskIntoConstraints="NO" id="CbR-h8-gpv">
                                                     <rect key="frame" x="256" y="0.0" width="64" height="64"/>
-                                                    <color key="backgroundColor" red="0.7643927693" green="1" blue="0.7697249652" alpha="0.2475343528" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="CbR-h8-gpv" secondAttribute="height" multiplier="1:1" id="EED-ra-wgf"/>
                                                         <constraint firstAttribute="width" constant="64" id="awJ-hP-EqQ"/>
@@ -558,10 +545,10 @@
             </objects>
             <point key="canvasLocation" x="3216" y="-1069"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--照会結果-->
         <scene sceneID="dN2-46-ny8">
             <objects>
-                <navigationController storyboardIdentifier="ResultView" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="w2w-1u-eFC" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ResultView" title="照会結果" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="w2w-1u-eFC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LHA-Z7-jqa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -600,13 +587,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="granclass.png" width="144" height="144"/>
-        <image name="green.png" width="288" height="144"/>
+        <image name="granclassW.png" width="144" height="144"/>
+        <image name="greenW.png" width="288" height="144"/>
         <image name="ltdexp.png" width="128" height="128"/>
-        <image name="nashi.png" width="144" height="144"/>
-        <image name="nonsmoking.png" width="144" height="144"/>
-        <image name="reserved.png" width="288" height="144"/>
-        <image name="sankaku.png" width="144" height="144"/>
-        <image name="smoking.png" width="144" height="144"/>
+        <image name="nashiW.png" width="144" height="144"/>
+        <image name="nonsmokeW.png" width="144" height="144"/>
+        <image name="reservedW.png" width="288" height="144"/>
+        <image name="sankakuW.png" width="144" height="144"/>
+        <image name="smokeW.png" width="144" height="144"/>
     </resources>
 </document>

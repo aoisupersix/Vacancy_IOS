@@ -247,20 +247,20 @@ class TrainData {
         var res = ""
         switch(str){
             case "-":
-                res = "nashi.png"
+                res = "nashiW.png"
                 break
             case "*":
                 //TODO
-                res = "nashi.png"
+                res = "nashiW.png"
                 break
             case "○":
-                res = "maru.png"
+                res = "maruW.png"
                 break
             case "△":
-                res = "sankaku.png"
+                res = "sankakuW.png"
                 break
             case "×":
-                res = "batsu.png"
+                res = "batsuW.png"
                 break
             default:
                 break
