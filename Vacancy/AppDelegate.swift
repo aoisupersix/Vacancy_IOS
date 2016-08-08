@@ -32,6 +32,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var dep_push = "7000"
     var arr_stn = "東京"
     var arr_push = "4000"
+    
+    /*
+     *  照会内容
+     */
+    var name: [String] = []
+    var depTime: [String] = []
+    var arrTime: [String] = []
+    var resNoSmoke: [String] = []
+    var resSmoke: [String] = []
+    var greNoSmoke: [String] = []
+    var greSmoke: [String] = []
+    var grnNoSmoke: [String] = []
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.

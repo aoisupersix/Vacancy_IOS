@@ -252,9 +252,11 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="高松(21:28)　→　東京(07:08)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="it9-Aj-IuK">
                                             <rect key="frame" x="8" y="8" width="359" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.148049336" green="0.67727100659999995" blue="0.18638348469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <size key="shadowOffset" width="1" height="1"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="特急サンライズ瀬戸" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dux-OW-F6P">
                                             <rect key="frame" x="90" y="56" width="189" height="26"/>
@@ -287,6 +289,12 @@
                                                         <constraint firstAttribute="height" constant="64" id="YCg-cj-RqK"/>
                                                         <constraint firstAttribute="width" constant="64" id="lnW-Us-8LX"/>
                                                     </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="YCg-cj-RqK"/>
+                                                            <exclude reference="lnW-Us-8LX"/>
+                                                        </mask>
+                                                    </variation>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -443,7 +451,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="zbP-px-fhG"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="照会結果" id="zu5-r9-Kqe">
-                        <barButtonItem key="leftBarButtonItem" title="戻る" id="mge-GC-JCa">
+                        <barButtonItem key="leftBarButtonItem" title="＜ 戻る" id="mge-GC-JCa">
                             <connections>
                                 <action selector="goBack:" destination="1Wb-xc-ju8" id="QAw-wJ-e6d"/>
                             </connections>
@@ -456,6 +464,9 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="resultTableView" destination="eJB-c8-FjU" id="PYx-7k-tpR"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUc-ON-utq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

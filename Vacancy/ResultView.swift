@@ -8,10 +8,24 @@
 
 import UIKit
 
-public class ResultView: UITableViewController {
+public class ResultView: UITableViewController, TrainDataDelegate {
+    
+    @IBOutlet var resultTableView: UITableView!
+    
+    /*
+     *  TrainData
+     */
+    var trainData: TrainData?
+    
+    /*
+     *  appdelegate
+     */
+    let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override public func viewDidLoad(){
         super.viewDidLoad()
+        
+        trainData = TrainData(dele: self)
     }
     override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -24,26 +38,26 @@ public class ResultView: UITableViewController {
      *  TableView
      */
     override public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return TrainData.name.count
+        return app.name.count
     }
     override public func tableView(tableView: UITableView, cellForRowAtIndexPath: NSIndexPath) -> UITableViewCell {
         let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let cell = tableView.dequeueReusableCellWithIdentifier("ResultTableViewCell", forIndexPath: cellForRowAtIndexPath) as! ResultCell
-        cell.trainInfoLabel.text = "\(app.dep_stn)(\(TrainData.depTime[cellForRowAtIndexPath.row]))　→　\(app.arr_stn)(\(TrainData.arrTime[cellForRowAtIndexPath.row]))"
+        cell.trainInfoLabel.text = "\(app.dep_stn)(\(app.depTime[cellForRowAtIndexPath.row]))　→　\(app.arr_stn)(\(app.arrTime[cellForRowAtIndexPath.row]))"
         cell.trainImage.image = UIImage(named: "ltdexp.png")
-        cell.trainNameLabel.text = TrainData.name[cellForRowAtIndexPath.row]
-        cell.resNonSmokeImage.image = UIImage(named: TrainData.resNoSmoke[cellForRowAtIndexPath.row])
-        cell.resSmokeImage.image = UIImage(named: TrainData.resSmoke[cellForRowAtIndexPath.row])
-        cell.greNonSmokeImage.image = UIImage(named: TrainData.greNoSmoke[cellForRowAtIndexPath.row])
-        cell.greSmokeImage.image = UIImage(named: TrainData.greSmoke[cellForRowAtIndexPath.row])
-        cell.granNonSmokeImage.image = UIImage(named: TrainData.grnNoSmoke[cellForRowAtIndexPath.row])
+        cell.trainNameLabel.text = app.name[cellForRowAtIndexPath.row]
+        cell.resNonSmokeImage.image = UIImage(named: app.resNoSmoke[cellForRowAtIndexPath.row])
+        cell.resSmokeImage.image = UIImage(named: app.resSmoke[cellForRowAtIndexPath.row])
+        cell.greNonSmokeImage.image = UIImage(named: app.greNoSmoke[cellForRowAtIndexPath.row])
+        cell.greSmokeImage.image = UIImage(named: app.greSmoke[cellForRowAtIndexPath.row])
+        cell.granNonSmokeImage.image = UIImage(named: app.grnNoSmoke[cellForRowAtIndexPath.row])
         return cell
     }
     /*
      *  再度読み込み
      */
     @IBAction func sendUrl(sender: AnyObject) {
-        ViewController().post()
+        trainData!.post()
     }
     /* 
      *  時間変更
@@ -52,37 +66,40 @@ public class ResultView: UITableViewController {
         let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         app.date = NSDate(timeInterval: -60*60*24, sinceDate: app.date)
         ViewController().updateDate()
-        ViewController().post()
         
-        self.loadView()
-        self.viewDidLoad()
+        trainData!.post()
     }
     @IBAction func before_hour(sender: AnyObject) {
         let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         app.date = NSDate(timeInterval: -60*60, sinceDate: app.date)
         ViewController().updateDate()
-        ViewController().post()
         
-        self.loadView()
-        self.viewDidLoad()
+        trainData!.post()
     }
     @IBAction func after_hour(sender: AnyObject) {
         let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        app.date = NSDate(timeInterval: 60*60*24, sinceDate: app.date)
+        app.date = NSDate(timeInterval: 60*60, sinceDate: app.date)
         ViewController().updateDate()
-        ViewController().post()
         
-        self.loadView()
-        self.viewDidLoad()
+        trainData!.post()
     }
     @IBAction func after_day(sender: AnyObject) {
         let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        app.date = NSDate(timeInterval: 60*60, sinceDate: app.date)
+        app.date = NSDate(timeInterval: 60*60*24, sinceDate: app.date)
         ViewController().updateDate()
-        ViewController().post()
         
-        self.loadView()
-        self.viewDidLoad()
+        trainData!.post()
     }
-    
+    /*
+     *  TrainDataDelegate
+     */
+    func completeConnection() {
+        self.tableView.reloadData()
+    }
+    func showAlert(title: String, mes: String) {
+        let alert = UIAlertController(title: title, message: mes, preferredStyle: .Alert)
+        let defaultAction = UIAlertAction(title: "了解", style: .Default, handler: nil)
+        alert.addAction(defaultAction)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 }

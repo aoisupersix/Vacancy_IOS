@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpPickerViewDelegate,NSURLSessionDataDelegate{
+class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpPickerViewDelegate, TrainDataDelegate{
 
     /*
      *  PopUpPickerView
@@ -28,6 +28,11 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
     @IBOutlet var arrStnLabel: UILabel!
     
     /*
+     *  TrainDataDelegate
+     */
+    var trainData: TrainData?
+    
+    /*
      *  設定画面へ
      */
     @IBAction func goSetting(sender: AnyObject) {
@@ -35,6 +40,7 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         settingView.modalTransitionStyle = .CoverVertical
         self.presentViewController(settingView, animated: true, completion: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         /*
@@ -51,6 +57,7 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         }
         datepicker!.datepickerDelegate = self
         trainTypePicker.delegate = self
+        trainData = TrainData(dele: self)
     }
     override func viewWillAppear(animated: Bool){
         super.viewWillAppear(animated)
@@ -158,73 +165,17 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
      *  Post送信
      */
     @IBAction func postVacancy(sender: AnyObject) {
-        post()
+        trainData!.post()
     }
-    func post() {
-        //カッコは削除
-        let dep_stn = deleteKakko(app.dep_stn)
-        let arr_stn = deleteKakko(app.arr_stn)
-        let urlString = "http://www1.jr.cyberstation.ne.jp/csws/Vacancy.do?script=0&month=\(app.month)&day=\(app.day)&hour=\(app.hour)&minute=\(app.minute)&train=\(app.type)&dep_stn=\(dep_stn)&arr_stn=\(arr_stn)&dep_stnpb=\(app.dep_push)&arr_stnpb=\(app.arr_push)"
-        let request = NSMutableURLRequest(URL: NSURL(string: urlString.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLFragmentAllowedCharacterSet() )!)!)
-        //設定
-        print(urlString.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLFragmentAllowedCharacterSet() )!)
-        request.HTTPMethod = "POST"
-        request.addValue("http://www1.jr.cyberstation.ne.jp/csws/Vacancy.do", forHTTPHeaderField: "Referer")
-        app.url = request.URL
-        
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
-            if (error == nil) {
-                //照会結果表示
-                print(NSString(data: data!, encoding: NSShiftJISStringEncoding))
-                TrainData.setResult(NSString(data: data!, encoding: NSShiftJISStringEncoding)! as String)
-                
-                switch(TrainData.documentType){
-                case 0:
-                    //照会結果あり
-                    print(self.title)
-                    if self.title == "空席照会" {
-                        let resultView = self.storyboard!.instantiateViewControllerWithIdentifier("ResultView") as! UINavigationController
-                        resultView.modalTransitionStyle = .FlipHorizontal
-                        self.presentViewController(resultView, animated: true, completion: nil)
-                    }
-                    break
-                case 1:
-                    //時間外
-                    self.showAlert("照会結果", mes: "受付時間外です。\n06:30~22:30の間照会可能です。")
-                    break
-                case 2:
-                    //該当列車なし
-                    self.showAlert("照会結果", mes: "該当区間を運行する照会可能な列車がありません。")
-                    break
-                case 3:
-                    //時間エラー
-                    self.showAlert("照会結果", mes: "ご希望の乗車日の照会はできません。")
-                    break
-                case 4:
-                    //時間エラー2(?)
-                    self.showAlert("照会結果", mes: "ご希望の情報はお取り扱いできません。")
-                    break
-                default:
-                    break
-                }
-            } else {
-                print(error)
-                self.showAlert("接続エラー", mes: "ネットワークに接続できないか、サーバーがダウンしている可能性があります。")
-                print("CONNECT ERROR")
-            }
-        })
-        task.resume()
 
-    }
     /*
-     *  駅名のカッコを削除
+     *  通信成功し、結果あり(delegate)
      */
-    func deleteKakko(stn: String) -> String {
-        var change = stn
-        if (stn.rangeOfString("(") != nil) {
-            change = stn.substringToIndex(stn.endIndex.advancedBy(-3))
-        }
-        return change
+    func completeConnection() {
+        let resultView = self.storyboard!.instantiateViewControllerWithIdentifier("ResultView") as! UINavigationController
+        resultView.modalTransitionStyle = .CoverVertical
+        self.presentViewController(resultView, animated: true, completion: nil)
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
