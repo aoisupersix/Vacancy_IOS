@@ -35,6 +35,7 @@ class StnViewController: UITableViewController, UISearchBarDelegate{
      *  メイン画面に戻る
      */
     @IBAction func back(sender: AnyObject) {
+        addHistory("")
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     override func viewDidLoad(){
@@ -129,7 +130,9 @@ class StnViewController: UITableViewController, UISearchBarDelegate{
             history.removeAtIndex(pos)
         }
         //追加
-        history.insert(str, atIndex: 0)
+        if str != "" {
+            history.insert(str, atIndex: 0)
+        }
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(history, forKey: "stn_history")
         showList()
