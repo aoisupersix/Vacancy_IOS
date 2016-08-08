@@ -282,6 +282,7 @@ class TrainData {
                 
                 //pos更新
                 pos = parts.rangeOfString(TrainData.searchTrainName)
+                print("pos:\(pos)")
             }
             
         }

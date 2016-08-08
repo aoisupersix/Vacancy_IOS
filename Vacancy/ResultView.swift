@@ -87,8 +87,11 @@ public class ResultView: UITableViewController, TrainDataDelegate {
      *  TrainDataDelegate
      */
     func completeConnection() {
-        self.tableView.reloadData()
-        infoLabel.text = "\(app.month)月\(app.day)日 \(app.hour):\(app.minute)発 \(app.dep_stn) → \(app.arr_stn)"
+        dispatch_async(dispatch_get_main_queue()){
+            print("Complete!")
+            self.resultTableView.reloadData()
+            self.infoLabel.text = "\(self.app.month)月\(self.app.day)日 \(self.app.hour):\(self.app.minute)発 \(self.app.dep_stn) → \(self.app.arr_stn)"
+        }
     }
     func showAlert(title: String, mes: String) {
         let alert = UIAlertController(title: title, message: mes, preferredStyle: .Alert)
