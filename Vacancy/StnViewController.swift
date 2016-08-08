@@ -114,9 +114,11 @@ class StnViewController: UITableViewController, UISearchBarDelegate{
     func loadHistory() {
         showList()
         let defaults = NSUserDefaults.standardUserDefaults()
-        history = defaults.objectForKey("stn_history") as! [String]
-        list = history
-        
+        let stnhist = defaults.objectForKey("stn_history")
+        if stnhist as? [String] != nil {
+            history = (stnhist as? [String])!
+            list = history
+        }
     }
     /*
      *  履歴の追加
