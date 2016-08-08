@@ -108,7 +108,7 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         let date = formatter.stringFromDate(app.date)
         dateLabel.text = date
 
-        updateDate()
+        trainData!.updateDate(app.date)
         
         //列車の種類
         trainTypeLabel.text = app.trainType[Int(app.type)! - 1]
@@ -116,20 +116,6 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         depStnLabel.text = "\(app.dep_stn)(\(app.dep_push))"
         //到着駅
         arrStnLabel.text = "\(app.arr_stn)(\(app.arr_push))"
-    }
-    /*
-     *  時刻を更新
-     */
-    func updateDate() {
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd HH時mm分"
-        let date = formatter.stringFromDate(app.date)
-        
-        //変数代入
-        app.month = date.substringWithRange(date.startIndex.advancedBy(5)..<date.endIndex.advancedBy(-10))
-        app.day = date.substringWithRange(date.startIndex.advancedBy(8)..<date.endIndex.advancedBy(-7))
-        app.hour = date.substringWithRange(date.startIndex.advancedBy(11)..<date.endIndex.advancedBy(-4))
-        app.minute = date.substringWithRange(date.startIndex.advancedBy(14)..<date.endIndex.advancedBy(-1))
     }
     
     /*

@@ -51,6 +51,11 @@ class TrainData {
      */
     let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
+    /*
+     *  日付のバックアップ
+     */
+    var dateBackup: NSDate?
+    
     init(dele: TrainDataDelegate) {
         delegate = dele
     }
@@ -340,5 +345,24 @@ class TrainData {
                 break
         }
         return res
+    }
+    
+    /*
+     *  時刻を更新
+     */
+    func updateDate(date: NSDate) {
+        //appに代入
+        dateBackup = app.date
+        app.date = date
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH時mm分"
+        let date = formatter.stringFromDate(app.date)
+        
+        //変数代入
+        app.month = date.substringWithRange(date.startIndex.advancedBy(5)..<date.endIndex.advancedBy(-10))
+        app.day = date.substringWithRange(date.startIndex.advancedBy(8)..<date.endIndex.advancedBy(-7))
+        app.hour = date.substringWithRange(date.startIndex.advancedBy(11)..<date.endIndex.advancedBy(-4))
+        app.minute = date.substringWithRange(date.startIndex.advancedBy(14)..<date.endIndex.advancedBy(-1))
     }
 }

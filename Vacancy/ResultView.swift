@@ -63,31 +63,19 @@ public class ResultView: UITableViewController, TrainDataDelegate {
      *  時間変更
      */
     @IBAction func before_day(sender: AnyObject) {
-        let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        app.date = NSDate(timeInterval: -60*60*24, sinceDate: app.date)
-        ViewController().updateDate()
-        
+        trainData!.updateDate(NSDate(timeInterval: -60*60*24, sinceDate: app.date))
         trainData!.post()
     }
     @IBAction func before_hour(sender: AnyObject) {
-        let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        app.date = NSDate(timeInterval: -60*60, sinceDate: app.date)
-        ViewController().updateDate()
-        
+        trainData!.updateDate(NSDate(timeInterval: -60*60, sinceDate: app.date))
         trainData!.post()
     }
     @IBAction func after_hour(sender: AnyObject) {
-        let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        app.date = NSDate(timeInterval: 60*60, sinceDate: app.date)
-        ViewController().updateDate()
-        
+        trainData!.updateDate(NSDate(timeInterval: 60*60, sinceDate: app.date))
         trainData!.post()
     }
     @IBAction func after_day(sender: AnyObject) {
-        let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        app.date = NSDate(timeInterval: 60*60*24, sinceDate: app.date)
-        ViewController().updateDate()
-        
+        trainData!.updateDate(NSDate(timeInterval: 60*60*24, sinceDate: app.date))
         trainData!.post()
     }
     /*
@@ -101,5 +89,8 @@ public class ResultView: UITableViewController, TrainDataDelegate {
         let defaultAction = UIAlertAction(title: "了解", style: .Default, handler: nil)
         alert.addAction(defaultAction)
         self.presentViewController(alert, animated: true, completion: nil)
+        
+        //Dateを戻しておく
+        app.date = trainData!.dateBackup!
     }
 }
