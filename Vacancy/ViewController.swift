@@ -43,11 +43,16 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        trainData = TrainData(dele: self)
+    }
+    override func viewWillLayoutSubviews() {
         /*
          *  PopUpDatePicker(乗車日入力)とPopUpPicker(列車の種類選択)の設定
          */
         datepicker = PopUpDatePickerView()
         trainTypePicker = PopUpPickerView()
+        
         if let window = UIApplication.sharedApplication().keyWindow {
             window.addSubview(datepicker)
             window.addSubview(trainTypePicker)
@@ -57,7 +62,6 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         }
         datepicker!.datepickerDelegate = self
         trainTypePicker.delegate = self
-        trainData = TrainData(dele: self)
     }
     override func viewWillAppear(animated: Bool){
         super.viewWillAppear(animated)

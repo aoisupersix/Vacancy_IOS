@@ -88,6 +88,7 @@ public class ResultView: UITableViewController, TrainDataDelegate {
      */
     func completeConnection() {
         self.tableView.reloadData()
+        infoLabel.text = "\(app.month)月\(app.day)日 \(app.hour):\(app.minute)発 \(app.dep_stn) → \(app.arr_stn)"
     }
     func showAlert(title: String, mes: String) {
         let alert = UIAlertController(title: title, message: mes, preferredStyle: .Alert)

@@ -8,6 +8,12 @@
 
 import UIKit
 
+/*
+ *  セクション名
+ */
+let HISTORY_SEARCH_TEXT = "履歴から検索"
+let STN_SEARCH_TEXT = "駅名から検索"
+
 class StnViewController: UITableViewController, UISearchBarDelegate{
     /*
      *  OUTLET
@@ -17,6 +23,10 @@ class StnViewController: UITableViewController, UISearchBarDelegate{
     
     //TableViewの中身
     var list: [String] = []
+    //セクション名
+    var sectionName = HISTORY_SEARCH_TEXT
+    //履歴
+    var history: [String] = []
     
     //AppDelegate
     let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -31,16 +41,29 @@ class StnViewController: UITableViewController, UISearchBarDelegate{
         super.viewDidLoad()
         stnSearchBar.delegate = self
         stnListTableView.delegate = self
+        
+    }
+    override func viewWillAppear(animated: Bool) {
+        loadHistory()
+        showList()
+        tableView.reloadData()
     }
     /*
      *  searchBar変更
      */
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        //駅名検索
         list.removeAll()
-        for (stn, _) in TrainData.pushcode{
-            if stn.containsString(searchText){
-                list.append(stn)
+        if searchText == "" {
+            //履歴検索
+            sectionName = HISTORY_SEARCH_TEXT
+            list = history
+        }else {
+            //駅名検索
+            sectionName = STN_SEARCH_TEXT
+            for (stn, _) in TrainData.pushcode{
+                if stn.containsString(searchText){
+                    list.append(stn)
+                }
             }
         }
         stnListTableView.reloadData()
@@ -51,12 +74,19 @@ class StnViewController: UITableViewController, UISearchBarDelegate{
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionName
+    }
     
     // セルの内容を変更
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
-        
+        if sectionName == HISTORY_SEARCH_TEXT {
+            //履歴検索
+            list = history
+        }
         cell.textLabel?.text = list[indexPath.row]
+        
         return cell
     }
     //セル選択
@@ -70,11 +100,48 @@ class StnViewController: UITableViewController, UISearchBarDelegate{
             app.arr_stn = list[indexPath.row]
             app.arr_push = TrainData.pushcode[app.arr_stn]!
         }
+        //履歴に追加
+        addHistory(list[indexPath.row])
+
+        
         //メイン画面に戻る
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    /*
+     *  履歴の読み込み
+     */
+    func loadHistory() {
+        showList()
+        let defaults = NSUserDefaults.standardUserDefaults()
+        history = defaults.objectForKey("stn_history") as! [String]
+        list = history
+        
+    }
+    /*
+     *  履歴の追加
+     */
+    func addHistory(str: String) {
+        //重複していたら削除
+        if let pos = history.indexOf(str){
+            history.removeAtIndex(pos)
+        }
+        //追加
+        history.insert(str, atIndex: 0)
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(history, forKey: "stn_history")
+        showList()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    //デバッグ用　中身表示
+    func showList() {
+        print("*****HISTORY*****")
+        for name in history {
+            print(name)
+        }
+        print("*****HISTORY*****")
     }
 }
