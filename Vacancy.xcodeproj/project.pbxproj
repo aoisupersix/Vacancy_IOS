@@ -54,6 +54,7 @@
 		E1C92E8B1D3BB202000FC366 /* PopUpDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E881D3BB202000FC366 /* PopUpDatePickerView.swift */; };
 		E1C92E8C1D3BB202000FC366 /* PopUpPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E891D3BB202000FC366 /* PopUpPickerView.swift */; };
 		E1C92E8D1D3BB202000FC366 /* PopUpPickerViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E8A1D3BB202000FC366 /* PopUpPickerViewBase.swift */; };
+		E1DAE41F1D58AB4D005C7F7D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1DAE41E1D58AB4D005C7F7D /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		E1C92E881D3BB202000FC366 /* PopUpDatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpDatePickerView.swift; sourceTree = "<group>"; };
 		E1C92E891D3BB202000FC366 /* PopUpPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpPickerView.swift; sourceTree = "<group>"; };
 		E1C92E8A1D3BB202000FC366 /* PopUpPickerViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpPickerViewBase.swift; sourceTree = "<group>"; };
+		E1DAE41E1D58AB4D005C7F7D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		F8DF6F48D82ABABE740BD67C /* Pods_VacancyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VacancyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -227,6 +229,7 @@
 		E1C92E491D3B8C8B000FC366 = {
 			isa = PBXGroup;
 			children = (
+				E1DAE41E1D58AB4D005C7F7D /* Settings.bundle */,
 				E1C92E541D3B8C8B000FC366 /* Vacancy */,
 				E1C92E6C1D3B8C8C000FC366 /* VacancyTests */,
 				E1C92E771D3B8C8C000FC366 /* VacancyUITests */,
@@ -438,6 +441,7 @@
 				E1686C8B1D5749C7001F3AA4 /* maru.png in Resources */,
 				E1686C821D5747DF001F3AA4 /* granclassW.png in Resources */,
 				E1686C841D5747DF001F3AA4 /* sankakuW.png in Resources */,
+				E1DAE41F1D58AB4D005C7F7D /* Settings.bundle in Resources */,
 				E17B028A1D3D92CE009A41D1 /* LtdExpList.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
