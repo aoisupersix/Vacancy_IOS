@@ -134,6 +134,29 @@ class StnViewController: UITableViewController, UISearchBarDelegate{
         defaults.setObject(history, forKey: "stn_history")
         showList()
     }
+    /*
+     *  履歴を削除
+     */
+    @IBAction func deleteHistory(sender: AnyObject) {
+        let alert = UIAlertController(title: "確認", message: "駅名の履歴を削除します。よろしいですか？", preferredStyle: .Alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {
+            (action: UIAlertAction!) -> Void in
+            //OKボタンクリック
+            self.history.removeAll()
+            if self.sectionName == HISTORY_SEARCH_TEXT {
+                self.list.removeAll()
+            }
+            self.tableView.reloadData()
+        })
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: {
+            (action: UIAlertAction) -> Void in
+            //キャンセルボタンクリック
+        })
+        alert.addAction(defaultAction)
+        alert.addAction(cancelAction)
+        self.presentViewController(alert, animated: true, completion: nil)
+
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

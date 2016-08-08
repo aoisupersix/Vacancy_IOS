@@ -520,6 +520,11 @@
                                 <action selector="back:" destination="nd0-3c-0BM" id="VRe-jD-hLH"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="履歴を削除" id="j93-Q1-LIY">
+                            <connections>
+                                <action selector="deleteHistory:" destination="nd0-3c-0BM" id="UT1-io-3k4"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
