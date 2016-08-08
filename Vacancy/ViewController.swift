@@ -36,9 +36,8 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
      *  設定画面へ
      */
     @IBAction func goSetting(sender: AnyObject) {
-        let settingView = self.storyboard!.instantiateViewControllerWithIdentifier("SettingView") as! UINavigationController
-        settingView.modalTransitionStyle = .CoverVertical
-        self.presentViewController(settingView, animated: true, completion: nil)
+        let url = NSURL(string:UIApplicationOpenSettingsURLString)
+        UIApplication.sharedApplication().openURL(url!)
     }
     
     override func viewDidLoad() {
