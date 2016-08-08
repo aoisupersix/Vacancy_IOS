@@ -71,9 +71,6 @@ class StnViewController: UITableViewController, UISearchBarDelegate{
             app.arr_push = TrainData.pushcode[app.arr_stn]!
         }
         //メイン画面に戻る
-        //let mainView = self.storyboard!.instantiateViewControllerWithIdentifier("MainView") as! UINavigationController
-        //mainView.modalTransitionStyle = .CrossDissolve
-        //self.presentViewController(mainView, animated: true, completion: nil)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 

@@ -11,6 +11,7 @@ import UIKit
 public class ResultView: UITableViewController, TrainDataDelegate {
     
     @IBOutlet var resultTableView: UITableView!
+    @IBOutlet var infoLabel: UILabel!
     
     /*
      *  TrainData
@@ -33,6 +34,9 @@ public class ResultView: UITableViewController, TrainDataDelegate {
     @IBAction func goBack(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    override public func viewWillAppear(animated: Bool) {
+        infoLabel.text = "\(app.month)月\(app.day)日 \(app.hour):\(app.minute)発 \(app.dep_stn) → \(app.arr_stn)"
+    }
     
     /*
      *  TableView
@@ -43,6 +47,7 @@ public class ResultView: UITableViewController, TrainDataDelegate {
     override public func tableView(tableView: UITableView, cellForRowAtIndexPath: NSIndexPath) -> UITableViewCell {
         let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let cell = tableView.dequeueReusableCellWithIdentifier("ResultTableViewCell", forIndexPath: cellForRowAtIndexPath) as! ResultCell
+        
         cell.trainInfoLabel.text = "\(app.dep_stn)(\(app.depTime[cellForRowAtIndexPath.row]))　→　\(app.arr_stn)(\(app.arrTime[cellForRowAtIndexPath.row]))"
         cell.trainImage.image = UIImage(named: "ltdexp.png")
         cell.trainNameLabel.text = app.name[cellForRowAtIndexPath.row]
