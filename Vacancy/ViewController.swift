@@ -161,19 +161,22 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
      *  通信成功し、結果あり(delegate)
      */
     func completeConnection() {
-        let resultView = self.storyboard!.instantiateViewControllerWithIdentifier("ResultView") as! UINavigationController
-        resultView.modalTransitionStyle = .CoverVertical
-        self.presentViewController(resultView, animated: true, completion: nil)
-
+        dispatch_async(dispatch_get_main_queue()){
+            let resultView = self.storyboard!.instantiateViewControllerWithIdentifier("ResultView") as! UINavigationController
+            resultView.modalTransitionStyle = .CoverVertical
+            self.presentViewController(resultView, animated: true, completion: nil)
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     func showAlert(title: String, mes: String){
-        let alert = UIAlertController(title: title, message: mes, preferredStyle: .Alert)
-        let defaultAction = UIAlertAction(title: "了解", style: .Default, handler: nil)
-        alert.addAction(defaultAction)
-        self.presentViewController(alert, animated: true, completion: nil)
+        dispatch_async(dispatch_get_main_queue()){
+            let alert = UIAlertController(title: title, message: mes, preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "了解", style: .Default, handler: nil)
+            alert.addAction(defaultAction)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
 }
 

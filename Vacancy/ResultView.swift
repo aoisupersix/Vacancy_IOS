@@ -94,12 +94,14 @@ public class ResultView: UITableViewController, TrainDataDelegate {
         }
     }
     func showAlert(title: String, mes: String) {
-        let alert = UIAlertController(title: title, message: mes, preferredStyle: .Alert)
-        let defaultAction = UIAlertAction(title: "了解", style: .Default, handler: nil)
-        alert.addAction(defaultAction)
-        self.presentViewController(alert, animated: true, completion: nil)
+        dispatch_async(dispatch_get_main_queue()){
+            let alert = UIAlertController(title: title, message: mes, preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "了解", style: .Default, handler: nil)
+            alert.addAction(defaultAction)
+            self.presentViewController(alert, animated: true, completion: nil)
         
-        //Dateを戻しておく
-        app.date = trainData!.dateBackup!
+            //Dateを戻しておく
+            self.app.date = self.trainData!.dateBackup!
+        }
     }
 }
