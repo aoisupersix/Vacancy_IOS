@@ -1,85 +1,79 @@
 //
-//  StnViewController.swift
+//  StnSelectController.swift
 //  Vacancy
 //
-//  Created by 田中葵 on 2016/07/21.
+//  Created by 田中葵 on 2016/08/09.
 //  Copyright © 2016年 田中葵. All rights reserved.
 //
 
 import UIKit
 
-class StnViewController: UITableViewController, UISearchBarDelegate{
-    /*
-     *  OUTLET
-     */
-    @IBOutlet var stnSearchBar: UISearchBar!
-    @IBOutlet var stnListTableView: UITableView!
+/*
+ *  segment
+ */
+
+
+class StnSelectController: UITableViewController {
     
-    //TableViewの中身
+    @IBOutlet var segment: UISegmentedControl!
+    
+    /*
+     *  TableViewの中身
+     */
     var list: [String] = []
-    //セクション名
-    var sectionName = HISTORY_SEARCH_TEXT
+    
     //履歴
     var history: [String] = []
     
-    //AppDelegate
+    /*
+     *  appdelegate
+     */
     let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    /*
+     *  新幹線の種類
+     */
+    var type: String?
     
     /*
-     *  メイン画面に戻る
+     *  ViewControllerに戻る
      */
     @IBAction func back(sender: AnyObject) {
         addHistory("")
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    override func viewDidLoad(){
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
-        stnSearchBar.delegate = self
-        stnListTableView.delegate = self
-        
     }
     override func viewWillAppear(animated: Bool) {
+        //新幹線の種類を設定
+        type = SUPEREXPRESS_NAME[Int(app.type)! - 1]
+        
         loadHistory()
-        showList()
+        updateList()
+        tableView.reloadData()
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    /*
+     *  セグメントが変更された
+     */
+    @IBAction func segmentChanged(sender: AnyObject) {
+        updateList()
         tableView.reloadData()
     }
     /*
-     *  searchBar変更
-     */
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        list.removeAll()
-        if searchText == "" {
-            //履歴検索
-            sectionName = HISTORY_SEARCH_TEXT
-            list = history
-        }else {
-            //駅名検索
-            sectionName = STN_SEARCH_TEXT
-            for (stn, _) in TrainData.pushcode{
-                if stn.containsString(searchText){
-                    list.append(stn)
-                }
-            }
-        }
-        stnListTableView.reloadData()
-    }
-    /*
-     *  TableViewメソッド
+     *  TableView
      */
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
-    }
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionName
     }
     
     // セルの内容を変更
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
-        if sectionName == HISTORY_SEARCH_TEXT {
-            //履歴検索
-            list = history
-        }
+
         cell.textLabel?.text = list[indexPath.row]
         
         return cell
@@ -90,18 +84,28 @@ class StnViewController: UITableViewController, UISearchBarDelegate{
             //出発駅の場合
             app.dep_stn = list[indexPath.row]
             app.dep_push = TrainData.pushcode[app.dep_stn]!
-        }else if app.stnType == 2{
+        }else if app.stnType == 2 {
             //到着駅の場合
             app.arr_stn = list[indexPath.row]
             app.arr_push = TrainData.pushcode[app.arr_stn]!
         }
         //履歴に追加
         addHistory(list[indexPath.row])
-
+        
         
         //メイン画面に戻る
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    func updateList() {
+        if segment.selectedSegmentIndex == HISTORY_SELECT {
+            //履歴検索
+            list = history
+        }else {
+            //リスト検索
+            list = TrainData.stnList[Int(app.type)! - 1]
+        }
+    }
+
     
     /*
      *  履歴の読み込み
@@ -109,10 +113,9 @@ class StnViewController: UITableViewController, UISearchBarDelegate{
     func loadHistory() {
         showList()
         let defaults = NSUserDefaults.standardUserDefaults()
-        let stnhist = defaults.objectForKey("stn_history")
+        let stnhist = defaults.objectForKey("stn_\(type)_history")
         if stnhist as? [String] != nil {
             history = (stnhist as? [String])!
-            list = history
         }
     }
     /*
@@ -128,11 +131,11 @@ class StnViewController: UITableViewController, UISearchBarDelegate{
             history.insert(str, atIndex: 0)
         }
         let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(history, forKey: "stn_history")
+        defaults.setObject(history, forKey: "stn_\(type)_history")
         showList()
     }
     /*
-     *  履歴を削除
+     *  履歴の削除
      */
     @IBAction func deleteHistory(sender: AnyObject) {
         let alert = UIAlertController(title: "確認", message: "駅名の履歴を削除します。よろしいですか？", preferredStyle: .Alert)
@@ -140,7 +143,7 @@ class StnViewController: UITableViewController, UISearchBarDelegate{
             (action: UIAlertAction!) -> Void in
             //OKボタンクリック
             self.history.removeAll()
-            if self.sectionName == HISTORY_SEARCH_TEXT {
+            if self.segment.selectedSegmentIndex == HISTORY_SELECT{
                 self.list.removeAll()
             }
             self.tableView.reloadData()
@@ -152,12 +155,8 @@ class StnViewController: UITableViewController, UISearchBarDelegate{
         alert.addAction(defaultAction)
         alert.addAction(cancelAction)
         self.presentViewController(alert, animated: true, completion: nil)
-
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+    
     //デバッグ用　中身表示
     func showList() {
         print("*****HISTORY*****")

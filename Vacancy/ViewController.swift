@@ -81,17 +81,26 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
             break
         case 2:
             //出発駅
-            let stnView = self.storyboard!.instantiateViewControllerWithIdentifier("StnView") as! UINavigationController
-            stnView.modalTransitionStyle = .CoverVertical
             app.stnType = 1
+            
+            var viewIdentifier = "StnSelectView"
+            if app.type == "5" {
+                viewIdentifier = "StnView"
+            }
+            let stnView = self.storyboard!.instantiateViewControllerWithIdentifier(viewIdentifier) as! UINavigationController
+            stnView.modalTransitionStyle = .CoverVertical
             self.presentViewController(stnView, animated: true, completion: nil)
-            //self.navigationController?.pushViewController(StnViewController(), animated: true)
             break
         case 3:
             //到着駅
-            let stnView = self.storyboard!.instantiateViewControllerWithIdentifier("StnView") as! UINavigationController
-            stnView.modalTransitionStyle = .CoverVertical
             app.stnType = 2
+            
+            var viewIdentifier = "StnSelectView"
+            if app.type == "5" {
+                viewIdentifier = "StnView"
+            }
+            let stnView = self.storyboard!.instantiateViewControllerWithIdentifier(viewIdentifier) as! UINavigationController
+            stnView.modalTransitionStyle = .CoverVertical
             self.presentViewController(stnView, animated: true, completion: nil)
             break
         case 4:

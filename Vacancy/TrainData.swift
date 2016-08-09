@@ -20,6 +20,10 @@ class TrainData {
     static var pushcode = [String : String]()
     
     /*
+     *  各新幹線の駅名リスト
+     */
+    static var stnList: [[String]] = [[], [], [], []]
+    /*
      *  結果HTML
      */
     var result: String?
@@ -77,10 +81,34 @@ class TrainData {
         } catch let error as NSError {
             print(error.localizedDescription)
         }
+        
+        //駅名リスト読み込み
+        for index in 0..<SUPEREXPRESS_NAME.count {
+            let txtBundle = NSBundle.mainBundle().pathForResource(SUPEREXPRESS_NAME[index], ofType: "txt")
+            do {
+                let listData: String = try String(contentsOfFile: txtBundle!, encoding: NSUTF8StringEncoding)
+                let list = listData.componentsSeparatedByString("\n")
+                for line in list {
+                    stnList[index].append(line)
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
         //中身を表示
+        print("*****PUSHCODE*****")
         for (stn, push) in pushcode{
             print("\(stn):\(push)")
         }
+        print("******************")
+        for i in 0..<stnList.count {
+            print("*****\(SUPEREXPRESS_NAME[i])*****")
+            for stn in stnList[i] {
+                print(stn)
+            }
+            print("***************")
+        }
+
     }
     /*
      *  Post

@@ -969,11 +969,6 @@
                                 <action selector="back:" destination="nd0-3c-0BM" id="VRe-jD-hLH"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="履歴を削除" id="j93-Q1-LIY">
-                            <connections>
-                                <action selector="deleteHistory:" destination="nd0-3c-0BM" id="UT1-io-3k4"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
@@ -984,6 +979,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6Y-ow-Hb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3216" y="-185"/>
+        </scene>
+        <!--駅名選択-->
+        <scene sceneID="QmF-At-QKG">
+            <objects>
+                <tableViewController storyboardIdentifier="StnSelectTableView" id="PM9-nt-zxa" customClass="StnSelectController" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0WK-F2-v6H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="aa3-n2-djx">
+                            <rect key="frame" x="0.0" y="64" width="375" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="駅名リストから選択"/>
+                                <segment title="履歴から選択"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentChanged:" destination="PM9-nt-zxa" eventType="valueChanged" id="94a-tM-jXK"/>
+                            </connections>
+                        </segmentedControl>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nuL-zD-0wL">
+                                <rect key="frame" x="0.0" y="122" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nuL-zD-0wL" id="qw1-BD-A1x">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="PM9-nt-zxa" id="V42-gs-Uyf"/>
+                            <outlet property="delegate" destination="PM9-nt-zxa" id="DQo-C3-Rgd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="駅名選択" id="JPN-3u-P3U">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="2ul-qI-dQ7">
+                            <connections>
+                                <action selector="back:" destination="PM9-nt-zxa" id="avc-5H-ViS"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="履歴を削除" id="j93-Q1-LIY">
+                            <connections>
+                                <action selector="deleteHistory:" destination="PM9-nt-zxa" id="aEb-FL-nuC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="segment" destination="aa3-n2-djx" id="tY9-Po-Ge5"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DTf-n9-fNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3952.5" y="-219.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sLM-9j-e2d">
+            <objects>
+                <navigationController storyboardIdentifier="StnSelectView" id="SIW-zj-lVZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8pO-dn-Ljh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PM9-nt-zxa" kind="relationship" relationship="rootViewController" id="y5N-NB-nWQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YXp-Lr-PWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3952" y="-1074"/>
         </scene>
         <!--空席照会-->
         <scene sceneID="Ua1-8F-SeZ">

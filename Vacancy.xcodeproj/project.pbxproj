@@ -22,7 +22,6 @@
 		E144E12A1D45F250002FADAA /* superexpress.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E11E1D45F250002FADAA /* superexpress.png */; };
 		E144E12C1D462412002FADAA /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E144E12B1D462412002FADAA /* ResultCell.swift */; };
 		E144E12E1D4628B7002FADAA /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E144E12D1D4628B7002FADAA /* ResultView.swift */; };
-		E1586E791D5214E200F62B44 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1586E781D5214E200F62B44 /* SettingViewController.swift */; };
 		E1686C771D574799001F3AA4 /* nashi.png in Resources */ = {isa = PBXBuildFile; fileRef = E1686C761D574799001F3AA4 /* nashi.png */; };
 		E1686C791D5747C0001F3AA4 /* greenW.png in Resources */ = {isa = PBXBuildFile; fileRef = E1686C781D5747C0001F3AA4 /* greenW.png */; };
 		E1686C7B1D5747C9001F3AA4 /* maruW.png in Resources */ = {isa = PBXBuildFile; fileRef = E1686C7A1D5747C9001F3AA4 /* maruW.png */; };
@@ -36,13 +35,13 @@
 		E1686C8B1D5749C7001F3AA4 /* maru.png in Resources */ = {isa = PBXBuildFile; fileRef = E1686C8A1D5749C7001F3AA4 /* maru.png */; };
 		E1686C8D1D5749CF001F3AA4 /* batsu.png in Resources */ = {isa = PBXBuildFile; fileRef = E1686C8C1D5749CF001F3AA4 /* batsu.png */; };
 		E1686C8F1D5749DA001F3AA4 /* sankaku.png in Resources */ = {isa = PBXBuildFile; fileRef = E1686C8E1D5749DA001F3AA4 /* sankaku.png */; };
-		E17B02881D3D92CE009A41D1 /* EastStaList.txt in Resources */ = {isa = PBXBuildFile; fileRef = E17B02811D3D92CE009A41D1 /* EastStaList.txt */; };
-		E17B02891D3D92CE009A41D1 /* Group2StaList.txt in Resources */ = {isa = PBXBuildFile; fileRef = E17B02821D3D92CE009A41D1 /* Group2StaList.txt */; };
+		E17B02881D3D92CE009A41D1 /* tohoku.txt in Resources */ = {isa = PBXBuildFile; fileRef = E17B02811D3D92CE009A41D1 /* tohoku.txt */; };
+		E17B02891D3D92CE009A41D1 /* kodama.txt in Resources */ = {isa = PBXBuildFile; fileRef = E17B02821D3D92CE009A41D1 /* kodama.txt */; };
 		E17B028A1D3D92CE009A41D1 /* LtdExpList.txt in Resources */ = {isa = PBXBuildFile; fileRef = E17B02831D3D92CE009A41D1 /* LtdExpList.txt */; };
-		E17B028B1D3D92CE009A41D1 /* NaganoStaList.txt in Resources */ = {isa = PBXBuildFile; fileRef = E17B02841D3D92CE009A41D1 /* NaganoStaList.txt */; };
+		E17B028B1D3D92CE009A41D1 /* nagano.txt in Resources */ = {isa = PBXBuildFile; fileRef = E17B02841D3D92CE009A41D1 /* nagano.txt */; };
 		E17B028C1D3D92CE009A41D1 /* pushcode.csv in Resources */ = {isa = PBXBuildFile; fileRef = E17B02851D3D92CE009A41D1 /* pushcode.csv */; };
 		E17B028D1D3D92CE009A41D1 /* SuperExpList.txt in Resources */ = {isa = PBXBuildFile; fileRef = E17B02861D3D92CE009A41D1 /* SuperExpList.txt */; };
-		E17B028E1D3D92CE009A41D1 /* TokaiStaList.txt in Resources */ = {isa = PBXBuildFile; fileRef = E17B02871D3D92CE009A41D1 /* TokaiStaList.txt */; };
+		E17B028E1D3D92CE009A41D1 /* tokaido.txt in Resources */ = {isa = PBXBuildFile; fileRef = E17B02871D3D92CE009A41D1 /* tokaido.txt */; };
 		E1C92E561D3B8C8B000FC366 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E551D3B8C8B000FC366 /* AppDelegate.swift */; };
 		E1C92E581D3B8C8B000FC366 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E571D3B8C8B000FC366 /* ViewController.swift */; };
 		E1C92E5B1D3B8C8B000FC366 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C92E591D3B8C8B000FC366 /* Main.storyboard */; };
@@ -56,6 +55,10 @@
 		E1C92E8D1D3BB202000FC366 /* PopUpPickerViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E8A1D3BB202000FC366 /* PopUpPickerViewBase.swift */; };
 		E1DAE41F1D58AB4D005C7F7D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1DAE41E1D58AB4D005C7F7D /* Settings.bundle */; };
 		E1DAE4211D594C57005C7F7D /* LegendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE4201D594C57005C7F7D /* LegendViewController.swift */; };
+		E1DAE4231D595BF9005C7F7D /* StnSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE4221D595BF9005C7F7D /* StnSelectController.swift */; };
+		E1DAE4261D5965B7005C7F7D /* SegmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE4251D5965B7005C7F7D /* SegmentType.swift */; };
+		E1DAE4281D596626005C7F7D /* SectionName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE4271D596626005C7F7D /* SectionName.swift */; };
+		E1DAE42C1D596AFC005C7F7D /* SuperExpressName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE42B1D596AFC005C7F7D /* SuperExpressName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +98,6 @@
 		E144E11E1D45F250002FADAA /* superexpress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = superexpress.png; sourceTree = "<group>"; };
 		E144E12B1D462412002FADAA /* ResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		E144E12D1D4628B7002FADAA /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
-		E1586E781D5214E200F62B44 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		E1686C761D574799001F3AA4 /* nashi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nashi.png; sourceTree = "<group>"; };
 		E1686C781D5747C0001F3AA4 /* greenW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenW.png; sourceTree = "<group>"; };
 		E1686C7A1D5747C9001F3AA4 /* maruW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maruW.png; sourceTree = "<group>"; };
@@ -109,13 +111,13 @@
 		E1686C8A1D5749C7001F3AA4 /* maru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maru.png; sourceTree = "<group>"; };
 		E1686C8C1D5749CF001F3AA4 /* batsu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batsu.png; sourceTree = "<group>"; };
 		E1686C8E1D5749DA001F3AA4 /* sankaku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sankaku.png; sourceTree = "<group>"; };
-		E17B02811D3D92CE009A41D1 /* EastStaList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EastStaList.txt; sourceTree = "<group>"; };
-		E17B02821D3D92CE009A41D1 /* Group2StaList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Group2StaList.txt; sourceTree = "<group>"; };
+		E17B02811D3D92CE009A41D1 /* tohoku.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tohoku.txt; sourceTree = "<group>"; };
+		E17B02821D3D92CE009A41D1 /* kodama.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kodama.txt; sourceTree = "<group>"; };
 		E17B02831D3D92CE009A41D1 /* LtdExpList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LtdExpList.txt; sourceTree = "<group>"; };
-		E17B02841D3D92CE009A41D1 /* NaganoStaList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NaganoStaList.txt; sourceTree = "<group>"; };
+		E17B02841D3D92CE009A41D1 /* nagano.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nagano.txt; sourceTree = "<group>"; };
 		E17B02851D3D92CE009A41D1 /* pushcode.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pushcode.csv; sourceTree = "<group>"; };
 		E17B02861D3D92CE009A41D1 /* SuperExpList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SuperExpList.txt; sourceTree = "<group>"; };
-		E17B02871D3D92CE009A41D1 /* TokaiStaList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TokaiStaList.txt; sourceTree = "<group>"; };
+		E17B02871D3D92CE009A41D1 /* tokaido.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tokaido.txt; sourceTree = "<group>"; };
 		E1C92E521D3B8C8B000FC366 /* Vacancy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vacancy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C92E551D3B8C8B000FC366 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1C92E571D3B8C8B000FC366 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,10 @@
 		E1C92E8A1D3BB202000FC366 /* PopUpPickerViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpPickerViewBase.swift; sourceTree = "<group>"; };
 		E1DAE41E1D58AB4D005C7F7D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E1DAE4201D594C57005C7F7D /* LegendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegendViewController.swift; sourceTree = "<group>"; };
+		E1DAE4221D595BF9005C7F7D /* StnSelectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnSelectController.swift; sourceTree = "<group>"; };
+		E1DAE4251D5965B7005C7F7D /* SegmentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentType.swift; sourceTree = "<group>"; };
+		E1DAE4271D596626005C7F7D /* SectionName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionName.swift; sourceTree = "<group>"; };
+		E1DAE42B1D596AFC005C7F7D /* SuperExpressName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperExpressName.swift; sourceTree = "<group>"; };
 		F8DF6F48D82ABABE740BD67C /* Pods_VacancyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VacancyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -217,13 +223,13 @@
 		E17B02801D3D9269009A41D1 /* assets */ = {
 			isa = PBXGroup;
 			children = (
-				E17B02811D3D92CE009A41D1 /* EastStaList.txt */,
-				E17B02821D3D92CE009A41D1 /* Group2StaList.txt */,
+				E17B02811D3D92CE009A41D1 /* tohoku.txt */,
+				E17B02821D3D92CE009A41D1 /* kodama.txt */,
 				E17B02831D3D92CE009A41D1 /* LtdExpList.txt */,
-				E17B02841D3D92CE009A41D1 /* NaganoStaList.txt */,
+				E17B02841D3D92CE009A41D1 /* nagano.txt */,
 				E17B02851D3D92CE009A41D1 /* pushcode.csv */,
 				E17B02861D3D92CE009A41D1 /* SuperExpList.txt */,
-				E17B02871D3D92CE009A41D1 /* TokaiStaList.txt */,
+				E17B02871D3D92CE009A41D1 /* tokaido.txt */,
 			);
 			name = assets;
 			sourceTree = "<group>";
@@ -254,6 +260,7 @@
 		E1C92E541D3B8C8B000FC366 /* Vacancy */ = {
 			isa = PBXGroup;
 			children = (
+				E1DAE4241D596549005C7F7D /* 定数 */,
 				E144E1121D45EFB7002FADAA /* Resource */,
 				E101EAC41D44B9DB003789A5 /* Vacancy.entitlements */,
 				E17B02801D3D9269009A41D1 /* assets */,
@@ -271,8 +278,8 @@
 				E101EABE1D40EE98003789A5 /* StnViewController.swift */,
 				E144E12B1D462412002FADAA /* ResultCell.swift */,
 				E144E12D1D4628B7002FADAA /* ResultView.swift */,
-				E1586E781D5214E200F62B44 /* SettingViewController.swift */,
 				E1DAE4201D594C57005C7F7D /* LegendViewController.swift */,
+				E1DAE4221D595BF9005C7F7D /* StnSelectController.swift */,
 			);
 			path = Vacancy;
 			sourceTree = "<group>";
@@ -293,6 +300,16 @@
 				E1C92E7A1D3B8C8C000FC366 /* Info.plist */,
 			);
 			path = VacancyUITests;
+			sourceTree = "<group>";
+		};
+		E1DAE4241D596549005C7F7D /* 定数 */ = {
+			isa = PBXGroup;
+			children = (
+				E1DAE4251D5965B7005C7F7D /* SegmentType.swift */,
+				E1DAE4271D596626005C7F7D /* SectionName.swift */,
+				E1DAE42B1D596AFC005C7F7D /* SuperExpressName.swift */,
+			);
+			name = "定数";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,7 +433,7 @@
 				E144E1251D45F250002FADAA /* nonsmoke.png in Resources */,
 				E144E1221D45F250002FADAA /* ltdexp.png in Resources */,
 				E1686C7B1D5747C9001F3AA4 /* maruW.png in Resources */,
-				E17B028B1D3D92CE009A41D1 /* NaganoStaList.txt in Resources */,
+				E17B028B1D3D92CE009A41D1 /* nagano.txt in Resources */,
 				E144E1201D45F250002FADAA /* granclass.png in Resources */,
 				E1686C871D57489F001F3AA4 /* nonsmokeW.png in Resources */,
 				E17B028C1D3D92CE009A41D1 /* pushcode.csv in Resources */,
@@ -424,13 +441,13 @@
 				E1C92E631D3B8C8B000FC366 /* LaunchScreen.storyboard in Resources */,
 				E144E12A1D45F250002FADAA /* superexpress.png in Resources */,
 				E1C92E601D3B8C8B000FC366 /* Assets.xcassets in Resources */,
-				E17B02881D3D92CE009A41D1 /* EastStaList.txt in Resources */,
+				E17B02881D3D92CE009A41D1 /* tohoku.txt in Resources */,
 				E1686C8F1D5749DA001F3AA4 /* sankaku.png in Resources */,
 				E1C92E5B1D3B8C8B000FC366 /* Main.storyboard in Resources */,
 				E1686C8D1D5749CF001F3AA4 /* batsu.png in Resources */,
 				E1686C7D1D5747D1001F3AA4 /* reservedW.png in Resources */,
 				E144E1261D45F250002FADAA /* rapid.png in Resources */,
-				E17B028E1D3D92CE009A41D1 /* TokaiStaList.txt in Resources */,
+				E17B028E1D3D92CE009A41D1 /* tokaido.txt in Resources */,
 				E144E1291D45F250002FADAA /* smoking.png in Resources */,
 				E144E1211D45F250002FADAA /* green.png in Resources */,
 				E116C34D1D486F240001A231 /* vacancy.png in Resources */,
@@ -438,7 +455,7 @@
 				E144E1271D45F250002FADAA /* reserved.png in Resources */,
 				E1686C891D5749BD001F3AA4 /* batsuW.png in Resources */,
 				E1686C831D5747DF001F3AA4 /* nashiW.png in Resources */,
-				E17B02891D3D92CE009A41D1 /* Group2StaList.txt in Resources */,
+				E17B02891D3D92CE009A41D1 /* kodama.txt in Resources */,
 				E17B028D1D3D92CE009A41D1 /* SuperExpList.txt in Resources */,
 				E1686C851D5747DF001F3AA4 /* smokeW.png in Resources */,
 				E1686C8B1D5749C7001F3AA4 /* maru.png in Resources */,
@@ -564,16 +581,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1C92E8D1D3BB202000FC366 /* PopUpPickerViewBase.swift in Sources */,
-				E1586E791D5214E200F62B44 /* SettingViewController.swift in Sources */,
 				E1C92E5E1D3B8C8B000FC366 /* Vacancy.xcdatamodeld in Sources */,
 				E1C92E8C1D3BB202000FC366 /* PopUpPickerView.swift in Sources */,
+				E1DAE4231D595BF9005C7F7D /* StnSelectController.swift in Sources */,
 				E1C92E581D3B8C8B000FC366 /* ViewController.swift in Sources */,
 				E1C92E561D3B8C8B000FC366 /* AppDelegate.swift in Sources */,
 				E144E12C1D462412002FADAA /* ResultCell.swift in Sources */,
 				E1DAE4211D594C57005C7F7D /* LegendViewController.swift in Sources */,
+				E1DAE4261D5965B7005C7F7D /* SegmentType.swift in Sources */,
 				E1C92E8B1D3BB202000FC366 /* PopUpDatePickerView.swift in Sources */,
 				E144E12E1D4628B7002FADAA /* ResultView.swift in Sources */,
 				E101EABF1D40EE98003789A5 /* StnViewController.swift in Sources */,
+				E1DAE4281D596626005C7F7D /* SectionName.swift in Sources */,
+				E1DAE42C1D596AFC005C7F7D /* SuperExpressName.swift in Sources */,
 				E101EABD1D40E712003789A5 /* TrainData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

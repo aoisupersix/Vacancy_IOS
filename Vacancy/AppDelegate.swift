@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var day = ""
     var hour = ""
     var minute = ""
-    var type = "5"
+    var type = "3"
     var dep_stn = "高松"
     var dep_push = "7000"
     var arr_stn = "東京"
