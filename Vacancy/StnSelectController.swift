@@ -96,6 +96,10 @@ class StnSelectController: UITableViewController {
         //メイン画面に戻る
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    /*
+     *  Listを更新
+     */
     func updateList() {
         if segment.selectedSegmentIndex == HISTORY_SELECT {
             //履歴検索
