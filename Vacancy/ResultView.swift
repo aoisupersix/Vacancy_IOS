@@ -27,6 +27,18 @@ public class ResultView: UITableViewController, TrainDataDelegate {
         super.viewDidLoad()
         
         trainData = TrainData(dele: self)
+        
+        /*
+         *  Refresh
+         */
+        let refresh = UIRefreshControl()
+        refresh.attributedTitle = NSAttributedString(string: "読み込み中")
+        refresh.tintColor = UIColor.blueColor()
+        refresh.addTarget(self, action: #selector(ResultView.refreshTable), forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl = refresh
+    }
+    func refreshTable() {
+        trainData!.post()
     }
     override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -91,6 +103,8 @@ public class ResultView: UITableViewController, TrainDataDelegate {
             print("Complete!")
             self.resultTableView.reloadData()
             self.infoLabel.text = "\(self.app.month)月\(self.app.day)日 \(self.app.hour):\(self.app.minute)発 \(self.app.dep_stn) → \(self.app.arr_stn)"
+            self.refreshControl?.endRefreshing()
+
         }
     }
     func showAlert(title: String, mes: String) {
