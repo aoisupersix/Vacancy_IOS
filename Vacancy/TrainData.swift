@@ -219,7 +219,7 @@ class TrainData {
 
         if app.type == "3" || app.type == "4" {
             //東北新幹線は喫煙席が存在しない
-            while(parts.substringWithRange(pos!.endIndex..<pos!.endIndex.advancedBy(1)) != "グ" && pos != nil){
+            while(pos != nil && parts.substringWithRange(pos!.endIndex..<pos!.endIndex.advancedBy(1)) != "グ"){
                 
                 parts = parts.substringFromIndex(pos!.endIndex)   //HTMLを分解
                 

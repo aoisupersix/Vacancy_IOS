@@ -75,6 +75,9 @@ class StnSelectController: UITableViewController {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
 
         cell.textLabel?.text = list[indexPath.row]
+        cell.textLabel?.textColor = UIColor.blueColor()
+        cell.textLabel?.font = UIFont.boldSystemFontOfSize(UIFont.labelFontSize())
+        cell.accessoryType = .DisclosureIndicator
         
         return cell
     }

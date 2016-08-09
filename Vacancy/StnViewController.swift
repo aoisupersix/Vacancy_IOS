@@ -81,6 +81,10 @@ class StnViewController: UITableViewController, UISearchBarDelegate{
             list = history
         }
         cell.textLabel?.text = list[indexPath.row]
+        cell.textLabel?.textColor = UIColor.blueColor()
+        cell.textLabel?.font = UIFont.boldSystemFontOfSize(UIFont.labelFontSize())
+
+        cell.accessoryType = .DisclosureIndicator
         
         return cell
     }
