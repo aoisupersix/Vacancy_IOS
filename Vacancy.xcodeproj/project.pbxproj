@@ -55,6 +55,7 @@
 		E1C92E8C1D3BB202000FC366 /* PopUpPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E891D3BB202000FC366 /* PopUpPickerView.swift */; };
 		E1C92E8D1D3BB202000FC366 /* PopUpPickerViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E8A1D3BB202000FC366 /* PopUpPickerViewBase.swift */; };
 		E1DAE41F1D58AB4D005C7F7D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1DAE41E1D58AB4D005C7F7D /* Settings.bundle */; };
+		E1DAE4211D594C57005C7F7D /* LegendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE4201D594C57005C7F7D /* LegendViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		E1C92E891D3BB202000FC366 /* PopUpPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpPickerView.swift; sourceTree = "<group>"; };
 		E1C92E8A1D3BB202000FC366 /* PopUpPickerViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpPickerViewBase.swift; sourceTree = "<group>"; };
 		E1DAE41E1D58AB4D005C7F7D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		E1DAE4201D594C57005C7F7D /* LegendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegendViewController.swift; sourceTree = "<group>"; };
 		F8DF6F48D82ABABE740BD67C /* Pods_VacancyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VacancyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -270,6 +272,7 @@
 				E144E12B1D462412002FADAA /* ResultCell.swift */,
 				E144E12D1D4628B7002FADAA /* ResultView.swift */,
 				E1586E781D5214E200F62B44 /* SettingViewController.swift */,
+				E1DAE4201D594C57005C7F7D /* LegendViewController.swift */,
 			);
 			path = Vacancy;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				E1C92E581D3B8C8B000FC366 /* ViewController.swift in Sources */,
 				E1C92E561D3B8C8B000FC366 /* AppDelegate.swift in Sources */,
 				E144E12C1D462412002FADAA /* ResultCell.swift in Sources */,
+				E1DAE4211D594C57005C7F7D /* LegendViewController.swift in Sources */,
 				E1C92E8B1D3BB202000FC366 /* PopUpDatePickerView.swift in Sources */,
 				E144E12E1D4628B7002FADAA /* ResultView.swift in Sources */,
 				E101EABF1D40EE98003789A5 /* StnViewController.swift in Sources */,
