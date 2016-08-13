@@ -196,7 +196,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vND-Wd-Ktf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1486.5" y="-185.5"/>
+            <point key="canvasLocation" x="1260.5" y="-185.5"/>
         </scene>
         <!--凡例-->
         <scene sceneID="K3P-dJ-mpK">
@@ -640,20 +640,14 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="凡例" id="CQv-VF-sR2">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="hyZ-9j-zqH">
-                            <connections>
-                                <action selector="goBack:" destination="M8m-rt-Zu7" id="PiA-fH-gJ0"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="凡例" id="CQv-VF-sR2"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSF-Sx-6em" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3248.5" y="1518.5"/>
+            <point key="canvasLocation" x="1902.5" y="1518.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tj4-sY-gs5">
@@ -669,12 +663,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="itX-K9-OBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2651.5" y="1518.5"/>
+            <point key="canvasLocation" x="1232" y="1518"/>
         </scene>
         <!--照会結果-->
         <scene sceneID="feQ-27-waf">
             <objects>
-                <tableViewController storyboardIdentifier="ResultTableView" title="照会結果" id="1Wb-xc-ju8" customClass="ResultView" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ResultView" title="照会結果" id="1Wb-xc-ju8" customClass="ResultView" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="grouped" allowsSelection="NO" rowHeight="332" sectionHeaderHeight="18" sectionFooterHeight="18" id="eJB-c8-FjU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -902,17 +896,9 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="zbP-px-fhG"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="照会結果" id="zu5-r9-Kqe">
-                        <barButtonItem key="leftBarButtonItem" title="戻る" id="mge-GC-JCa">
-                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="goBack:" destination="1Wb-xc-ju8" id="QAw-wJ-e6d"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="凡例" id="UNN-g9-XXX">
                             <connections>
-                                <segue destination="et3-Bb-3tV" kind="popoverPresentation" popoverAnchorBarButtonItem="UNN-g9-XXX" id="XOt-7f-3K0">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
+                                <segue destination="M8m-rt-Zu7" kind="show" id="mEb-c4-WMK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -925,12 +911,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUc-ON-utq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2466.5" y="387.5"/>
+            <point key="canvasLocation" x="1135.5" y="664.5"/>
         </scene>
         <!--駅名検索-->
         <scene sceneID="4nQ-aF-wRs">
             <objects>
-                <tableViewController storyboardIdentifier="StnTableView" id="nd0-3c-0BM" customClass="StnViewController" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="StnView" id="nd0-3c-0BM" customClass="StnViewController" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="v1A-rp-Qlc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -966,11 +952,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="駅名検索" id="R5M-kG-TJS">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="rah-Vo-Sva">
-                            <connections>
-                                <action selector="back:" destination="nd0-3c-0BM" id="VRe-jD-hLH"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="履歴を削除" id="V44-nZ-m0S">
                             <connections>
                                 <action selector="deleteHistory:" destination="nd0-3c-0BM" id="YNw-UW-G55"/>
@@ -985,12 +966,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6Y-ow-Hb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3216" y="-185"/>
+            <point key="canvasLocation" x="1938" y="-220"/>
         </scene>
         <!--駅名選択-->
         <scene sceneID="QmF-At-QKG">
             <objects>
-                <tableViewController storyboardIdentifier="StnSelectTableView" id="PM9-nt-zxa" customClass="StnSelectController" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="StnSelectView" id="PM9-nt-zxa" customClass="StnSelectController" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="0WK-F2-v6H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1023,19 +1004,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="駅名選択" id="JPN-3u-P3U">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="2ul-qI-dQ7">
-                            <connections>
-                                <action selector="back:" destination="PM9-nt-zxa" id="avc-5H-ViS"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="履歴を削除" id="j93-Q1-LIY">
                             <connections>
                                 <action selector="deleteHistory:" destination="PM9-nt-zxa" id="aEb-FL-nuC"/>
                             </connections>
                         </barButtonItem>
-                        <connections>
-                            <outlet property="backBarButtonItem" destination="2ul-qI-dQ7" id="IHW-wa-yBB"/>
-                        </connections>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -1044,12 +1017,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DTf-n9-fNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3952.5" y="-219.5"/>
+            <point key="canvasLocation" x="2527.5" y="-254.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sLM-9j-e2d">
             <objects>
-                <navigationController storyboardIdentifier="StnSelectView" id="SIW-zj-lVZ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="StnSelectNavigationView" id="SIW-zj-lVZ" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8pO-dn-Ljh">
@@ -1062,7 +1035,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXp-Lr-PWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3952" y="-1074"/>
+            <point key="canvasLocation" x="2527.5" y="-1065.5"/>
         </scene>
         <!--空席照会-->
         <scene sceneID="Ua1-8F-SeZ">
@@ -1080,13 +1053,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CTX-Ta-VIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="675" y="-185"/>
+            <point key="canvasLocation" x="670" y="-185"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="foy-HH-RAP">
             <objects>
-                <navigationController storyboardIdentifier="StnView" automaticallyAdjustsScrollViewInsets="NO" id="JVM-d2-waa" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="StnNavigationView" automaticallyAdjustsScrollViewInsets="NO" id="JVM-d2-waa" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TD7-10-0Zm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1098,12 +1072,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dH1-w9-DdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3216" y="-1069"/>
+            <point key="canvasLocation" x="1938" y="-1065"/>
         </scene>
         <!--照会結果-->
         <scene sceneID="dN2-46-ny8">
             <objects>
-                <navigationController storyboardIdentifier="ResultView" title="照会結果" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="w2w-1u-eFC" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ResultNavigationView" title="照会結果" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="w2w-1u-eFC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LHA-Z7-jqa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1120,7 +1094,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oe1-qQ-ArN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1887" y="722"/>
+            <point key="canvasLocation" x="543" y="665"/>
         </scene>
     </scenes>
     <resources>
@@ -1144,4 +1118,7 @@
         <image name="smoking.png" width="144" height="144"/>
         <image name="superexpress.png" width="64" height="64"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="mEb-c4-WMK"/>
+    </inferredMetricsTieBreakers>
 </document>

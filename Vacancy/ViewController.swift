@@ -87,9 +87,8 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
             if app.type == "5" {
                 viewIdentifier = "StnView"
             }
-            let stnView = self.storyboard!.instantiateViewControllerWithIdentifier(viewIdentifier) as! UINavigationController
-            stnView.modalTransitionStyle = .CoverVertical
-            self.presentViewController(stnView, animated: true, completion: nil)
+            let stnView = self.storyboard!.instantiateViewControllerWithIdentifier(viewIdentifier) as! UITableViewController
+            self.navigationController?.pushViewController(stnView, animated: true)
             break
         case 3:
             //到着駅
@@ -99,11 +98,8 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
             if app.type == "5" {
                 viewIdentifier = "StnView"
             }
-            let stnView = self.storyboard!.instantiateViewControllerWithIdentifier(viewIdentifier) as! UINavigationController
-            stnView.modalTransitionStyle = .CoverVertical
-            self.presentViewController(stnView, animated: true, completion: nil)
-            break
-        case 4:
+            let stnView = self.storyboard!.instantiateViewControllerWithIdentifier(viewIdentifier) as! UITableViewController
+            self.navigationController?.pushViewController(stnView, animated: true)
             break
         default:
             break
@@ -171,9 +167,8 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
      */
     func completeConnection() {
         dispatch_async(dispatch_get_main_queue()){
-            let resultView = self.storyboard!.instantiateViewControllerWithIdentifier("ResultView") as! UINavigationController
-            resultView.modalTransitionStyle = .CoverVertical
-            self.presentViewController(resultView, animated: true, completion: nil)
+            let resultView = self.storyboard!.instantiateViewControllerWithIdentifier("ResultView") as! UITableViewController
+            self.navigationController?.pushViewController(resultView, animated: true)
         }
     }
     override func didReceiveMemoryWarning() {
