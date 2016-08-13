@@ -9,12 +9,6 @@
 import UIKit
 
 class LegendViewController: UITableViewController {
-    /*
-     *  戻る
-     */
-    @IBAction func goBack(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

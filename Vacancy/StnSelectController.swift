@@ -97,7 +97,7 @@ class StnSelectController: UITableViewController {
         
         
         //メイン画面に戻る
-        self.dismissViewControllerAnimated(true, completion: nil)
+        navigationController?.popViewControllerAnimated(true)
     }
     
     /*

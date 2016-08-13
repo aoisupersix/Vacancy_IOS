@@ -24,14 +24,7 @@ class StnViewController: UITableViewController, UISearchBarDelegate{
     
     //AppDelegate
     let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    
-    /*
-     *  メイン画面に戻る
-     */
-    @IBAction func back(sender: AnyObject) {
-        addHistory("")
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
+
     override func viewDidLoad(){
         super.viewDidLoad()
         stnSearchBar.delegate = self
@@ -104,7 +97,7 @@ class StnViewController: UITableViewController, UISearchBarDelegate{
 
         
         //メイン画面に戻る
-        self.dismissViewControllerAnimated(true, completion: nil)
+        navigationController?.popViewControllerAnimated(true)
     }
     
     /*
