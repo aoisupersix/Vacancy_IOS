@@ -48,6 +48,7 @@ public class ResultView: UITableViewController, TrainDataDelegate {
     }
     override public func viewWillAppear(animated: Bool) {
         infoLabel.text = "\(app.month)月\(app.day)日 \(app.hour):\(app.minute)発 \(app.dep_stn) → \(app.arr_stn)"
+        navigationController?.toolbarHidden = false
     }
     
     /*
@@ -61,7 +62,7 @@ public class ResultView: UITableViewController, TrainDataDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("ResultTableViewCell", forIndexPath: cellForRowAtIndexPath) as! ResultCell
         
         cell.trainInfoLabel.text = "\(app.dep_stn)(\(app.depTime[cellForRowAtIndexPath.row]))　→　\(app.arr_stn)(\(app.arrTime[cellForRowAtIndexPath.row]))"
-        cell.trainImage.image = UIImage(named: "ltdexp.png")
+        cell.trainImage.image = UIImage(named: app.trainIcon[cellForRowAtIndexPath.row])
         cell.trainNameLabel.text = app.name[cellForRowAtIndexPath.row]
         cell.resNonSmokeImage.image = UIImage(named: app.resNoSmoke[cellForRowAtIndexPath.row])
         cell.resSmokeImage.image = UIImage(named: app.resSmoke[cellForRowAtIndexPath.row])

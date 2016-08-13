@@ -10,8 +10,8 @@
         <!--空席照会-->
         <scene sceneID="Uhu-fB-K0L">
             <objects>
-                <tableViewController title="空席照会" id="Jkh-15-fwS" customClass="ViewController" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="fEQ-4z-K3Y">
+                <tableViewController storyboardIdentifier="MainView" title="空席照会" id="Jkh-15-fwS" customClass="ViewController" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="fEQ-4z-K3Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -26,7 +26,7 @@
                             </connections>
                         </button>
                         <sections>
-                            <tableViewSection headerTitle="06:30~22:30の間のみ照会可能です。" id="Ylo-Fc-dWa">
+                            <tableViewSection headerTitle="照会する列車の情報を入力してください。" id="Ylo-Fc-dWa">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" editingAccessoryType="checkmark" rowHeight="80" id="pes-QX-bjY">
                                         <rect key="frame" x="0.0" y="114" width="375" height="80"/>
@@ -537,7 +537,6 @@
                                                     <rect key="frame" x="8" y="11" width="64" height="63"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="63" id="3GS-VK-s1R"/>
-                                                        <constraint firstAttribute="width" constant="64" id="QKw-ut-Qdd"/>
                                                         <constraint firstAttribute="width" secondItem="EOg-hl-Dxa" secondAttribute="height" multiplier="64:63" id="eF0-TG-GId"/>
                                                     </constraints>
                                                 </imageView>
@@ -554,6 +553,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="TgF-Jv-Z7l" firstAttribute="trailing" secondItem="riw-kO-yjO" secondAttribute="trailingMargin" id="8ST-Si-MQ0"/>
+                                                <constraint firstItem="EOg-hl-Dxa" firstAttribute="leading" secondItem="riw-kO-yjO" secondAttribute="leadingMargin" id="E9Y-tG-RXx"/>
                                                 <constraint firstItem="TgF-Jv-Z7l" firstAttribute="top" secondItem="riw-kO-yjO" secondAttribute="topMargin" constant="14" id="Wl8-vo-Zo8"/>
                                                 <constraint firstItem="TgF-Jv-Z7l" firstAttribute="centerY" secondItem="riw-kO-yjO" secondAttribute="centerY" id="aXt-p5-nij"/>
                                                 <constraint firstItem="TgF-Jv-Z7l" firstAttribute="leading" secondItem="EOg-hl-Dxa" secondAttribute="trailing" constant="8" id="bml-TO-Rvd"/>
@@ -643,7 +643,7 @@
                     <navigationItem key="navigationItem" title="凡例" id="CQv-VF-sR2"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSF-Sx-6em" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -680,6 +680,32 @@
                             <color key="textColor" red="0.13725490200000001" green="0.62745098040000002" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <toolbar key="tableFooterView" alpha="0.65000000000000002" contentMode="scaleToFill" id="fhP-vP-K19">
+                            <rect key="frame" x="0.0" y="508" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="SPk-Xt-bYf"/>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="LMy-DO-Kd1"/>
+                                <barButtonItem title="1時間前" id="NhH-lP-g9N">
+                                    <connections>
+                                        <action selector="before_hour:" destination="1Wb-xc-ju8" id="JUI-OH-M6l"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="H0w-Ri-2Xo"/>
+                                <barButtonItem title="1時間後" id="sz1-5T-ULL">
+                                    <connections>
+                                        <action selector="after_hour:" destination="1Wb-xc-ju8" id="BCe-8f-rUY"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="ETW-WQ-ey5"/>
+                                <barButtonItem title="翌日" id="h6l-Js-mlt">
+                                    <connections>
+                                        <action selector="after_day:" destination="1Wb-xc-ju8" id="fFt-7M-dth"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="zbP-px-fhG"/>
+                            </items>
+                        </toolbar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ResultTableViewCell" selectionStyle="none" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="ResultTableViewCell" rowHeight="332" id="M8G-Nf-lhY" customClass="ResultCell" customModule="Vacancy" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="158" width="375" height="332"/>
@@ -869,31 +895,11 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="SPk-Xt-bYf"/>
                         <barButtonItem title="前日" id="nmA-DS-e5r">
                             <connections>
                                 <action selector="before_day:" destination="1Wb-xc-ju8" id="wiJ-di-Htv"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="LMy-DO-Kd1"/>
-                        <barButtonItem title="1時間前" style="plain" id="NhH-lP-g9N">
-                            <connections>
-                                <action selector="before_hour:" destination="1Wb-xc-ju8" id="JUI-OH-M6l"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="H0w-Ri-2Xo"/>
-                        <barButtonItem title="1時間後" style="plain" id="sz1-5T-ULL">
-                            <connections>
-                                <action selector="after_hour:" destination="1Wb-xc-ju8" id="BCe-8f-rUY"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ETW-WQ-ey5"/>
-                        <barButtonItem title="翌日" style="plain" id="h6l-Js-mlt">
-                            <connections>
-                                <action selector="after_day:" destination="1Wb-xc-ju8" id="fFt-7M-dth"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="zbP-px-fhG"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="照会結果" id="zu5-r9-Kqe">
                         <barButtonItem key="rightBarButtonItem" title="凡例" id="UNN-g9-XXX">
@@ -902,7 +908,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="infoLabel" destination="dQJ-Jb-udS" id="15C-qW-vwG"/>
@@ -1040,13 +1046,17 @@
         <!--空席照会-->
         <scene sceneID="Ua1-8F-SeZ">
             <objects>
-                <navigationController storyboardIdentifier="MainView" title="空席照会" automaticallyAdjustsScrollViewInsets="NO" id="oeT-VH-jeS" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" title="空席照会" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="oeT-VH-jeS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="a1i-jW-akW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="vJJ-wk-pdK">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Jkh-15-fwS" kind="relationship" relationship="rootViewController" id="8QO-nm-hcn"/>
                     </connections>
@@ -1072,7 +1082,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dH1-w9-DdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1938" y="-1065"/>
+            <point key="canvasLocation" x="1938.5" y="-1065.5"/>
         </scene>
         <!--照会結果-->
         <scene sceneID="dN2-46-ny8">

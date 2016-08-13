@@ -61,6 +61,8 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         }
         datepicker!.datepickerDelegate = self
         trainTypePicker.delegate = self
+        
+        self.navigationController?.toolbarHidden = true
     }
     override func viewWillAppear(animated: Bool){
         super.viewWillAppear(animated)

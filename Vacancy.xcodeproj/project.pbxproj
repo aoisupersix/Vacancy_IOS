@@ -42,6 +42,8 @@
 		E17B028C1D3D92CE009A41D1 /* pushcode.csv in Resources */ = {isa = PBXBuildFile; fileRef = E17B02851D3D92CE009A41D1 /* pushcode.csv */; };
 		E17B028D1D3D92CE009A41D1 /* SuperExpList.txt in Resources */ = {isa = PBXBuildFile; fileRef = E17B02861D3D92CE009A41D1 /* SuperExpList.txt */; };
 		E17B028E1D3D92CE009A41D1 /* tokaido.txt in Resources */ = {isa = PBXBuildFile; fileRef = E17B02871D3D92CE009A41D1 /* tokaido.txt */; };
+		E18628DE1D5F1B1200972A2C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18628DD1D5F1B1200972A2C /* CoreData.framework */; };
+		E196C20A1D5FD14800635F7F /* RapidList.txt in Resources */ = {isa = PBXBuildFile; fileRef = E196C2091D5FD14800635F7F /* RapidList.txt */; };
 		E1C92E561D3B8C8B000FC366 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E551D3B8C8B000FC366 /* AppDelegate.swift */; };
 		E1C92E581D3B8C8B000FC366 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E571D3B8C8B000FC366 /* ViewController.swift */; };
 		E1C92E5B1D3B8C8B000FC366 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C92E591D3B8C8B000FC366 /* Main.storyboard */; };
@@ -118,6 +120,8 @@
 		E17B02851D3D92CE009A41D1 /* pushcode.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pushcode.csv; sourceTree = "<group>"; };
 		E17B02861D3D92CE009A41D1 /* SuperExpList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SuperExpList.txt; sourceTree = "<group>"; };
 		E17B02871D3D92CE009A41D1 /* tokaido.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tokaido.txt; sourceTree = "<group>"; };
+		E18628DD1D5F1B1200972A2C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E196C2091D5FD14800635F7F /* RapidList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RapidList.txt; sourceTree = "<group>"; };
 		E1C92E521D3B8C8B000FC366 /* Vacancy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vacancy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C92E551D3B8C8B000FC366 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1C92E571D3B8C8B000FC366 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E18628DE1D5F1B1200972A2C /* CoreData.framework in Frameworks */,
 				D244B2C5F306E6AF3DBC6FE3 /* Pods_Vacancy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +179,7 @@
 		0A6873C00F053AE1CBEAC401 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E18628DD1D5F1B1200972A2C /* CoreData.framework */,
 				B2114BD053D86D13573955B3 /* Pods_Vacancy.framework */,
 				F8DF6F48D82ABABE740BD67C /* Pods_VacancyTests.framework */,
 			);
@@ -223,6 +229,7 @@
 		E17B02801D3D9269009A41D1 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				E196C2091D5FD14800635F7F /* RapidList.txt */,
 				E17B02811D3D92CE009A41D1 /* tohoku.txt */,
 				E17B02821D3D92CE009A41D1 /* kodama.txt */,
 				E17B02831D3D92CE009A41D1 /* LtdExpList.txt */,
@@ -441,6 +448,7 @@
 				E1C92E631D3B8C8B000FC366 /* LaunchScreen.storyboard in Resources */,
 				E144E12A1D45F250002FADAA /* superexpress.png in Resources */,
 				E1C92E601D3B8C8B000FC366 /* Assets.xcassets in Resources */,
+				E196C20A1D5FD14800635F7F /* RapidList.txt in Resources */,
 				E17B02881D3D92CE009A41D1 /* tohoku.txt in Resources */,
 				E1686C8F1D5749DA001F3AA4 /* sankaku.png in Resources */,
 				E1C92E5B1D3B8C8B000FC366 /* Main.storyboard in Resources */,

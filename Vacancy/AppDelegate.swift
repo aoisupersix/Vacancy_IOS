@@ -37,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      *  照会内容
      */
     var name: [String] = []
+    var trainIcon: [String] = []
     var depTime: [String] = []
     var arrTime: [String] = []
     var resNoSmoke: [String] = []

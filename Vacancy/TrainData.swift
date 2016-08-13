@@ -23,6 +23,13 @@ class TrainData {
      *  各新幹線の駅名リスト
      */
     static var stnList: [[String]] = [[], [], [], []]
+    
+    /*
+     *  列車名
+     */
+    static var ltdExpList: [String] = []
+    static var rapidList: [String] = []
+    
     /*
      *  結果HTML
      */
@@ -95,6 +102,31 @@ class TrainData {
                 print(error.localizedDescription)
             }
         }
+        
+        //特急名読み込み
+        var txtBundle = NSBundle.mainBundle().pathForResource("LtdExpList", ofType: "txt")
+        do {
+            let listData: String = try String(contentsOfFile: txtBundle!, encoding: NSUTF8StringEncoding)
+            let list = listData.componentsSeparatedByString("\n")
+            for line in list {
+                ltdExpList.append(line)
+            }
+        }catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
+        //特急名読み込み
+        txtBundle = NSBundle.mainBundle().pathForResource("RapidList", ofType: "txt")
+        do {
+            let listData: String = try String(contentsOfFile: txtBundle!, encoding: NSUTF8StringEncoding)
+            let list = listData.componentsSeparatedByString("\n")
+            for line in list {
+                rapidList.append(line)
+            }
+        }catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
         //中身を表示
         print("*****PUSHCODE*****")
         for (stn, push) in pushcode{
@@ -206,6 +238,7 @@ class TrainData {
     func checkHtml(){
         //初期化
         app.name.removeAll()
+        app.trainIcon.removeAll()
         app.depTime.removeAll()
         app.arrTime.removeAll()
         app.resNoSmoke.removeAll()
@@ -227,6 +260,9 @@ class TrainData {
                 app.name.append(parts.substringWithRange(parts.startIndex..<parts.rangeOfString(TrainData.searchNameEnd)!.endIndex.advancedBy(-1)))
                 parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchNameEnd)!.endIndex)  //HTMLを分解
                 parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchTrainVacancy)!.endIndex)
+                
+                //列車アイコン
+                app.trainIcon.append(changeIcon(app.name[app.name.count - 1]))
                 
                 //出発時刻取得
                 app.depTime.append(parts.substringWithRange(parts.startIndex..<parts.rangeOfString(TrainData.searchNameEnd)!.endIndex.advancedBy(-1)))
@@ -274,6 +310,9 @@ class TrainData {
                 app.name.append(parts.substringWithRange(parts.startIndex..<parts.rangeOfString(TrainData.searchNameEnd)!.endIndex.advancedBy(-1)))
                 parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchNameEnd)!.endIndex)  //HTMLを分解
                 parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchTrainVacancy)!.endIndex)
+                
+                //列車アイコン
+                app.trainIcon.append(changeIcon(app.name[app.name.count - 1]))
                 
                 //出発時刻取得
                 app.depTime.append(parts.substringWithRange(parts.startIndex..<parts.rangeOfString(TrainData.searchNameEnd)!.endIndex.advancedBy(-1)))
@@ -372,6 +411,32 @@ class TrainData {
                 break
             default:
                 break
+        }
+        return res
+    }
+    
+    /*
+     *  列車のアイコンを指定
+     */
+    func changeIcon(trainName: String) -> String {
+        var res = ""
+        if app.type == "5" {
+            //在来線の場合
+            for line in TrainData.ltdExpList {
+                if trainName.containsString(line) {
+                    res = "ltdexp.png"
+                    break
+                }
+            }
+            for line in TrainData.rapidList {
+                if trainName.containsString(line) {
+                    res = "rapid.png"
+                    break
+                }
+            }
+        }else {
+            //新幹線の場合
+            res = "superexpress.png"
         }
         return res
     }

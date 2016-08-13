@@ -8,12 +8,6 @@
 	<array>
 		<dict>
 			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-			<key>Title</key>
-			<string></string>
-		</dict>
-		<dict>
-			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
 			<string>検索履歴を利用する</string>
@@ -21,6 +15,16 @@
 			<string>history_preference</string>
 			<key>DefaultValue</key>
 			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>駅名は常に検索して指定する</string>
+			<key>Key</key>
+			<string>always_stnsearch</string>
+			<key>DefaultValue</key>
+			<false/>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -35,6 +39,8 @@
 			<string>バージョン</string>
 			<key>Key</key>
 			<string>version</string>
+			<key>DefaultValue</key>
+			<string>1.0</string>
 		</dict>
 	</array>
 </dict>
