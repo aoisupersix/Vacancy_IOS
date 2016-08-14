@@ -72,6 +72,7 @@ public class ResultView: UITableViewController, TrainDataDelegate {
         cell.greNonSmokeImage.image = UIImage(named: app.greNoSmoke[cellForRowAtIndexPath.row])
         cell.greSmokeImage.image = UIImage(named: app.greSmoke[cellForRowAtIndexPath.row])
         cell.granNonSmokeImage.image = UIImage(named: app.grnNoSmoke[cellForRowAtIndexPath.row])
+        
         return cell
     }
     /*

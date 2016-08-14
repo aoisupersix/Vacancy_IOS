@@ -14,6 +14,7 @@
 		E11388CB1D60032F00C0B0B6 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11388CA1D60032F00C0B0B6 /* CustomButton.swift */; };
 		E11388CD1D6017D200C0B0B6 /* SearchSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11388CC1D6017D200C0B0B6 /* SearchSettings.swift */; };
 		E11388CF1D601CED00C0B0B6 /* BookMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11388CE1D601CED00C0B0B6 /* BookMarkViewController.swift */; };
+		E113890E1D6041A800C0B0B6 /* BookMarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E113890D1D6041A800C0B0B6 /* BookMarkCell.swift */; };
 		E116C34D1D486F240001A231 /* vacancy.png in Resources */ = {isa = PBXBuildFile; fileRef = E116C34C1D486F240001A231 /* vacancy.png */; };
 		E144E1201D45F250002FADAA /* granclass.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E1141D45F250002FADAA /* granclass.png */; };
 		E144E1211D45F250002FADAA /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E1151D45F250002FADAA /* green.png */; };
@@ -94,6 +95,7 @@
 		E11388CA1D60032F00C0B0B6 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = ../CustomButton.swift; sourceTree = "<group>"; };
 		E11388CC1D6017D200C0B0B6 /* SearchSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSettings.swift; sourceTree = "<group>"; };
 		E11388CE1D601CED00C0B0B6 /* BookMarkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMarkViewController.swift; sourceTree = "<group>"; };
+		E113890D1D6041A800C0B0B6 /* BookMarkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMarkCell.swift; sourceTree = "<group>"; };
 		E116C34C1D486F240001A231 /* vacancy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vacancy.png; path = Assets.xcassets/AppIcon.appiconset/vacancy.png; sourceTree = "<group>"; };
 		E144E1141D45F250002FADAA /* granclass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = granclass.png; sourceTree = "<group>"; };
 		E144E1151D45F250002FADAA /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				E1DAE4221D595BF9005C7F7D /* StnSelectController.swift */,
 				E11388CC1D6017D200C0B0B6 /* SearchSettings.swift */,
 				E11388CE1D601CED00C0B0B6 /* BookMarkViewController.swift */,
+				E113890D1D6041A800C0B0B6 /* BookMarkCell.swift */,
 			);
 			path = Vacancy;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 			files = (
 				E1C92E8D1D3BB202000FC366 /* PopUpPickerViewBase.swift in Sources */,
 				E1C92E5E1D3B8C8B000FC366 /* Vacancy.xcdatamodeld in Sources */,
+				E113890E1D6041A800C0B0B6 /* BookMarkCell.swift in Sources */,
 				E1C92E8C1D3BB202000FC366 /* PopUpPickerView.swift in Sources */,
 				E1DAE4231D595BF9005C7F7D /* StnSelectController.swift in Sources */,
 				E11388CB1D60032F00C0B0B6 /* CustomButton.swift in Sources */,
