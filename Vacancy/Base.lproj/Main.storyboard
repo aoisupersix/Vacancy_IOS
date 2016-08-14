@@ -870,7 +870,8 @@
                     </tableView>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="zkx-eC-lmt"/>
-                        <barButtonItem title="前日" id="nmA-DS-e5r">
+                        <barButtonItem title="前日" width="46" id="nmA-DS-e5r">
+                            <inset key="imageInsets" minX="12" minY="16" maxX="13" maxY="0.0"/>
                             <connections>
                                 <action selector="before_day:" destination="1Wb-xc-ju8" id="wiJ-di-Htv"/>
                             </connections>
@@ -888,7 +889,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Rj3-jK-jSC"/>
-                        <barButtonItem title="翌日" id="h6l-Js-mlt">
+                        <barButtonItem title="翌日" width="50" id="h6l-Js-mlt">
                             <connections>
                                 <action selector="after_day:" destination="1Wb-xc-ju8" id="fFt-7M-dth"/>
                             </connections>
