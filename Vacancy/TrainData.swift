@@ -172,11 +172,12 @@ class TrainData {
                 //print(NSString(data: data!, encoding: NSShiftJISStringEncoding))
                 self.setResult(NSString(data: data!, encoding: NSShiftJISStringEncoding)! as String)
                 
+                sleep(1)
+                SwiftSpinner.hide()
+                
                 switch(self.documentType){
                 case 0:
                     //照会結果あり
-                    sleep(1)
-                    SwiftSpinner.hide()
                     self.delegate.completeConnection()
                     break
                 case 1:

@@ -13,6 +13,7 @@ public class ResultView: UITableViewController, TrainDataDelegate {
     @IBOutlet var resultTableView: UITableView!
     @IBOutlet var infoLabel: UILabel!
     
+    
     /*
      *  TrainData
      */
@@ -37,6 +38,9 @@ public class ResultView: UITableViewController, TrainDataDelegate {
         refresh.addTarget(self, action: #selector(ResultView.refreshTable), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refresh
     }
+    override public func viewDidAppear(animated: Bool) {
+        self.navigationController?.setToolbarHidden(false, animated: true)
+    }
     func refreshTable() {
         trainData!.post()
     }
@@ -48,7 +52,6 @@ public class ResultView: UITableViewController, TrainDataDelegate {
     }
     override public func viewWillAppear(animated: Bool) {
         infoLabel.text = "\(app.month)月\(app.day)日 \(app.hour):\(app.minute)発 \(app.dep_stn) → \(app.arr_stn)"
-        self.navigationController?.setToolbarHidden(false, animated: true)
     }
     
     /*

@@ -44,6 +44,9 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         super.viewDidLoad()
 
         trainData = TrainData(dele: self)
+        
+        //時刻を1分後に変更
+        trainData!.updateDate(NSDate(timeInterval: 60, sinceDate: app.date))
     }
     override func viewWillLayoutSubviews() {
         /*

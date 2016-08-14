@@ -680,32 +680,6 @@
                             <color key="textColor" red="0.13725490200000001" green="0.62745098040000002" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <toolbar key="tableFooterView" alpha="0.65000000000000002" contentMode="scaleToFill" id="fhP-vP-K19">
-                            <rect key="frame" x="0.0" y="508" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <items>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="SPk-Xt-bYf"/>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="LMy-DO-Kd1"/>
-                                <barButtonItem title="1時間前" id="NhH-lP-g9N">
-                                    <connections>
-                                        <action selector="before_hour:" destination="1Wb-xc-ju8" id="JUI-OH-M6l"/>
-                                    </connections>
-                                </barButtonItem>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="H0w-Ri-2Xo"/>
-                                <barButtonItem title="1時間後" id="sz1-5T-ULL">
-                                    <connections>
-                                        <action selector="after_hour:" destination="1Wb-xc-ju8" id="BCe-8f-rUY"/>
-                                    </connections>
-                                </barButtonItem>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="ETW-WQ-ey5"/>
-                                <barButtonItem title="翌日" id="h6l-Js-mlt">
-                                    <connections>
-                                        <action selector="after_day:" destination="1Wb-xc-ju8" id="fFt-7M-dth"/>
-                                    </connections>
-                                </barButtonItem>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="zbP-px-fhG"/>
-                            </items>
-                        </toolbar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ResultTableViewCell" selectionStyle="none" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="ResultTableViewCell" rowHeight="332" id="M8G-Nf-lhY" customClass="ResultCell" customModule="Vacancy" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="158" width="375" height="332"/>
@@ -895,11 +869,31 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="zkx-eC-lmt"/>
                         <barButtonItem title="前日" id="nmA-DS-e5r">
                             <connections>
                                 <action selector="before_day:" destination="1Wb-xc-ju8" id="wiJ-di-Htv"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="QaT-Ea-EDP"/>
+                        <barButtonItem title="1時間前" id="NhH-lP-g9N">
+                            <connections>
+                                <action selector="before_hour:" destination="1Wb-xc-ju8" id="JUI-OH-M6l"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="tUA-OE-MNu"/>
+                        <barButtonItem title="1時間後" id="sz1-5T-ULL">
+                            <connections>
+                                <action selector="after_hour:" destination="1Wb-xc-ju8" id="BCe-8f-rUY"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Rj3-jK-jSC"/>
+                        <barButtonItem title="翌日" id="h6l-Js-mlt">
+                            <connections>
+                                <action selector="after_day:" destination="1Wb-xc-ju8" id="fFt-7M-dth"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="rCr-CN-g88"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="照会結果" id="zu5-r9-Kqe">
                         <barButtonItem key="rightBarButtonItem" title="凡例" id="UNN-g9-XXX">
@@ -908,6 +902,8 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -1083,28 +1079,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dH1-w9-DdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1938.5" y="-1065.5"/>
-        </scene>
-        <!--照会結果-->
-        <scene sceneID="dN2-46-ny8">
-            <objects>
-                <navigationController storyboardIdentifier="ResultNavigationView" title="照会結果" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="w2w-1u-eFC" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LHA-Z7-jqa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="wH8-Kn-Qr1">
-                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="1Wb-xc-ju8" kind="relationship" relationship="rootViewController" id="EGl-cC-dKO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oe1-qQ-ArN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="530" y="665"/>
         </scene>
     </scenes>
     <resources>
