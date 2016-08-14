@@ -11,6 +11,7 @@
 		D4280ED0252DA6E7D8A05762 /* Pods_VacancyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8DF6F48D82ABABE740BD67C /* Pods_VacancyTests.framework */; };
 		E101EABD1D40E712003789A5 /* TrainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E101EABC1D40E712003789A5 /* TrainData.swift */; };
 		E101EABF1D40EE98003789A5 /* StnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E101EABE1D40EE98003789A5 /* StnViewController.swift */; };
+		E11388CB1D60032F00C0B0B6 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11388CA1D60032F00C0B0B6 /* CustomButton.swift */; };
 		E116C34D1D486F240001A231 /* vacancy.png in Resources */ = {isa = PBXBuildFile; fileRef = E116C34C1D486F240001A231 /* vacancy.png */; };
 		E144E1201D45F250002FADAA /* granclass.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E1141D45F250002FADAA /* granclass.png */; };
 		E144E1211D45F250002FADAA /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E1151D45F250002FADAA /* green.png */; };
@@ -42,7 +43,6 @@
 		E17B028C1D3D92CE009A41D1 /* pushcode.csv in Resources */ = {isa = PBXBuildFile; fileRef = E17B02851D3D92CE009A41D1 /* pushcode.csv */; };
 		E17B028D1D3D92CE009A41D1 /* SuperExpList.txt in Resources */ = {isa = PBXBuildFile; fileRef = E17B02861D3D92CE009A41D1 /* SuperExpList.txt */; };
 		E17B028E1D3D92CE009A41D1 /* tokaido.txt in Resources */ = {isa = PBXBuildFile; fileRef = E17B02871D3D92CE009A41D1 /* tokaido.txt */; };
-		E18628DE1D5F1B1200972A2C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18628DD1D5F1B1200972A2C /* CoreData.framework */; };
 		E196C20A1D5FD14800635F7F /* RapidList.txt in Resources */ = {isa = PBXBuildFile; fileRef = E196C2091D5FD14800635F7F /* RapidList.txt */; };
 		E1C92E561D3B8C8B000FC366 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E551D3B8C8B000FC366 /* AppDelegate.swift */; };
 		E1C92E581D3B8C8B000FC366 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E571D3B8C8B000FC366 /* ViewController.swift */; };
@@ -89,6 +89,7 @@
 		E101EABC1D40E712003789A5 /* TrainData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainData.swift; sourceTree = "<group>"; };
 		E101EABE1D40EE98003789A5 /* StnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnViewController.swift; sourceTree = "<group>"; };
 		E101EAC41D44B9DB003789A5 /* Vacancy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Vacancy.entitlements; sourceTree = "<group>"; };
+		E11388CA1D60032F00C0B0B6 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		E116C34C1D486F240001A231 /* vacancy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vacancy.png; path = Assets.xcassets/AppIcon.appiconset/vacancy.png; sourceTree = "<group>"; };
 		E144E1141D45F250002FADAA /* granclass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = granclass.png; sourceTree = "<group>"; };
 		E144E1151D45F250002FADAA /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
@@ -153,7 +154,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E18628DE1D5F1B1200972A2C /* CoreData.framework in Frameworks */,
 				D244B2C5F306E6AF3DBC6FE3 /* Pods_Vacancy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,6 +244,7 @@
 		E1C92E491D3B8C8B000FC366 = {
 			isa = PBXGroup;
 			children = (
+				E11388CA1D60032F00C0B0B6 /* CustomButton.swift */,
 				E1DAE41E1D58AB4D005C7F7D /* Settings.bundle */,
 				E1C92E541D3B8C8B000FC366 /* Vacancy */,
 				E1C92E6C1D3B8C8C000FC366 /* VacancyTests */,
@@ -592,6 +593,7 @@
 				E1C92E5E1D3B8C8B000FC366 /* Vacancy.xcdatamodeld in Sources */,
 				E1C92E8C1D3BB202000FC366 /* PopUpPickerView.swift in Sources */,
 				E1DAE4231D595BF9005C7F7D /* StnSelectController.swift in Sources */,
+				E11388CB1D60032F00C0B0B6 /* CustomButton.swift in Sources */,
 				E1C92E581D3B8C8B000FC366 /* ViewController.swift in Sources */,
 				E1C92E561D3B8C8B000FC366 /* AppDelegate.swift in Sources */,
 				E144E12C1D462412002FADAA /* ResultCell.swift in Sources */,
