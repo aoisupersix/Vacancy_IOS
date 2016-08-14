@@ -8,5 +8,6 @@
 
 // StnSelectViewのセグメントのインデックス
 
+let NO_SELECT = -1
 let LIST_SELECT = 0 //駅名リストから選択
 let HISTORY_SELECT = 1  //履歴から選択

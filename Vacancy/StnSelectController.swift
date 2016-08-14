@@ -8,11 +8,6 @@
 
 import UIKit
 
-/*
- *  segment
- */
-
-
 class StnSelectController: UITableViewController {
     
     @IBOutlet var segment: UISegmentedControl!
@@ -150,9 +145,10 @@ class StnSelectController: UITableViewController {
             (action: UIAlertAction!) -> Void in
             //OKボタンクリック
             self.history.removeAll()
-            if self.segment.selectedSegmentIndex == HISTORY_SELECT{
+            if self.segment.selectedSegmentIndex == NO_SELECT {
                 self.list.removeAll()
             }
+            self.addHistory("")
             self.tableView.reloadData()
         })
         let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: {

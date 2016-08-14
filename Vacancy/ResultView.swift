@@ -48,7 +48,7 @@ public class ResultView: UITableViewController, TrainDataDelegate {
     }
     override public func viewWillAppear(animated: Bool) {
         infoLabel.text = "\(app.month)月\(app.day)日 \(app.hour):\(app.minute)発 \(app.dep_stn) → \(app.arr_stn)"
-        navigationController?.toolbarHidden = false
+        self.navigationController?.setToolbarHidden(false, animated: true)
     }
     
     /*
