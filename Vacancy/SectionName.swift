@@ -8,6 +8,6 @@
 
 //StnSearchViewのセクション名
 
-let HISTORY_SEARCH_TEXT = "履歴から検索"
+let HISTORY_SEARCH_TEXT = "履歴から選択"
 let STN_SEARCH_TEXT = "駅名から検索"
 

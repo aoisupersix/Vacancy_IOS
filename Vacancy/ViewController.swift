@@ -42,16 +42,7 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        trainData = TrainData(dele: self)
         
-        //時刻を1分後に変更
-        trainData!.updateDate(NSDate(timeInterval: 60, sinceDate: app.date))
-        
-        //ボタンのデザインを変更
-        
-    }
-    override func viewWillLayoutSubviews() {
         /*
          *  PopUpDatePicker(乗車日入力)とPopUpPicker(列車の種類選択)の設定
          */
@@ -68,11 +59,24 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         datepicker!.datepickerDelegate = self
         trainTypePicker.delegate = self
         
-        self.navigationController?.toolbarHidden = true
+
+        trainData = TrainData(dele: self)
+        
+        //時刻を1分後に変更
+        trainData!.updateDate(NSDate(timeInterval: 60, sinceDate: app.date))
+        
+        //ボタンのデザインを変更
+        
     }
     override func viewWillAppear(animated: Bool){
         super.viewWillAppear(animated)
         updateLabels()
+        self.navigationController?.toolbarHidden = true
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.datepicker.endPicker()
+        self.trainTypePicker.endPicker()
     }
     /*
      *  TableViewCell選択
@@ -81,10 +85,14 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         switch indexPath.row{
         case 0:
             //乗車日設定
+            self.trainTypePicker.endPicker()
+
             datepicker.showPicker()
             break
         case 1:
             //列車の種類変更
+            self.datepicker.endPicker()
+
             trainTypePicker.showPicker()
             break
         case 2:

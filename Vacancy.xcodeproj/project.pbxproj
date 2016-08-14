@@ -12,6 +12,8 @@
 		E101EABD1D40E712003789A5 /* TrainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E101EABC1D40E712003789A5 /* TrainData.swift */; };
 		E101EABF1D40EE98003789A5 /* StnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E101EABE1D40EE98003789A5 /* StnViewController.swift */; };
 		E11388CB1D60032F00C0B0B6 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11388CA1D60032F00C0B0B6 /* CustomButton.swift */; };
+		E11388CD1D6017D200C0B0B6 /* SearchSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11388CC1D6017D200C0B0B6 /* SearchSettings.swift */; };
+		E11388CF1D601CED00C0B0B6 /* BookMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11388CE1D601CED00C0B0B6 /* BookMarkViewController.swift */; };
 		E116C34D1D486F240001A231 /* vacancy.png in Resources */ = {isa = PBXBuildFile; fileRef = E116C34C1D486F240001A231 /* vacancy.png */; };
 		E144E1201D45F250002FADAA /* granclass.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E1141D45F250002FADAA /* granclass.png */; };
 		E144E1211D45F250002FADAA /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E1151D45F250002FADAA /* green.png */; };
@@ -89,7 +91,9 @@
 		E101EABC1D40E712003789A5 /* TrainData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainData.swift; sourceTree = "<group>"; };
 		E101EABE1D40EE98003789A5 /* StnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnViewController.swift; sourceTree = "<group>"; };
 		E101EAC41D44B9DB003789A5 /* Vacancy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Vacancy.entitlements; sourceTree = "<group>"; };
-		E11388CA1D60032F00C0B0B6 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		E11388CA1D60032F00C0B0B6 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = ../CustomButton.swift; sourceTree = "<group>"; };
+		E11388CC1D6017D200C0B0B6 /* SearchSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSettings.swift; sourceTree = "<group>"; };
+		E11388CE1D601CED00C0B0B6 /* BookMarkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMarkViewController.swift; sourceTree = "<group>"; };
 		E116C34C1D486F240001A231 /* vacancy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vacancy.png; path = Assets.xcassets/AppIcon.appiconset/vacancy.png; sourceTree = "<group>"; };
 		E144E1141D45F250002FADAA /* granclass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = granclass.png; sourceTree = "<group>"; };
 		E144E1151D45F250002FADAA /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 		E17B02801D3D9269009A41D1 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				E11388CA1D60032F00C0B0B6 /* CustomButton.swift */,
 				E196C2091D5FD14800635F7F /* RapidList.txt */,
 				E17B02811D3D92CE009A41D1 /* tohoku.txt */,
 				E17B02821D3D92CE009A41D1 /* kodama.txt */,
@@ -244,7 +249,6 @@
 		E1C92E491D3B8C8B000FC366 = {
 			isa = PBXGroup;
 			children = (
-				E11388CA1D60032F00C0B0B6 /* CustomButton.swift */,
 				E1DAE41E1D58AB4D005C7F7D /* Settings.bundle */,
 				E1C92E541D3B8C8B000FC366 /* Vacancy */,
 				E1C92E6C1D3B8C8C000FC366 /* VacancyTests */,
@@ -288,6 +292,8 @@
 				E144E12D1D4628B7002FADAA /* ResultView.swift */,
 				E1DAE4201D594C57005C7F7D /* LegendViewController.swift */,
 				E1DAE4221D595BF9005C7F7D /* StnSelectController.swift */,
+				E11388CC1D6017D200C0B0B6 /* SearchSettings.swift */,
+				E11388CE1D601CED00C0B0B6 /* BookMarkViewController.swift */,
 			);
 			path = Vacancy;
 			sourceTree = "<group>";
@@ -596,8 +602,10 @@
 				E11388CB1D60032F00C0B0B6 /* CustomButton.swift in Sources */,
 				E1C92E581D3B8C8B000FC366 /* ViewController.swift in Sources */,
 				E1C92E561D3B8C8B000FC366 /* AppDelegate.swift in Sources */,
+				E11388CD1D6017D200C0B0B6 /* SearchSettings.swift in Sources */,
 				E144E12C1D462412002FADAA /* ResultCell.swift in Sources */,
 				E1DAE4211D594C57005C7F7D /* LegendViewController.swift in Sources */,
+				E11388CF1D601CED00C0B0B6 /* BookMarkViewController.swift in Sources */,
 				E1DAE4261D5965B7005C7F7D /* SegmentType.swift in Sources */,
 				E1C92E8B1D3BB202000FC366 /* PopUpDatePickerView.swift in Sources */,
 				E144E12E1D4628B7002FADAA /* ResultView.swift in Sources */,

@@ -27,11 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var day = ""
     var hour = ""
     var minute = ""
-    var type = "3"
-    var dep_stn = "高松"
-    var dep_push = "7000"
-    var arr_stn = "東京"
-    var arr_push = "4000"
+    var type = "1"
+    var dep_stn = "東京"
+    var dep_push = "4000"
+    var arr_stn = "新大阪"
+    var arr_push = "6100"
     
     /*
      *  照会内容
