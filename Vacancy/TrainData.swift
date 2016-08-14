@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftSpinner
 
 protocol TrainDataDelegate {
     func completeConnection()   //通信成功し、結果が返ってきた際のdelegate
@@ -115,7 +116,7 @@ class TrainData {
             print(error.localizedDescription)
         }
         
-        //特急名読み込み
+        //快速名読み込み
         txtBundle = NSBundle.mainBundle().pathForResource("RapidList", ofType: "txt")
         do {
             let listData: String = try String(contentsOfFile: txtBundle!, encoding: NSUTF8StringEncoding)
@@ -146,6 +147,9 @@ class TrainData {
      *  Post
      */
     func post(){
+        //スピナー表示
+        SwiftSpinner.show("照会中...")
+        
         //駅名のカッコを削除
         let dep_stn = deleteKakko(app.dep_stn)
         let arr_stn = deleteKakko(app.arr_stn)
@@ -171,6 +175,8 @@ class TrainData {
                 switch(self.documentType){
                 case 0:
                     //照会結果あり
+                    sleep(1)
+                    SwiftSpinner.hide()
                     self.delegate.completeConnection()
                     break
                 case 1:
