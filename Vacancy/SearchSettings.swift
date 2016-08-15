@@ -18,3 +18,4 @@ class SearchSettings: Object {
     dynamic var arr_stn = ""
     dynamic var arr_push = ""
 }
+

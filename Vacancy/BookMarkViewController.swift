@@ -79,6 +79,54 @@ class BookMarkViewController: UITableViewController {
         
         if recognizer.state == UIGestureRecognizerState.Began && indexPath != nil {
             print("longPress:\(indexPath!.row)")
+            let alert = UIAlertController(title: "ブックマークを編集", message: "", preferredStyle: .ActionSheet)
+            let changeName = UIAlertAction(title: "ブックマーク名を変更", style: .Default, handler: {
+                (action: UIAlertAction!) -> Void in
+                //名前変更
+                let alert = UIAlertController(title: "ブックマーク名を変更", message: "変更するブックマーク名を入力してください。", preferredStyle: .Alert)
+                let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: .Default, handler: {
+                    (action: UIAlertAction!) -> Void in
+                    //OKボタンクリック
+                    let textFields:Array<UITextField>? = alert.textFields as Array<UITextField>?
+                    
+                    print(textFields![0].text)
+                    if textFields![0].text == ""{
+                        //条件名未入力
+                        let alert = UIAlertController(title: "エラー", message: "ブックマーク名が未入力です。", preferredStyle: .Alert)
+                        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                        alert.addAction(defaultAction)
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    }else {
+                        //名前を変更
+                        self.changeName(indexPath!.row, name: textFields![0].text!)
+                        self.tableView.reloadData()
+                    }
+                })
+                let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil)
+                
+                alert.addAction(defaultAction)
+                alert.addAction(cancelAction)
+                
+                alert.addTextFieldWithConfigurationHandler({(text: UITextField!) -> Void in
+                    text.placeholder = "変更するブックマーク名を入力"
+                })
+                
+                self.presentViewController(alert, animated: true, completion: nil)
+
+            })
+            let deleteBook = UIAlertAction(title: "削除", style: .Destructive, handler: {
+                (action: UIAlertAction!) -> Void in
+                //削除
+                self.deleteItem(indexPath!.row)
+                self.tableView.reloadData()
+            })
+            let cancelAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil)
+            
+            alert.addAction(changeName)
+            alert.addAction(deleteBook)
+            alert.addAction(cancelAction)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
     
@@ -87,7 +135,7 @@ class BookMarkViewController: UITableViewController {
      */
     @IBAction func addBookMark(sender: AnyObject) {
         //確認アラートを表示
-        let alert = UIAlertController(title: "照会条件を追加", message: "現在の照会条件をブックマークに追加します。分かりやすい条件名を入力してください。", preferredStyle: .Alert)
+        let alert = UIAlertController(title: "照会条件を追加", message: "現在の照会条件：\n\n\(app.month)月\(app.day)日 \(app.hour):\(app.minute)発\n\(app.trainType[Int(app.type)! - 1])\n\(app.dep_stn) → \(app.arr_stn)\n\nをブックマークに追加します。分かりやすいブックマーク名を入力してください。", preferredStyle: .Alert)
         let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {
             (action: UIAlertAction!) -> Void in
             //OKボタンクリック
@@ -96,7 +144,7 @@ class BookMarkViewController: UITableViewController {
             print(textFields![0].text)
             if textFields![0].text == ""{
                 //条件名未入力
-                let alert = UIAlertController(title: "エラー", message: "条件名が未入力です。", preferredStyle: .Alert)
+                let alert = UIAlertController(title: "エラー", message: "ブックマーク名が未入力です。", preferredStyle: .Alert)
                 let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
                 alert.addAction(defaultAction)
                 self.presentViewController(alert, animated: true, completion: nil)
@@ -112,11 +160,30 @@ class BookMarkViewController: UITableViewController {
         alert.addAction(cancelAction)
         
         alert.addTextFieldWithConfigurationHandler({(text: UITextField!) -> Void in
-            text.placeholder = "照会条件の名前を入力"
+            text.placeholder = "ブックマーク名を入力"
         })
         
         self.presentViewController(alert, animated: true, completion: nil)
     }
+    
+    /*
+     *  照会条件を削除
+     */
+    @IBAction func deleteAll(sender: AnyObject) {
+        let alert = UIAlertController(title: "確認", message: "ブックマークを全て削除します。\nよろしいですか?", preferredStyle: .Alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {
+            (action: UIAlertAction!) -> Void in
+            //OKボタンクリック
+            self.deleteAllBookMarks()
+            self.tableView.reloadData()
+        })
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil)
+        alert.addAction(defaultAction)
+        alert.addAction(cancelAction)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     /*
      *  Realmメソッド
      */
@@ -127,6 +194,32 @@ class BookMarkViewController: UITableViewController {
         
         try! realm.write {
             realm.add(model)
+        }
+    }
+    //名前変更
+    func changeName(index: Int, name: String) {
+        let realm = try! Realm()
+        let items = realm.objects(SearchSettings)
+        try! realm.write {
+            items[index].name = name
+        }
+    }
+    //一つ削除
+    func deleteItem(index: Int) {
+        let realm = try! Realm()
+        let items = realm.objects(SearchSettings)
+        try! realm.write {
+            realm.delete(items[index])
+        }
+    }
+    //全削除
+    func deleteAllBookMarks() {
+        let realm = try! Realm()
+        let items = realm.objects(SearchSettings)
+        for item in items {
+            try! realm.write {
+                realm.delete(item)
+            }
         }
     }
 }

@@ -309,7 +309,7 @@ class TrainData {
             
         }else{
             //東北新幹線以外の列車にはグランクラスが存在しない
-            while(parts.substringWithRange(pos!.endIndex..<pos!.endIndex.advancedBy(1)) != "グ" && pos != nil){
+            while(pos != nil && parts.substringWithRange(pos!.endIndex..<pos!.endIndex.advancedBy(1)) != "グ"){
 
                 parts = parts.substringFromIndex(pos!.endIndex)   //HTMLを分解
                 
