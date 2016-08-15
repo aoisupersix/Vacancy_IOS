@@ -17,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vacancy.png" translatesAutoresizingMaskIntoConstraints="NO" id="KiW-tg-3ji">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smoking.png" translatesAutoresizingMaskIntoConstraints="NO" id="KiW-tg-3ji">
                                 <rect key="frame" x="143" y="290" width="88" height="88"/>
-                                <color key="backgroundColor" red="0.13725490196078433" green="0.62745098039215685" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="88" id="AGP-8u-eIR"/>
                                     <constraint firstAttribute="width" constant="120" id="cCY-s1-Vx4"/>
@@ -49,6 +48,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="vacancy.png" width="120" height="120"/>
+        <image name="smoking.png" width="144" height="144"/>
     </resources>
 </document>

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -50,6 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         //データ読み込み
         TrainData.read()
+        //標準設定
+        setDefault()
         return true
     }
 
@@ -140,11 +143,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    /*
-     *  標準設定
-     */
-    func defaultReadIndex() {
-        
+    func setDefault() {
+        let realm = try! Realm()
+        let setting = realm.objects(Setting)
+        if setting.count == 1 {
+            let index = setting[0].defaultBookMark
+            if index != -1 {
+                //標準設定あり
+                let items = realm.objects(SearchSettings)
+                //セット
+                date = items[index].date
+                type = items[index].type
+                dep_stn = items[index].dep_stn
+                dep_push = items[index].dep_push
+                arr_stn = items[index].arr_stn
+                arr_push = items[index].arr_push
+            }
+        }
     }
 }
 

@@ -16,8 +16,8 @@ class BookMarkViewController: UITableViewController {
     let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     var Items: Results<SearchSettings>? {
-        let realm = try! Realm()
         do {
+            let realm = try Realm()
             return realm.objects(SearchSettings)
         }catch {
             print("Realmエラー")
@@ -54,7 +54,9 @@ class BookMarkViewController: UITableViewController {
         
         cell.bookMarkTitleLabel.text = bookmark!.name
         cell.bookMarkMsgLabel.text = "\(date) \(bookmark!.dep_stn) → \(bookmark!.arr_stn)"
-        if indexPath.row == 1 {
+        if loadDefault() == indexPath.row {
+            cell.bookMarkCheckImage.image = UIImage(named: "selectedMaru.png")
+        }else {
             cell.bookMarkCheckImage.image = UIImage(named: "maru.png")
         }
         return cell
@@ -114,6 +116,12 @@ class BookMarkViewController: UITableViewController {
                 self.presentViewController(alert, animated: true, completion: nil)
 
             })
+            let setDefault = UIAlertAction(title: "起動時の照会条件に設定", style: .Default, handler: {
+                (action: UIAlertAction) -> Void in
+                //標準設定に設定
+                self.setDefault(indexPath!.row)
+                self.tableView.reloadData()
+            })
             let deleteBook = UIAlertAction(title: "削除", style: .Destructive, handler: {
                 (action: UIAlertAction!) -> Void in
                 //削除
@@ -123,6 +131,7 @@ class BookMarkViewController: UITableViewController {
             let cancelAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil)
             
             alert.addAction(changeName)
+            alert.addAction(setDefault)
             alert.addAction(deleteBook)
             alert.addAction(cancelAction)
             
@@ -219,6 +228,35 @@ class BookMarkViewController: UITableViewController {
         for item in items {
             try! realm.write {
                 realm.delete(item)
+            }
+        }
+    }
+    //標準設定のインデックス読み込み
+    func loadDefault() -> Int{
+        var index = -1
+        
+        let realm = try! Realm()
+        let setting = realm.objects(Setting)
+        if setting.count == 1 {
+            index = setting[0].defaultBookMark
+        }
+        
+        return index
+    }
+    //標準設定に指定
+    func setDefault(index: Int) {
+        print("標準設定:\(index)")
+        let realm = try! Realm()
+        let setting = realm.objects(Setting)
+        if setting.count == 1 {
+            try! realm.write {
+                setting[0].defaultBookMark = index
+            }
+        }else {
+            //新たに設定
+            let model = Setting(value: ["defaulBookMark": index])
+            try! realm.write {
+                realm.add(model)
             }
         }
     }
