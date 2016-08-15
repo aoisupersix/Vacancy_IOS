@@ -126,6 +126,7 @@ class BookMarkViewController: UITableViewController {
                 (action: UIAlertAction!) -> Void in
                 //削除
                 self.deleteItem(indexPath!.row)
+                self.deleteDefault()
                 self.tableView.reloadData()
             })
             let cancelAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil)
@@ -184,6 +185,7 @@ class BookMarkViewController: UITableViewController {
             (action: UIAlertAction!) -> Void in
             //OKボタンクリック
             self.deleteAllBookMarks()
+            self.deleteDefault()
             self.tableView.reloadData()
         })
         let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil)
@@ -254,10 +256,18 @@ class BookMarkViewController: UITableViewController {
             }
         }else {
             //新たに設定
-            let model = Setting(value: ["defaulBookMark": index])
+            let model = Setting(value: ["defaultBookMark": index])
             try! realm.write {
                 realm.add(model)
             }
+        }
+    }
+    //標準設定を削除
+    func deleteDefault() {
+        let realm = try! Realm()
+        let setting = realm.objects(Setting)
+        try! realm.write {
+            realm.delete(setting)
         }
     }
 }
