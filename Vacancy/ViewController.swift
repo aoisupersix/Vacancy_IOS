@@ -26,7 +26,7 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
     @IBOutlet var depStnLabel: UILabel!
     @IBOutlet var startVacancyButton: UIButton!
     @IBOutlet var arrStnLabel: UILabel!
-    
+
     /*
      *  TrainDataDelegate
      */

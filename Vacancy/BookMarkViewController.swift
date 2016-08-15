@@ -15,6 +15,11 @@ class BookMarkViewController: UITableViewController {
      */
     let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
+    /*
+     *  キーボードのツールバー
+     */
+    var keyboardToolbar: UIToolbar?
+    
     var Items: Results<SearchSettings>? {
         do {
             let realm = try Realm()
@@ -31,6 +36,7 @@ class BookMarkViewController: UITableViewController {
         //イベント登録
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(BookMarkViewController.cellLongPressed(_:)))
         tableView.addGestureRecognizer(longPressRecognizer)
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -150,6 +156,7 @@ class BookMarkViewController: UITableViewController {
             (action: UIAlertAction!) -> Void in
             //OKボタンクリック
             let textFields:Array<UITextField>? = alert.textFields as Array<UITextField>?
+            
             
             print(textFields![0].text)
             if textFields![0].text == ""{

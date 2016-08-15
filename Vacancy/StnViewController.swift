@@ -35,7 +35,26 @@ class StnViewController: UITableViewController, UISearchBarDelegate{
         loadHistory()
         showList()
         tableView.reloadData()
+        
+        //キーボード表示を監視
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: #selector(self.handleKeyboardWillShowNotification(_:)), name: UIKeyboardWillShowNotification, object: nil)
     }
+    /*
+     *  キーボード表示
+     */
+    func handleKeyboardWillShowNotification(notification: NSNotification) {
+        stnSearchBar.showsCancelButton = true
+    }
+    
+    /*
+     *  searchBarのキャンセルボタンクリック
+     */
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        stnSearchBar.showsCancelButton = false
+        stnSearchBar.resignFirstResponder()
+    }
+
     /*
      *  searchBar変更
      */
