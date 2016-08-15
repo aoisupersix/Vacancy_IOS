@@ -16,8 +16,8 @@ class BookMarkViewController: UITableViewController {
     let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     var Items: Results<SearchSettings>? {
+        let realm = try! Realm()
         do {
-            let realm = try Realm()
             return realm.objects(SearchSettings)
         }catch {
             print("Realmエラー")

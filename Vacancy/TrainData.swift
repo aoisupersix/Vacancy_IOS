@@ -129,18 +129,18 @@ class TrainData {
         }
         
         //中身を表示
-        print("*****PUSHCODE*****")
-        for (stn, push) in pushcode{
-            print("\(stn):\(push)")
-        }
-        print("******************")
-        for i in 0..<stnList.count {
-            print("*****\(SUPEREXPRESS_NAME[i])*****")
-            for stn in stnList[i] {
-                print(stn)
-            }
-            print("***************")
-        }
+//        print("*****PUSHCODE*****")
+//        for (stn, push) in pushcode{
+//            print("\(stn):\(push)")
+//        }
+//        print("******************")
+//        for i in 0..<stnList.count {
+//            print("*****\(SUPEREXPRESS_NAME[i])*****")
+//            for stn in stnList[i] {
+//                print(stn)
+//            }
+//            print("***************")
+//        }
 
     }
     /*

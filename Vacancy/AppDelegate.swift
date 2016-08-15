@@ -139,6 +139,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    
+    /*
+     *  標準設定
+     */
+    func defaultReadIndex() {
+        
+    }
 }
 
