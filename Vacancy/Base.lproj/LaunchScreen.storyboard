@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smoking.png" translatesAutoresizingMaskIntoConstraints="NO" id="KiW-tg-3ji">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="superexpress.png" translatesAutoresizingMaskIntoConstraints="NO" id="KiW-tg-3ji">
                                 <rect key="frame" x="143" y="290" width="88" height="88"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="88" id="AGP-8u-eIR"/>
@@ -48,6 +48,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="smoking.png" width="144" height="144"/>
+        <image name="superexpress.png" width="64" height="64"/>
     </resources>
 </document>

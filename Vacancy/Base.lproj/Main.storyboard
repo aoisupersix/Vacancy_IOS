@@ -15,12 +15,12 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MainTableView" alwaysBounceVertical="YES" dataMode="static" style="grouped" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="fEQ-4z-K3Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="separatorColor" red="0.79398080500000001" green="1" blue="0.79914041960000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="separatorColor" red="1" green="0.67652453859999995" blue="0.75966938439999998" alpha="1" colorSpace="calibratedRGB"/>
                         <button key="tableFooterView" contentMode="center" verticalHuggingPriority="240" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="SMf-oe-FF9" customClass="CustomButton" customModule="Vacancy" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="452" width="375" height="57"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.90196078430000004" green="0.96078431369999995" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                             <rect key="contentStretch" x="0.0" y="0.0" width="0.65000000000000002" height="1"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                             <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
@@ -75,6 +75,7 @@
                                                 <constraint firstItem="wCE-Dw-8FX" firstAttribute="centerY" secondItem="EpG-2d-od3" secondAttribute="centerY" id="yL8-45-3oc"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         <accessibility key="accessibilityConfiguration" hint="アホ" label="えええ">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
@@ -114,6 +115,7 @@
                                                 <constraint firstItem="cbq-2x-3ia" firstAttribute="trailing" secondItem="N0x-cJ-HoC" secondAttribute="trailingMargin" id="xV1-Xn-CBe"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DepStnCell" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DepStn" editingAccessoryType="checkmark" rowHeight="80" id="9M2-hK-EWU">
                                         <rect key="frame" x="0.0" y="274" width="375" height="80"/>
@@ -149,6 +151,7 @@
                                                 <constraint firstItem="QEH-fD-RA3" firstAttribute="leading" secondItem="e0r-Gz-MHr" secondAttribute="leadingMargin" id="k68-78-CRM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ArrStnCell" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ArrStn" editingAccessoryType="checkmark" rowHeight="80" id="sKZ-Bc-wpc">
                                         <rect key="frame" x="0.0" y="354" width="375" height="80"/>
@@ -183,6 +186,7 @@
                                                 <constraint firstItem="W5V-0V-aLR" firstAttribute="leading" secondItem="dKS-ag-lcy" secondAttribute="leadingMargin" id="Q7I-ek-8hh"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -961,7 +965,7 @@
                             <outlet property="delegate" destination="nd0-3c-0BM" id="Sf7-gs-ItC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="駅名検索" id="R5M-kG-TJS">
+                    <navigationItem key="navigationItem" title="駅名検索" prompt="プッシュコードが存在するJR線の駅のみ指定できます。" id="R5M-kG-TJS">
                         <barButtonItem key="rightBarButtonItem" title="履歴を削除" id="V44-nZ-m0S">
                             <connections>
                                 <action selector="deleteHistory:" destination="nd0-3c-0BM" id="YNw-UW-G55"/>
@@ -1041,7 +1045,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="BookMarkCell" selectionStyle="blue" showsReorderControl="YES" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BookMarkCell" rowHeight="66" id="FL6-lv-vbz" customClass="BookMarkCell" customModule="Vacancy" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="122" width="375" height="66"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FL6-lv-vbz" id="iRB-V3-Z5M">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="65"/>
