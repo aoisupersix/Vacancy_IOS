@@ -59,7 +59,6 @@
 		E1C92E8B1D3BB202000FC366 /* PopUpDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E881D3BB202000FC366 /* PopUpDatePickerView.swift */; };
 		E1C92E8C1D3BB202000FC366 /* PopUpPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E891D3BB202000FC366 /* PopUpPickerView.swift */; };
 		E1C92E8D1D3BB202000FC366 /* PopUpPickerViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E8A1D3BB202000FC366 /* PopUpPickerViewBase.swift */; };
-		E1DAE41F1D58AB4D005C7F7D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1DAE41E1D58AB4D005C7F7D /* Settings.bundle */; };
 		E1DAE4211D594C57005C7F7D /* LegendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE4201D594C57005C7F7D /* LegendViewController.swift */; };
 		E1DAE4231D595BF9005C7F7D /* StnSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE4221D595BF9005C7F7D /* StnSelectController.swift */; };
 		E1DAE4261D5965B7005C7F7D /* SegmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE4251D5965B7005C7F7D /* SegmentType.swift */; };
@@ -149,7 +148,6 @@
 		E1C92E881D3BB202000FC366 /* PopUpDatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpDatePickerView.swift; sourceTree = "<group>"; };
 		E1C92E891D3BB202000FC366 /* PopUpPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpPickerView.swift; sourceTree = "<group>"; };
 		E1C92E8A1D3BB202000FC366 /* PopUpPickerViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpPickerViewBase.swift; sourceTree = "<group>"; };
-		E1DAE41E1D58AB4D005C7F7D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E1DAE4201D594C57005C7F7D /* LegendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegendViewController.swift; sourceTree = "<group>"; };
 		E1DAE4221D595BF9005C7F7D /* StnSelectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnSelectController.swift; sourceTree = "<group>"; };
 		E1DAE4251D5965B7005C7F7D /* SegmentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentType.swift; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 		E1C92E491D3B8C8B000FC366 = {
 			isa = PBXGroup;
 			children = (
-				E1DAE41E1D58AB4D005C7F7D /* Settings.bundle */,
 				E1C92E541D3B8C8B000FC366 /* Vacancy */,
 				E1C92E6C1D3B8C8C000FC366 /* VacancyTests */,
 				E1C92E771D3B8C8C000FC366 /* VacancyUITests */,
@@ -486,7 +483,6 @@
 				E1686C8B1D5749C7001F3AA4 /* maru.png in Resources */,
 				E1686C821D5747DF001F3AA4 /* granclassW.png in Resources */,
 				E1686C841D5747DF001F3AA4 /* sankakuW.png in Resources */,
-				E1DAE41F1D58AB4D005C7F7D /* Settings.bundle in Resources */,
 				E17B028A1D3D92CE009A41D1 /* LtdExpList.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

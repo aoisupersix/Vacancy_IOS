@@ -85,13 +85,12 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         switch indexPath.row{
         case 0:
             //乗車日設定
-            self.trainTypePicker.endPicker()
-
+            self.trainTypePicker.hidePicker()
             datepicker.showPicker()
             break
         case 1:
             //列車の種類変更
-            self.datepicker.endPicker()
+            self.datepicker.hidePicker()
 
             trainTypePicker.showPicker()
             break
@@ -166,8 +165,8 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         return app.trainType[row]
     }
     func pickerView(pickerView: UIPickerView, didSelect numbers: [Int]) {
-        print("\n(trainType[numbers[0]])選択")
         let type = String(numbers[0] + 1)
+        print(pickerView)
         app.type = type
         updateLabels()
     }

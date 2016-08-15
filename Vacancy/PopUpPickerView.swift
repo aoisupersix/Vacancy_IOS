@@ -102,7 +102,6 @@ class PopUpPickerView: PopUpPickerViewBase {
         restoreSelectedRows()
         selectedRows = nil
     }
-
     override func endPicker() {
         hidePicker()
         delegate?.pickerView?(pickerView, didSelect: getSelectedRows())

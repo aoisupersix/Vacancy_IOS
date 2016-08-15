@@ -75,6 +75,9 @@
                                                 <constraint firstItem="wCE-Dw-8FX" firstAttribute="centerY" secondItem="EpG-2d-od3" secondAttribute="centerY" id="yL8-45-3oc"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" hint="アホ" label="えええ">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TrainTypeCell" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="trainType" editingAccessoryType="checkmark" rowHeight="80" id="4dZ-2W-p4l">
                                         <rect key="frame" x="0.0" y="194" width="375" height="80"/>
@@ -972,7 +975,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6Y-ow-Hb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1938" y="-220"/>
+            <point key="canvasLocation" x="1856.5" y="-186.5"/>
         </scene>
         <!--駅名選択-->
         <scene sceneID="QmF-At-QKG">
@@ -1024,7 +1027,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DTf-n9-fNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2532.5" y="-220.5"/>
+            <point key="canvasLocation" x="2336.5" y="-186.5"/>
         </scene>
         <!--ブックマーク-->
         <scene sceneID="xXA-WD-GFR">
