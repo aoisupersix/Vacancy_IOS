@@ -159,6 +159,7 @@ class StnViewController: UITableViewController, UISearchBarDelegate{
             if self.sectionName == HISTORY_SEARCH_TEXT {
                 self.list.removeAll()
             }
+            self.addHistory("")
             self.tableView.reloadData()
         })
         let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: {

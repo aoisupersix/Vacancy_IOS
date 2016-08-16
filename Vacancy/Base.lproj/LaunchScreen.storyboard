@@ -17,8 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="superexpress.png" translatesAutoresizingMaskIntoConstraints="NO" id="KiW-tg-3ji">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vacancy" translatesAutoresizingMaskIntoConstraints="NO" id="KiW-tg-3ji">
                                 <rect key="frame" x="143" y="290" width="88" height="88"/>
+                                <color key="backgroundColor" red="0.12941176470588234" green="0.63529411764705879" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="88" id="AGP-8u-eIR"/>
                                     <constraint firstAttribute="width" constant="120" id="cCY-s1-Vx4"/>
@@ -48,6 +49,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="superexpress.png" width="64" height="64"/>
+        <image name="Vacancy" width="88" height="88"/>
     </resources>
 </document>

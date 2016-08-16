@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpPickerViewDelegate, TrainDataDelegate{
+class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpPickerViewDelegate, TrainDataDelegate, GADBannerViewDelegate{
 
     /*
      *  PopUpPickerView
@@ -72,9 +73,6 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         trainTypePicker.reloadInputViews()
         
         updateLabels()
-        self.navigationController?.toolbarHidden = true
-        
-        print("yaho:\(trainTypePicker.getSelectedRows())")
     }
     
     override func viewWillDisappear(animated: Bool) {

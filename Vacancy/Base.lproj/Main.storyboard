@@ -12,10 +12,10 @@
         <scene sceneID="Uhu-fB-K0L">
             <objects>
                 <tableViewController storyboardIdentifier="MainView" title="空席照会" id="Jkh-15-fwS" customClass="ViewController" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MainTableView" alwaysBounceVertical="YES" dataMode="static" style="grouped" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="fEQ-4z-K3Y">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MainTableView" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="static" style="grouped" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="fEQ-4z-K3Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="1" green="0.67652453859999995" blue="0.75966938439999998" alpha="1" colorSpace="calibratedRGB"/>
                         <button key="tableFooterView" contentMode="center" verticalHuggingPriority="240" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="SMf-oe-FF9" customClass="CustomButton" customModule="Vacancy" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="452" width="375" height="57"/>
@@ -41,7 +41,7 @@
                             </connections>
                         </button>
                         <sections>
-                            <tableViewSection headerTitle="06:30~22:30の間のみ照会可能です。" id="Ylo-Fc-dWa">
+                            <tableViewSection headerTitle="照会条件を入力してください。" id="Ylo-Fc-dWa">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DateCell" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Date" editingAccessoryType="checkmark" rowHeight="80" id="pes-QX-bjY">
                                         <rect key="frame" x="0.0" y="114" width="375" height="80"/>
@@ -60,7 +60,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="dateLabel" text="2016/99/88 22時04分" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCE-Dw-8FX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="dateLabel" text="2016/99/88 22時04分" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wCE-Dw-8FX">
                                                     <rect key="frame" x="163" y="29" width="171" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -75,7 +75,7 @@
                                                 <constraint firstItem="wCE-Dw-8FX" firstAttribute="centerY" secondItem="EpG-2d-od3" secondAttribute="centerY" id="yL8-45-3oc"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration" hint="アホ" label="えええ">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
@@ -97,7 +97,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="在来線列車" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbq-2x-3ia">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="在来線列車" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cbq-2x-3ia">
                                                     <rect key="frame" x="105" y="29" width="229" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="C4K-6Z-AD3"/>
@@ -115,7 +115,7 @@
                                                 <constraint firstItem="cbq-2x-3ia" firstAttribute="trailing" secondItem="N0x-cJ-HoC" secondAttribute="trailingMargin" id="xV1-Xn-CBe"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DepStnCell" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DepStn" editingAccessoryType="checkmark" rowHeight="80" id="9M2-hK-EWU">
                                         <rect key="frame" x="0.0" y="274" width="375" height="80"/>
@@ -151,7 +151,7 @@
                                                 <constraint firstItem="QEH-fD-RA3" firstAttribute="leading" secondItem="e0r-Gz-MHr" secondAttribute="leadingMargin" id="k68-78-CRM"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ArrStnCell" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ArrStn" editingAccessoryType="checkmark" rowHeight="80" id="sKZ-Bc-wpc">
                                         <rect key="frame" x="0.0" y="354" width="375" height="80"/>
@@ -186,7 +186,7 @@
                                                 <constraint firstItem="W5V-0V-aLR" firstAttribute="leading" secondItem="dKS-ag-lcy" secondAttribute="leadingMargin" id="Q7I-ek-8hh"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -198,11 +198,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="JR空席照会" id="VJb-sR-cWO">
                         <barButtonItem key="backBarButtonItem" title="戻る" id="XVb-Dl-UCD"/>
-                        <barButtonItem key="leftBarButtonItem" title="設定" id="apV-jj-GbA">
-                            <connections>
-                                <action selector="goSetting:" destination="Jkh-15-fwS" id="slG-5V-xn6"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="9Bh-dc-xLb">
                             <connections>
                                 <segue destination="R5e-he-sQb" kind="show" id="8sv-tf-0xS"/>
@@ -703,7 +698,7 @@
                                                 <constraint firstAttribute="width" constant="64" id="dSF-vc-Bsh"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="特急サンライズ瀬戸" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dux-OW-F6P">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="特急サンライズ瀬戸" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dux-OW-F6P">
                                             <rect key="frame" x="80" y="27" width="268" height="26"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -936,7 +931,7 @@
                         <color key="separatorColor" red="0.148049336" green="0.67727100659999995" blue="0.18638348469999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="駅名を入力してください" id="rbc-l3-WPQ">
-                            <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="94" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.148049336" green="0.67727100659999995" blue="0.18638348469999999" alpha="1" colorSpace="calibratedRGB"/>
                             <gestureRecognizers/>
@@ -951,7 +946,7 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="StnListTableViewCell" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StnListTableViewCell" id="aIZ-z9-ily">
-                                <rect key="frame" x="0.0" y="158" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="188" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aIZ-z9-ily" id="mbn-dX-XcC">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
@@ -966,13 +961,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="駅名検索" prompt="プッシュコードが存在するJR線の駅のみ指定できます。" id="R5M-kG-TJS">
-                        <barButtonItem key="rightBarButtonItem" title="履歴を削除" id="V44-nZ-m0S">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="V44-nZ-m0S">
                             <connections>
                                 <action selector="deleteHistory:" destination="nd0-3c-0BM" id="YNw-UW-G55"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="stnListTableView" destination="v1A-rp-Qlc" id="n3d-h3-icI"/>
@@ -992,7 +987,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="0.13725490200000001" green="0.62745098040000002" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <segmentedControl key="tableHeaderView" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" momentary="YES" id="aa3-n2-djx">
+                        <segmentedControl key="tableHeaderView" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" id="aa3-n2-djx">
                             <rect key="frame" x="0.0" y="64" width="375" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
@@ -1019,7 +1014,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="駅名選択" id="JPN-3u-P3U">
-                        <barButtonItem key="rightBarButtonItem" title="履歴を削除" id="j93-Q1-LIY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="j93-Q1-LIY">
                             <connections>
                                 <action selector="deleteHistory:" destination="PM9-nt-zxa" id="aEb-FL-nuC"/>
                             </connections>
@@ -1051,13 +1046,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="65"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="BookMarkMsgLabel" text="2016/08/20 20:00発 高松(賛) →東京" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3i-KT-C9f">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="BookMarkMsgLabel" text="2016/08/20 20:00発 高松(賛) →東京" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G3i-KT-C9f">
                                             <rect key="frame" x="41" y="36" width="301" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="BookMarkTitleLabel" text="サンライズ瀬戸キャンセル待ち用" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhi-UV-OL2">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="BookMarkTitleLabel" text="サンライズ瀬戸キャンセル待ち用" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bhi-UV-OL2">
                                             <rect key="frame" x="41" y="8" width="301" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>

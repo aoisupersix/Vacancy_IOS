@@ -102,6 +102,7 @@ class StnSelectController: UITableViewController {
         if segment.selectedSegmentIndex == HISTORY_SELECT {
             //履歴検索
             list = history
+            
         }else {
             //リスト検索
             list = TrainData.stnList[Int(app.type)! - 1]

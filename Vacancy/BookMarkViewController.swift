@@ -56,7 +56,7 @@ class BookMarkViewController: UITableViewController {
         cell.bookMarkTitleLabel.text = bookmark!.name
         cell.bookMarkMsgLabel.text = "\(date) \(bookmark!.dep_stn) → \(bookmark!.arr_stn)"
         if loadDefault() == indexPath.row {
-            cell.bookMarkCheckImage.image = UIImage(named: "selectedMaru.png")
+            cell.bookMarkCheckImage.image = UIImage(named: "sankaku.png")
         }else {
             cell.bookMarkCheckImage.image = UIImage(named: "maru.png")
         }

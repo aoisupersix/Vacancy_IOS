@@ -127,22 +127,8 @@ class TrainData {
         }catch let error as NSError {
             print(error.localizedDescription)
         }
-        
-        //中身を表示
-//        print("*****PUSHCODE*****")
-//        for (stn, push) in pushcode{
-//            print("\(stn):\(push)")
-//        }
-//        print("******************")
-//        for i in 0..<stnList.count {
-//            print("*****\(SUPEREXPRESS_NAME[i])*****")
-//            for stn in stnList[i] {
-//                print(stn)
-//            }
-//            print("***************")
-//        }
-
     }
+    
     /*
      *  Post
      */
@@ -201,6 +187,7 @@ class TrainData {
                 }
             } else {
                 print(error)
+                SwiftSpinner.hide()
                 self.delegate.showAlert("接続エラー", mes: "ネットワークに接続できないか、サーバーがダウンしている可能性があります。")
                 print("CONNECT ERROR")
             }

@@ -25,7 +25,7 @@ class PopUpDatePickerView: PopUpPickerViewBase {
     let pickerView: UIDatePicker = {
         let p = UIDatePicker()
         p.datePickerMode = .DateAndTime
-        p.minuteInterval = 10
+        p.minuteInterval = 1
         p.backgroundColor = UIColor.whiteColor()
         let appdel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         p.setDate(appdel.date, animated: true)
