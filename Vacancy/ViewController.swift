@@ -58,7 +58,8 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         }
         datepicker!.datepickerDelegate = self
         trainTypePicker.delegate = self
-        
+        trainTypePicker.selectedRows = [(Int(app.type)! - 1)]
+        trainTypePicker.setSelectedRow()
 
         trainData = TrainData(dele: self)
         
@@ -70,8 +71,12 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
     }
     override func viewWillAppear(animated: Bool){
         super.viewWillAppear(animated)
+        trainTypePicker.reloadInputViews()
+        
         updateLabels()
         self.navigationController?.toolbarHidden = true
+        
+        print("yaho:\(trainTypePicker.getSelectedRows())")
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -134,7 +139,7 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         trainData!.updateDate(app.date)
         
         //列車の種類
-        trainTypeLabel.text = app.trainType[Int(app.type)! - 1]
+        trainTypeLabel.text = app.trainType[trainTypePicker.getSelectedRows()[0]]
         //出発駅
         depStnLabel.text = "\(app.dep_stn)(\(app.dep_push))"
         //到着駅

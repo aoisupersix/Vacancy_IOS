@@ -103,6 +103,7 @@ class PopUpPickerView: PopUpPickerViewBase {
         selectedRows = nil
     }
     override func endPicker() {
+        print("endPicker")
         hidePicker()
         delegate?.pickerView?(pickerView, didSelect: getSelectedRows())
         selectedRows = nil
@@ -120,6 +121,13 @@ class PopUpPickerView: PopUpPickerViewBase {
         guard let selectedRows = selectedRows else { return }
         for i in 0..<selectedRows.count {
             pickerView.selectRow(selectedRows[i], inComponent: i, animated: true)
+        }
+    }
+    func setSelectedRow() {
+        if let selectedRows = selectedRows {
+            for (component, row) in selectedRows.enumerate() {
+                pickerView.selectRow(row, inComponent: component, animated: false)
+            }
         }
     }
 
