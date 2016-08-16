@@ -65,9 +65,7 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         
         //時刻を1分後に変更
         trainData!.updateDate(NSDate(timeInterval: 60, sinceDate: app.date))
-        
-        //ボタンのデザインを変更
-        
+
     }
     override func viewWillAppear(animated: Bool){
         super.viewWillAppear(animated)
