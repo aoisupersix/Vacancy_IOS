@@ -15,11 +15,6 @@ class BookMarkViewController: UITableViewController {
      */
     let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
-    /*
-     *  キーボードのツールバー
-     */
-    var keyboardToolbar: UIToolbar?
-    
     var Items: Results<SearchSettings>? {
         do {
             let realm = try Realm()
@@ -96,7 +91,7 @@ class BookMarkViewController: UITableViewController {
                     (action: UIAlertAction!) -> Void in
                     //OKボタンクリック
                     let textFields:Array<UITextField>? = alert.textFields as Array<UITextField>?
-                    
+
                     print(textFields![0].text)
                     if textFields![0].text == ""{
                         //条件名未入力
@@ -116,7 +111,7 @@ class BookMarkViewController: UITableViewController {
                 alert.addAction(cancelAction)
                 
                 alert.addTextFieldWithConfigurationHandler({(text: UITextField!) -> Void in
-                    text.placeholder = "変更するブックマーク名を入力"
+                    text.text = self.loadName(indexPath!.row)
                 })
                 
                 self.presentViewController(alert, animated: true, completion: nil)
@@ -205,6 +200,7 @@ class BookMarkViewController: UITableViewController {
     /*
      *  Realmメソッド
      */
+    
     //追加
     func addRealm(bookName: String) {
         let model = SearchSettings(value: ["name": bookName, "date": app.date, "type": app.type, "dep_stn": app.dep_stn, "dep_push": app.dep_push, "arr_stn": app.arr_stn, "arr_push": app.arr_push])
@@ -214,6 +210,7 @@ class BookMarkViewController: UITableViewController {
             realm.add(model)
         }
     }
+    
     //名前変更
     func changeName(index: Int, name: String) {
         let realm = try! Realm()
@@ -222,6 +219,7 @@ class BookMarkViewController: UITableViewController {
             items[index].name = name
         }
     }
+    
     //一つ削除
     func deleteItem(index: Int) {
         let realm = try! Realm()
@@ -230,6 +228,7 @@ class BookMarkViewController: UITableViewController {
             realm.delete(items[index])
         }
     }
+    
     //全削除
     func deleteAllBookMarks() {
         let realm = try! Realm()
@@ -240,6 +239,7 @@ class BookMarkViewController: UITableViewController {
             }
         }
     }
+    
     //標準設定のインデックス読み込み
     func loadDefault() -> Int{
         var index = -1
@@ -251,6 +251,14 @@ class BookMarkViewController: UITableViewController {
         }
         
         return index
+    }
+    
+    //名前読み込み
+    func loadName(index: Int) -> String {
+        let realm = try! Realm()
+        let name = realm.objects(SearchSettings)[index].name
+        
+        return name
     }
     //標準設定に指定
     func setDefault(index: Int) {
@@ -269,6 +277,7 @@ class BookMarkViewController: UITableViewController {
             }
         }
     }
+    
     //標準設定を削除
     func deleteDefault() {
         let realm = try! Realm()
