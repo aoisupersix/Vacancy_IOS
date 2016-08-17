@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "LanchScreen.png",
+      "filename" : "Vacancy_cleanness.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "LanchScreen@2x.png",
+      "filename" : "Vacancy_cleanness@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "LanchScreen@3x.png",
+      "filename" : "Vacancy_cleanness@3x.png",
       "scale" : "3x"
     }
   ],

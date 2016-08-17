@@ -176,6 +176,7 @@ class TrainData {
                     break
                 case 3:
                     //時間エラー
+                    print(self.dateBackup!)
                     self.delegate.showAlert("照会結果", mes: "ご希望の乗車日の照会はできません。")
                     break
                 case 4:

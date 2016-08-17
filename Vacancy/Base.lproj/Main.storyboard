@@ -18,7 +18,7 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="1" green="0.67652453859999995" blue="0.75966938439999998" alpha="1" colorSpace="calibratedRGB"/>
                         <button key="tableFooterView" contentMode="center" verticalHuggingPriority="240" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="SMf-oe-FF9" customClass="CustomButton" customModule="Vacancy" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="452" width="375" height="57"/>
+                            <rect key="frame" x="0.0" y="388" width="375" height="57"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.90196078430000004" green="0.96078431369999995" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                             <rect key="contentStretch" x="0.0" y="0.0" width="0.65000000000000002" height="1"/>
@@ -44,7 +44,7 @@
                             <tableViewSection headerTitle="照会条件を入力してください。" id="Ylo-Fc-dWa">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DateCell" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Date" editingAccessoryType="checkmark" rowHeight="80" id="pes-QX-bjY">
-                                        <rect key="frame" x="0.0" y="114" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="50" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pes-QX-bjY" id="EpG-2d-od3">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="79"/>
@@ -81,7 +81,7 @@
                                         </accessibility>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TrainTypeCell" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="trainType" editingAccessoryType="checkmark" rowHeight="80" id="4dZ-2W-p4l">
-                                        <rect key="frame" x="0.0" y="194" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="130" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4dZ-2W-p4l" id="N0x-cJ-HoC">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="79"/>
@@ -118,7 +118,7 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DepStnCell" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DepStn" editingAccessoryType="checkmark" rowHeight="80" id="9M2-hK-EWU">
-                                        <rect key="frame" x="0.0" y="274" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="210" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9M2-hK-EWU" id="e0r-Gz-MHr">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="79"/>
@@ -154,7 +154,7 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ArrStnCell" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ArrStn" editingAccessoryType="checkmark" rowHeight="80" id="sKZ-Bc-wpc">
-                                        <rect key="frame" x="0.0" y="354" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="290" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sKZ-Bc-wpc" id="dKS-ag-lcy">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="79"/>
@@ -196,14 +196,7 @@
                             <outlet property="delegate" destination="Jkh-15-fwS" id="Ftc-Ig-Vjn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="JR空席照会" id="VJb-sR-cWO">
-                        <barButtonItem key="backBarButtonItem" title="戻る" id="XVb-Dl-UCD"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="9Bh-dc-xLb">
-                            <connections>
-                                <segue destination="R5e-he-sQb" kind="show" id="8sv-tf-0xS"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="arrStnLabel" destination="Tsf-Cn-8U2" id="uR9-Yv-aea"/>
@@ -215,7 +208,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vND-Wd-Ktf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1260" y="-186"/>
+            <point key="canvasLocation" x="1307.5" y="-531.5"/>
         </scene>
         <!--凡例-->
         <scene sceneID="K3P-dJ-mpK">
@@ -918,183 +911,246 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUc-ON-utq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1135.5" y="664.5"/>
+            <point key="canvasLocation" x="1701.5" y="800.5"/>
         </scene>
         <!--駅名検索-->
-        <scene sceneID="4nQ-aF-wRs">
+        <scene sceneID="QgO-9d-qgh">
             <objects>
-                <tableViewController storyboardIdentifier="StnView" id="nd0-3c-0BM" customClass="StnViewController" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="StnListTableView" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="v1A-rp-Qlc">
+                <viewController storyboardIdentifier="StnSearchView" title="駅名検索" id="YDH-xX-bsR" customClass="StnSearchViewController" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FEd-c8-b8B"/>
+                        <viewControllerLayoutGuide type="bottom" id="XsS-ff-Du9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O4z-3e-XF2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="separatorColor" red="0.148049336" green="0.67727100659999995" blue="0.18638348469999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="sectionIndexColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="駅名を入力してください" id="rbc-l3-WPQ">
-                            <rect key="frame" x="0.0" y="94" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.148049336" green="0.67727100659999995" blue="0.18638348469999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <gestureRecognizers/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
-                            <scopeButtonTitles>
-                                <string>Title</string>
-                                <string>Title</string>
-                            </scopeButtonTitles>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Y8t-2t-rAy">
+                                <rect key="frame" x="-4" y="94" width="383" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="YDH-xX-bsR" id="c3H-Yv-Oua"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Zso-Kf-6ez">
+                                <rect key="frame" x="-4" y="138" width="383" height="479"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StnSearchCell" id="hY5-fQ-g2Z">
+                                        <rect key="frame" x="0.0" y="50" width="383" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hY5-fQ-g2Z" id="v7S-1N-u8b">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="YDH-xX-bsR" id="20s-Xg-Zya"/>
+                                    <outlet property="delegate" destination="YDH-xX-bsR" id="bBl-we-WvE"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y8t-2t-rAy" secondAttribute="trailing" constant="-20" id="DPE-Ph-SEd"/>
+                            <constraint firstItem="Zso-Kf-6ez" firstAttribute="leading" secondItem="O4z-3e-XF2" secondAttribute="leadingMargin" constant="-20" id="NOk-2Z-fiY"/>
+                            <constraint firstItem="Y8t-2t-rAy" firstAttribute="top" secondItem="FEd-c8-b8B" secondAttribute="bottom" id="NS3-Ua-unr"/>
+                            <constraint firstItem="XsS-ff-Du9" firstAttribute="top" secondItem="Zso-Kf-6ez" secondAttribute="bottom" id="ey1-32-e1s"/>
+                            <constraint firstItem="Zso-Kf-6ez" firstAttribute="top" secondItem="Y8t-2t-rAy" secondAttribute="bottom" id="igK-sw-El8"/>
+                            <constraint firstItem="Y8t-2t-rAy" firstAttribute="leading" secondItem="O4z-3e-XF2" secondAttribute="leadingMargin" constant="-20" id="ij0-WE-LgA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zso-Kf-6ez" secondAttribute="trailing" constant="-20" id="w0E-sH-4aG"/>
+                            <constraint firstItem="XsS-ff-Du9" firstAttribute="top" secondItem="Zso-Kf-6ez" secondAttribute="bottom" constant="50" id="zEb-h7-UnJ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ey1-32-e1s"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="駅名検索" prompt="駅コードが存在するJR線の駅のみ指定できます。" id="nhV-Ra-E8U">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="VJu-mI-tNt">
                             <connections>
-                                <outlet property="delegate" destination="nd0-3c-0BM" id="hU1-Tv-mYD"/>
-                            </connections>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="StnListTableViewCell" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StnListTableViewCell" id="aIZ-z9-ily">
-                                <rect key="frame" x="0.0" y="188" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aIZ-z9-ily" id="mbn-dX-XcC">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <gestureRecognizers/>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="nd0-3c-0BM" id="muX-rD-0c3"/>
-                            <outlet property="delegate" destination="nd0-3c-0BM" id="Sf7-gs-ItC"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="駅名検索" prompt="プッシュコードが存在するJR線の駅のみ指定できます。" id="R5M-kG-TJS">
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="V44-nZ-m0S">
-                            <connections>
-                                <action selector="deleteHistory:" destination="nd0-3c-0BM" id="YNw-UW-G55"/>
+                                <action selector="deleteHistory:" destination="YDH-xX-bsR" id="CCO-9y-Hjj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="stnListTableView" destination="v1A-rp-Qlc" id="n3d-h3-icI"/>
-                        <outlet property="stnSearchBar" destination="rbc-l3-WPQ" id="ufm-VB-U2T"/>
+                        <outlet property="stnListTableView" destination="Zso-Kf-6ez" id="I5a-Ah-REG"/>
+                        <outlet property="stnSearchBar" destination="Y8t-2t-rAy" id="TBA-mT-1Fh"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n6Y-ow-Hb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rre-dA-Iz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1856.5" y="-186.5"/>
+            <point key="canvasLocation" x="1885.5" y="-186.5"/>
         </scene>
-        <!--駅名選択-->
-        <scene sceneID="QmF-At-QKG">
+        <!--駅名検索-->
+        <scene sceneID="twd-2D-t3s">
             <objects>
-                <tableViewController storyboardIdentifier="StnSelectView" id="PM9-nt-zxa" customClass="StnSelectController" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="StnSelectTableVIew" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="0WK-F2-v6H">
+                <viewController storyboardIdentifier="StnSelectView" title="駅名検索" id="PUk-rx-mK9" customClass="StnSelectViewController" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P0y-km-aFl"/>
+                        <viewControllerLayoutGuide type="bottom" id="B4g-nq-hXs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lBK-oS-VwH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="separatorColor" red="0.13725490200000001" green="0.62745098040000002" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <segmentedControl key="tableHeaderView" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" id="aa3-n2-djx">
-                            <rect key="frame" x="0.0" y="64" width="375" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="駅名リストから選択"/>
-                                <segment title="履歴から選択"/>
-                            </segments>
+                        <subviews>
+                            <segmentedControl contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6sj-Zq-eyT">
+                                <rect key="frame" x="-4" y="64" width="383" height="29"/>
+                                <segments>
+                                    <segment title="駅名リストから選択"/>
+                                    <segment title="履歴から選択"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="PUk-rx-mK9" eventType="valueChanged" id="lrf-J0-5KP"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WXk-Y1-RaH">
+                                <rect key="frame" x="-8" y="93" width="391" height="524"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="StnSelectTableViewCell" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StnSelectTableViewCell" id="klK-Ms-9gI">
+                                        <rect key="frame" x="0.0" y="28" width="391" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="klK-Ms-9gI" id="O9J-bD-Sf6">
+                                            <rect key="frame" x="0.0" y="0.0" width="358" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="PUk-rx-mK9" id="5M3-wi-5PI"/>
+                                    <outlet property="delegate" destination="PUk-rx-mK9" id="7TN-f1-RrY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="B4g-nq-hXs" firstAttribute="top" secondItem="WXk-Y1-RaH" secondAttribute="bottom" constant="50" id="0wB-Ey-Btn"/>
+                            <constraint firstItem="WXk-Y1-RaH" firstAttribute="top" secondItem="6sj-Zq-eyT" secondAttribute="bottom" constant="1" id="2ru-vs-4Fy"/>
+                            <constraint firstItem="WXk-Y1-RaH" firstAttribute="top" secondItem="6sj-Zq-eyT" secondAttribute="bottom" id="7kf-ob-3x7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WXk-Y1-RaH" secondAttribute="trailing" constant="-24" id="F8h-YF-PMU"/>
+                            <constraint firstItem="B4g-nq-hXs" firstAttribute="top" secondItem="WXk-Y1-RaH" secondAttribute="bottom" constant="50" id="aqV-kS-129"/>
+                            <constraint firstItem="WXk-Y1-RaH" firstAttribute="leading" secondItem="lBK-oS-VwH" secondAttribute="leadingMargin" constant="-24" id="dWr-EQ-6WE"/>
+                            <constraint firstItem="6sj-Zq-eyT" firstAttribute="leading" secondItem="lBK-oS-VwH" secondAttribute="leadingMargin" constant="-20" id="fPY-Y8-76i"/>
+                            <constraint firstItem="6sj-Zq-eyT" firstAttribute="top" secondItem="P0y-km-aFl" secondAttribute="bottom" id="g9s-MY-IuY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6sj-Zq-eyT" secondAttribute="trailing" constant="-20" id="leI-wo-zPu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WXk-Y1-RaH" secondAttribute="trailing" constant="-20" id="n6i-JE-hmJ"/>
+                            <constraint firstItem="WXk-Y1-RaH" firstAttribute="leading" secondItem="lBK-oS-VwH" secondAttribute="leadingMargin" constant="-20" id="zvn-Yc-aSW"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7kf-ob-3x7"/>
+                                <exclude reference="n6i-JE-hmJ"/>
+                                <exclude reference="zvn-Yc-aSW"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="駅名選択" id="Hfw-Xy-CbS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="BLg-G0-BIa">
                             <connections>
-                                <action selector="segmentChanged:" destination="PM9-nt-zxa" eventType="valueChanged" id="94a-tM-jXK"/>
-                            </connections>
-                        </segmentedControl>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="StnSelectTableViewCell" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="StnSelectTableViewCell" id="nuL-zD-0wL">
-                                <rect key="frame" x="0.0" y="144" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nuL-zD-0wL" id="qw1-BD-A1x">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="PM9-nt-zxa" id="V42-gs-Uyf"/>
-                            <outlet property="delegate" destination="PM9-nt-zxa" id="DQo-C3-Rgd"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="駅名選択" id="JPN-3u-P3U">
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="j93-Q1-LIY">
-                            <connections>
-                                <action selector="deleteHistory:" destination="PM9-nt-zxa" id="aEb-FL-nuC"/>
+                                <action selector="deleteHistory:" destination="PUk-rx-mK9" id="ybS-z1-SAQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="segment" destination="aa3-n2-djx" id="tY9-Po-Ge5"/>
+                        <outlet property="segment" destination="6sj-Zq-eyT" id="Wbb-Yd-gZC"/>
+                        <outlet property="tableView" destination="WXk-Y1-RaH" id="3Oi-gb-P9u"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DTf-n9-fNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WS5-8i-iCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2336.5" y="-186.5"/>
+            <point key="canvasLocation" x="2373.5" y="-186.5"/>
         </scene>
         <!--ブックマーク-->
-        <scene sceneID="xXA-WD-GFR">
+        <scene sceneID="4aI-jS-f2l">
             <objects>
-                <tableViewController title="ブックマーク" id="R5e-he-sQb" customClass="BookMarkViewController" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" id="lOH-BE-Pwy">
+                <viewController storyboardIdentifier="BookMarkRootView" title="ブックマーク" id="cml-86-Q9e" customClass="BookMarkRootViewController" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E1N-lX-XCp"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKe-ZZ-6tr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xCB-OE-RR1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="BookMarkCell" selectionStyle="blue" showsReorderControl="YES" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BookMarkCell" rowHeight="66" id="FL6-lv-vbz" customClass="BookMarkCell" customModule="Vacancy" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="122" width="375" height="66"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FL6-lv-vbz" id="iRB-V3-Z5M">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="65"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="BookMarkMsgLabel" text="2016/08/20 20:00発 高松(賛) →東京" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G3i-KT-C9f">
-                                            <rect key="frame" x="41" y="36" width="301" height="21"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="BookMarkTitleLabel" text="サンライズ瀬戸キャンセル待ち用" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bhi-UV-OL2">
-                                            <rect key="frame" x="41" y="8" width="301" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="bookMarkCheckImage" image="maru.png" translatesAutoresizingMaskIntoConstraints="NO" id="9r0-1m-bKK">
-                                            <rect key="frame" x="8" y="20" width="25" height="25"/>
-                                        </imageView>
-                                    </subviews>
-                                </tableViewCellContentView>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="bookMarkTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H4P-jC-yQY">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="617"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="BookMarkCell" selectionStyle="blue" showsReorderControl="YES" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BookMarkCell" rowHeight="66" id="vNb-ao-aVG" customClass="BookMarkCell" customModule="Vacancy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="122" width="383" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vNb-ao-aVG" id="z8L-oa-d9z">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="65"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="BookMarkMsgLabel" text="2016/08/20 20:00発 高松(賛) →東京" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v34-v0-dhH">
+                                                    <rect key="frame" x="41" y="36" width="301" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="BookMarkTitleLabel" text="サンライズ瀬戸キャンセル待ち用" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1ZV-v8-Pk3">
+                                                    <rect key="frame" x="41" y="8" width="301" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="bookMarkCheckImage" image="maru.png" translatesAutoresizingMaskIntoConstraints="NO" id="q97-nt-AlB">
+                                                    <rect key="frame" x="8" y="20" width="25" height="25"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bookMarkCheckImage" destination="q97-nt-AlB" id="TsN-jJ-4dQ"/>
+                                            <outlet property="bookMarkMsgLabel" destination="v34-v0-dhH" id="vxK-35-TIu"/>
+                                            <outlet property="bookMarkTitleLabel" destination="1ZV-v8-Pk3" id="Vge-Xm-Wwa"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <outlet property="bookMarkCheckImage" destination="9r0-1m-bKK" id="SWJ-Ib-JII"/>
-                                    <outlet property="bookMarkMsgLabel" destination="G3i-KT-C9f" id="gHE-Vo-91T"/>
-                                    <outlet property="bookMarkTitleLabel" destination="bhi-UV-OL2" id="Rqt-tY-fWd"/>
+                                    <outlet property="dataSource" destination="cml-86-Q9e" id="1I4-Ny-5ie"/>
+                                    <outlet property="delegate" destination="cml-86-Q9e" id="5Qe-EW-oJi"/>
                                 </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="R5e-he-sQb" id="91l-Sg-EsJ"/>
-                            <outlet property="delegate" destination="R5e-he-sQb" id="NKg-b7-vdh"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="ブックマーク" prompt="照会条件の保存と呼び出しができます。" id="mlU-ah-t5D">
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="H4P-jC-yQY" firstAttribute="leading" secondItem="xCB-OE-RR1" secondAttribute="leadingMargin" constant="-20" id="A6G-Sd-fQ7"/>
+                            <constraint firstItem="H4P-jC-yQY" firstAttribute="top" secondItem="xCB-OE-RR1" secondAttribute="topMargin" id="Cwi-nT-zew"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H4P-jC-yQY" secondAttribute="trailing" constant="-20" id="PY1-Xl-TuH"/>
+                            <constraint firstItem="FKe-ZZ-6tr" firstAttribute="top" secondItem="H4P-jC-yQY" secondAttribute="bottom" constant="50" id="xkD-Ov-QPC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="ブックマーク" prompt="照会条件の保存と呼び出しができます。" id="xfV-IS-r1Z">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="KzJ-yx-ffu">
+                            <barButtonItem systemItem="add" id="Yht-WO-iaF">
                                 <connections>
-                                    <action selector="addBookMark:" destination="R5e-he-sQb" id="0w9-k5-OXr"/>
+                                    <action selector="addBookMark:" destination="cml-86-Q9e" id="d7C-HA-pA8"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="trash" id="Ibt-SX-qKZ">
+                            <barButtonItem systemItem="trash" id="kbd-wq-qEE">
                                 <connections>
-                                    <action selector="deleteAll:" destination="R5e-he-sQb" id="gib-ae-SnE"/>
+                                    <action selector="deleteAll:" destination="cml-86-Q9e" id="elJ-Us-x3d"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wMg-wB-VcH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <connections>
+                        <outlet property="tableView" destination="H4P-jC-yQY" id="4qE-K9-qwK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UWl-0D-znX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1260.5" y="-1065.5"/>
+            <point key="canvasLocation" x="852.5" y="-1383.5"/>
         </scene>
         <!--空席照会-->
         <scene sceneID="Ua1-8F-SeZ">
@@ -1111,12 +1167,60 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="Jkh-15-fwS" kind="relationship" relationship="rootViewController" id="8QO-nm-hcn"/>
+                        <segue destination="1I8-c9-8zj" kind="relationship" relationship="rootViewController" id="FmC-BN-bMm"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CTX-Ta-VIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="670" y="-185"/>
+        </scene>
+        <!--空席照会-->
+        <scene sceneID="EYp-Vf-nzP">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" title="空席照会" id="1I8-c9-8zj" customClass="MainViewController" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6zy-4T-1X9"/>
+                        <viewControllerLayoutGuide type="bottom" id="viC-f5-tWG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3NM-7U-qpd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YXq-rB-zwc">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="617"/>
+                                <connections>
+                                    <segue destination="Jkh-15-fwS" kind="embed" id="c7g-J7-9zA"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YXq-rB-zwc" firstAttribute="top" secondItem="6zy-4T-1X9" secondAttribute="bottom" id="MOl-xT-BUl"/>
+                            <constraint firstItem="YXq-rB-zwc" firstAttribute="top" secondItem="3NM-7U-qpd" secondAttribute="topMargin" id="VQD-xi-MOe"/>
+                            <constraint firstItem="viC-f5-tWG" firstAttribute="top" secondItem="YXq-rB-zwc" secondAttribute="bottom" constant="50" id="oqv-lh-Dfp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YXq-rB-zwc" secondAttribute="trailing" constant="-20" id="quq-vw-WB6"/>
+                            <constraint firstItem="YXq-rB-zwc" firstAttribute="leading" secondItem="3NM-7U-qpd" secondAttribute="leadingMargin" constant="-20" id="wo4-au-idW"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="MOl-xT-BUl"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="JR空席照会" id="9lq-nh-F80">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="gKH-fg-Skg">
+                            <connections>
+                                <segue destination="cml-86-Q9e" kind="show" id="mxT-dC-6hl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="viO-gm-5aL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962.5" y="593.5"/>
         </scene>
     </scenes>
     <resources>

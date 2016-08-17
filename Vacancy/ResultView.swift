@@ -42,6 +42,7 @@ public class ResultView: UITableViewController, TrainDataDelegate {
         self.navigationController?.setToolbarHidden(false, animated: true)
     }
     func refreshTable() {
+        trainData!.updateDate(app.date)
         trainData!.post()
     }
     override public func didReceiveMemoryWarning() {
@@ -79,6 +80,7 @@ public class ResultView: UITableViewController, TrainDataDelegate {
      *  再度読み込み
      */
     @IBAction func sendUrl(sender: AnyObject) {
+        trainData!.updateDate(app.date)
         trainData!.post()
     }
     /* 
@@ -114,11 +116,14 @@ public class ResultView: UITableViewController, TrainDataDelegate {
     }
     func showAlert(title: String, mes: String) {
         dispatch_async(dispatch_get_main_queue()){
+            self.refreshControl?.endRefreshing()
+            
             let alert = UIAlertController(title: title, message: mes, preferredStyle: .Alert)
             let defaultAction = UIAlertAction(title: "了解", style: .Default, handler: nil)
             alert.addAction(defaultAction)
             self.presentViewController(alert, animated: true, completion: nil)
-        
+            
+            print(self.trainData!.dateBackup!)
             //Dateを戻しておく
             self.app.date = self.trainData!.dateBackup!
         }

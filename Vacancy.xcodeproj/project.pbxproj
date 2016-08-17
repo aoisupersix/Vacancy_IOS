@@ -10,11 +10,16 @@
 		D244B2C5F306E6AF3DBC6FE3 /* Pods_Vacancy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2114BD053D86D13573955B3 /* Pods_Vacancy.framework */; };
 		D4280ED0252DA6E7D8A05762 /* Pods_VacancyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8DF6F48D82ABABE740BD67C /* Pods_VacancyTests.framework */; };
 		E101EABD1D40E712003789A5 /* TrainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E101EABC1D40E712003789A5 /* TrainData.swift */; };
-		E101EABF1D40EE98003789A5 /* StnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E101EABE1D40EE98003789A5 /* StnViewController.swift */; };
+		E111945C1D6404EB00DBF598 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E111945B1D6404EB00DBF598 /* MainViewController.swift */; };
+		E11194601D640ECB00DBF598 /* BookMarkRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E111945F1D640ECB00DBF598 /* BookMarkRootViewController.swift */; };
+		E11194621D64151C00DBF598 /* StnSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11194611D64151C00DBF598 /* StnSearchViewController.swift */; };
+		E11194661D64425600DBF598 /* Vacancy_cleanness@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11194651D64425600DBF598 /* Vacancy_cleanness@2x.png */; };
+		E11194681D64425F00DBF598 /* Vacancy_cleanness.png in Resources */ = {isa = PBXBuildFile; fileRef = E11194671D64425F00DBF598 /* Vacancy_cleanness.png */; };
+		E111946A1D64426C00DBF598 /* Vacancy_cleanness@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11194691D64426C00DBF598 /* Vacancy_cleanness@3x.png */; };
 		E11388CD1D6017D200C0B0B6 /* SearchSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11388CC1D6017D200C0B0B6 /* SearchSettings.swift */; };
-		E11388CF1D601CED00C0B0B6 /* BookMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11388CE1D601CED00C0B0B6 /* BookMarkViewController.swift */; };
 		E113890E1D6041A800C0B0B6 /* BookMarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E113890D1D6041A800C0B0B6 /* BookMarkCell.swift */; };
 		E11389121D61528E00C0B0B6 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11389111D61528E00C0B0B6 /* Setting.swift */; };
+		E12C31D61D63EB8200BE19B6 /* UnitID.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C31D51D63EB8200BE19B6 /* UnitID.swift */; };
 		E1344F991D62D9C700AD18FB /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1344F981D62D9C700AD18FB /* Icon-Small@2x.png */; };
 		E1344F9B1D62D9D600AD18FB /* Icon-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1344F9A1D62D9D600AD18FB /* Icon-Small@3x.png */; };
 		E1344F9D1D62DA1C00AD18FB /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1344F9C1D62DA1C00AD18FB /* Icon-60@2x.png */; };
@@ -23,9 +28,6 @@
 		E1344FA31D62DA8B00AD18FB /* Icon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1344FA21D62DA8B00AD18FB /* Icon-40@3x.png */; };
 		E1344FAD1D62DE9600AD18FB /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = E1344FAC1D62DE9600AD18FB /* info.png */; };
 		E1344FAF1D62DE9D00AD18FB /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1344FAE1D62DE9D00AD18FB /* info@2x.png */; };
-		E1344FB31D62F51300AD18FB /* LanchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = E1344FB01D62F51300AD18FB /* LanchScreen.png */; };
-		E1344FB41D62F51300AD18FB /* LanchScreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1344FB11D62F51300AD18FB /* LanchScreen@2x.png */; };
-		E1344FB51D62F51300AD18FB /* LanchScreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1344FB21D62F51300AD18FB /* LanchScreen@3x.png */; };
 		E144E1201D45F250002FADAA /* granclass.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E1141D45F250002FADAA /* granclass.png */; };
 		E144E1211D45F250002FADAA /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E1151D45F250002FADAA /* green.png */; };
 		E144E1221D45F250002FADAA /* ltdexp.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E1161D45F250002FADAA /* ltdexp.png */; };
@@ -70,7 +72,7 @@
 		E1C92E8C1D3BB202000FC366 /* PopUpPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E891D3BB202000FC366 /* PopUpPickerView.swift */; };
 		E1C92E8D1D3BB202000FC366 /* PopUpPickerViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E8A1D3BB202000FC366 /* PopUpPickerViewBase.swift */; };
 		E1DAE4211D594C57005C7F7D /* LegendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE4201D594C57005C7F7D /* LegendViewController.swift */; };
-		E1DAE4231D595BF9005C7F7D /* StnSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE4221D595BF9005C7F7D /* StnSelectController.swift */; };
+		E1DAE4231D595BF9005C7F7D /* StnSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE4221D595BF9005C7F7D /* StnSelectViewController.swift */; };
 		E1DAE4261D5965B7005C7F7D /* SegmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE4251D5965B7005C7F7D /* SegmentType.swift */; };
 		E1DAE4281D596626005C7F7D /* SectionName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE4271D596626005C7F7D /* SectionName.swift */; };
 		E1DAE42C1D596AFC005C7F7D /* SuperExpressName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE42B1D596AFC005C7F7D /* SuperExpressName.swift */; };
@@ -115,12 +117,17 @@
 		B2114BD053D86D13573955B3 /* Pods_Vacancy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vacancy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCAEC17C0A6D1645B0CCAC3B /* Pods-VacancyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VacancyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VacancyTests/Pods-VacancyTests.release.xcconfig"; sourceTree = "<group>"; };
 		E101EABC1D40E712003789A5 /* TrainData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainData.swift; sourceTree = "<group>"; };
-		E101EABE1D40EE98003789A5 /* StnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnViewController.swift; sourceTree = "<group>"; };
 		E101EAC41D44B9DB003789A5 /* Vacancy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Vacancy.entitlements; sourceTree = "<group>"; };
+		E111945B1D6404EB00DBF598 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E111945F1D640ECB00DBF598 /* BookMarkRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMarkRootViewController.swift; sourceTree = "<group>"; };
+		E11194611D64151C00DBF598 /* StnSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnSearchViewController.swift; sourceTree = "<group>"; };
+		E11194651D64425600DBF598 /* Vacancy_cleanness@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Vacancy_cleanness@2x.png"; sourceTree = "<group>"; };
+		E11194671D64425F00DBF598 /* Vacancy_cleanness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Vacancy_cleanness.png; sourceTree = "<group>"; };
+		E11194691D64426C00DBF598 /* Vacancy_cleanness@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Vacancy_cleanness@3x.png"; sourceTree = "<group>"; };
 		E11388CC1D6017D200C0B0B6 /* SearchSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSettings.swift; sourceTree = "<group>"; };
-		E11388CE1D601CED00C0B0B6 /* BookMarkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMarkViewController.swift; sourceTree = "<group>"; };
 		E113890D1D6041A800C0B0B6 /* BookMarkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMarkCell.swift; sourceTree = "<group>"; };
 		E11389111D61528E00C0B0B6 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		E12C31D51D63EB8200BE19B6 /* UnitID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitID.swift; sourceTree = "<group>"; };
 		E1344F981D62D9C700AD18FB /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		E1344F9A1D62D9D600AD18FB /* Icon-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@3x.png"; sourceTree = "<group>"; };
 		E1344F9C1D62DA1C00AD18FB /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
@@ -129,9 +136,6 @@
 		E1344FA21D62DA8B00AD18FB /* Icon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@3x.png"; sourceTree = "<group>"; };
 		E1344FAC1D62DE9600AD18FB /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		E1344FAE1D62DE9D00AD18FB /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@2x.png"; sourceTree = "<group>"; };
-		E1344FB01D62F51300AD18FB /* LanchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LanchScreen.png; sourceTree = "<group>"; };
-		E1344FB11D62F51300AD18FB /* LanchScreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LanchScreen@2x.png"; sourceTree = "<group>"; };
-		E1344FB21D62F51300AD18FB /* LanchScreen@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LanchScreen@3x.png"; sourceTree = "<group>"; };
 		E144E1141D45F250002FADAA /* granclass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = granclass.png; sourceTree = "<group>"; };
 		E144E1151D45F250002FADAA /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		E144E1161D45F250002FADAA /* ltdexp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ltdexp.png; sourceTree = "<group>"; };
@@ -183,7 +187,7 @@
 		E1C92E891D3BB202000FC366 /* PopUpPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpPickerView.swift; sourceTree = "<group>"; };
 		E1C92E8A1D3BB202000FC366 /* PopUpPickerViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpPickerViewBase.swift; sourceTree = "<group>"; };
 		E1DAE4201D594C57005C7F7D /* LegendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegendViewController.swift; sourceTree = "<group>"; };
-		E1DAE4221D595BF9005C7F7D /* StnSelectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnSelectController.swift; sourceTree = "<group>"; };
+		E1DAE4221D595BF9005C7F7D /* StnSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnSelectViewController.swift; sourceTree = "<group>"; };
 		E1DAE4251D5965B7005C7F7D /* SegmentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentType.swift; sourceTree = "<group>"; };
 		E1DAE4271D596626005C7F7D /* SectionName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionName.swift; sourceTree = "<group>"; };
 		E1DAE42B1D596AFC005C7F7D /* SuperExpressName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperExpressName.swift; sourceTree = "<group>"; };
@@ -298,9 +302,9 @@
 				E144E11E1D45F250002FADAA /* superexpress.png */,
 				E1344FAC1D62DE9600AD18FB /* info.png */,
 				E1344FAE1D62DE9D00AD18FB /* info@2x.png */,
-				E1344FB01D62F51300AD18FB /* LanchScreen.png */,
-				E1344FB11D62F51300AD18FB /* LanchScreen@2x.png */,
-				E1344FB21D62F51300AD18FB /* LanchScreen@3x.png */,
+				E11194671D64425F00DBF598 /* Vacancy_cleanness.png */,
+				E11194651D64425600DBF598 /* Vacancy_cleanness@2x.png */,
+				E11194691D64426C00DBF598 /* Vacancy_cleanness@3x.png */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -360,16 +364,17 @@
 				E1C92E611D3B8C8B000FC366 /* LaunchScreen.storyboard */,
 				E1C92E641D3B8C8B000FC366 /* Info.plist */,
 				E101EABC1D40E712003789A5 /* TrainData.swift */,
-				E101EABE1D40EE98003789A5 /* StnViewController.swift */,
 				E144E12B1D462412002FADAA /* ResultCell.swift */,
 				E144E12D1D4628B7002FADAA /* ResultView.swift */,
 				E1DAE4201D594C57005C7F7D /* LegendViewController.swift */,
-				E1DAE4221D595BF9005C7F7D /* StnSelectController.swift */,
+				E1DAE4221D595BF9005C7F7D /* StnSelectViewController.swift */,
 				E11388CC1D6017D200C0B0B6 /* SearchSettings.swift */,
-				E11388CE1D601CED00C0B0B6 /* BookMarkViewController.swift */,
 				E113890D1D6041A800C0B0B6 /* BookMarkCell.swift */,
 				E11389111D61528E00C0B0B6 /* Setting.swift */,
 				E1E8E8651D61BD4A0019057E /* CustomButton.swift */,
+				E111945B1D6404EB00DBF598 /* MainViewController.swift */,
+				E111945F1D640ECB00DBF598 /* BookMarkRootViewController.swift */,
+				E11194611D64151C00DBF598 /* StnSearchViewController.swift */,
 			);
 			path = Vacancy;
 			sourceTree = "<group>";
@@ -398,6 +403,7 @@
 				E1DAE4251D5965B7005C7F7D /* SegmentType.swift */,
 				E1DAE4271D596626005C7F7D /* SectionName.swift */,
 				E1DAE42B1D596AFC005C7F7D /* SuperExpressName.swift */,
+				E12C31D51D63EB8200BE19B6 /* UnitID.swift */,
 			);
 			name = "定数";
 			sourceTree = "<group>";
@@ -485,6 +491,7 @@
 				TargetAttributes = {
 					E1C92E511D3B8C8B000FC366 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = M7W5L3GRW3;
 						SystemCapabilities = {
 							com.apple.WAC = {
 								enabled = 0;
@@ -553,15 +560,14 @@
 			files = (
 				E1344F9F1D62DA2C00AD18FB /* Icon-60@3x.png in Resources */,
 				E144E1251D45F250002FADAA /* nonsmoke.png in Resources */,
-				E1344FB31D62F51300AD18FB /* LanchScreen.png in Resources */,
 				E144E1221D45F250002FADAA /* ltdexp.png in Resources */,
 				E1686C7B1D5747C9001F3AA4 /* maruW.png in Resources */,
 				E17B028B1D3D92CE009A41D1 /* nagano.txt in Resources */,
 				E144E1201D45F250002FADAA /* granclass.png in Resources */,
+				E111946A1D64426C00DBF598 /* Vacancy_cleanness@3x.png in Resources */,
 				E1686C871D57489F001F3AA4 /* nonsmokeW.png in Resources */,
 				E17B028C1D3D92CE009A41D1 /* pushcode.csv in Resources */,
 				E1686C791D5747C0001F3AA4 /* greenW.png in Resources */,
-				E1344FB41D62F51300AD18FB /* LanchScreen@2x.png in Resources */,
 				E1344FA11D62DA7C00AD18FB /* Icon-40@2x.png in Resources */,
 				E1C92E631D3B8C8B000FC366 /* LaunchScreen.storyboard in Resources */,
 				E144E12A1D45F250002FADAA /* superexpress.png in Resources */,
@@ -573,11 +579,13 @@
 				E1344F991D62D9C700AD18FB /* Icon-Small@2x.png in Resources */,
 				E1686C8F1D5749DA001F3AA4 /* sankaku.png in Resources */,
 				E1C92E5B1D3B8C8B000FC366 /* Main.storyboard in Resources */,
+				E11194681D64425F00DBF598 /* Vacancy_cleanness.png in Resources */,
 				E1686C8D1D5749CF001F3AA4 /* batsu.png in Resources */,
 				E1686C7D1D5747D1001F3AA4 /* reservedW.png in Resources */,
 				E1344FAF1D62DE9D00AD18FB /* info@2x.png in Resources */,
 				E144E1261D45F250002FADAA /* rapid.png in Resources */,
 				E17B028E1D3D92CE009A41D1 /* tokaido.txt in Resources */,
+				E11194661D64425600DBF598 /* Vacancy_cleanness@2x.png in Resources */,
 				E144E1291D45F250002FADAA /* smoking.png in Resources */,
 				E144E1211D45F250002FADAA /* green.png in Resources */,
 				E165348B1D61D88A00CD60B6 /* selectedMaru.png in Resources */,
@@ -585,7 +593,6 @@
 				E144E1271D45F250002FADAA /* reserved.png in Resources */,
 				E1344FAD1D62DE9600AD18FB /* info.png in Resources */,
 				E1686C891D5749BD001F3AA4 /* batsuW.png in Resources */,
-				E1344FB51D62F51300AD18FB /* LanchScreen@3x.png in Resources */,
 				E1686C831D5747DF001F3AA4 /* nashiW.png in Resources */,
 				E17B02891D3D92CE009A41D1 /* kodama.txt in Resources */,
 				E17B028D1D3D92CE009A41D1 /* SuperExpList.txt in Resources */,
@@ -712,23 +719,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E11194601D640ECB00DBF598 /* BookMarkRootViewController.swift in Sources */,
 				E1C92E8D1D3BB202000FC366 /* PopUpPickerViewBase.swift in Sources */,
+				E11194621D64151C00DBF598 /* StnSearchViewController.swift in Sources */,
+				E111945C1D6404EB00DBF598 /* MainViewController.swift in Sources */,
 				E1C92E5E1D3B8C8B000FC366 /* Vacancy.xcdatamodeld in Sources */,
 				E113890E1D6041A800C0B0B6 /* BookMarkCell.swift in Sources */,
 				E1C92E8C1D3BB202000FC366 /* PopUpPickerView.swift in Sources */,
-				E1DAE4231D595BF9005C7F7D /* StnSelectController.swift in Sources */,
+				E1DAE4231D595BF9005C7F7D /* StnSelectViewController.swift in Sources */,
 				E1C92E581D3B8C8B000FC366 /* ViewController.swift in Sources */,
 				E1C92E561D3B8C8B000FC366 /* AppDelegate.swift in Sources */,
 				E11388CD1D6017D200C0B0B6 /* SearchSettings.swift in Sources */,
 				E144E12C1D462412002FADAA /* ResultCell.swift in Sources */,
+				E12C31D61D63EB8200BE19B6 /* UnitID.swift in Sources */,
 				E11389121D61528E00C0B0B6 /* Setting.swift in Sources */,
 				E1DAE4211D594C57005C7F7D /* LegendViewController.swift in Sources */,
 				E1E8E8661D61BD4A0019057E /* CustomButton.swift in Sources */,
-				E11388CF1D601CED00C0B0B6 /* BookMarkViewController.swift in Sources */,
 				E1DAE4261D5965B7005C7F7D /* SegmentType.swift in Sources */,
 				E1C92E8B1D3BB202000FC366 /* PopUpDatePickerView.swift in Sources */,
 				E144E12E1D4628B7002FADAA /* ResultView.swift in Sources */,
-				E101EABF1D40EE98003789A5 /* StnViewController.swift in Sources */,
 				E1DAE4281D596626005C7F7D /* SectionName.swift in Sources */,
 				E1DAE42C1D596AFC005C7F7D /* SuperExpressName.swift in Sources */,
 				E101EABD1D40E712003789A5 /* TrainData.swift in Sources */,
@@ -877,11 +886,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = Vacancy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.gr.java-conf.aoisupersix-";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.wpblog.aoisupersix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Vacancy/Vacancy-Bridging-Header.h";
@@ -898,11 +907,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = Vacancy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "jp.gr.java-conf.aoisupersix-";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.wpblog.aoisupersix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Vacancy/Vacancy-Bridging-Header.h";

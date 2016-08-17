@@ -30,8 +30,13 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>www1.jr.cyberstation.ne.jp</key>
-			<string></string>
+			<key>cyberstation.ne.jp</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+            			<true/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
 		</dict>
 	</dict>
 	<key>UILaunchStoryboardName</key>

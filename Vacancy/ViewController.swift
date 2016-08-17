@@ -9,25 +9,27 @@
 import UIKit
 import GoogleMobileAds
 
-class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpPickerViewDelegate, TrainDataDelegate, GADBannerViewDelegate{
+class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpPickerViewDelegate, TrainDataDelegate {
 
     /*
      *  PopUpPickerView
      */
     var datepicker: PopUpDatePickerView!
     var trainTypePicker: PopUpPickerView!
-    
+
     let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     /*
      *  UI OUTLET
      */
+    @IBOutlet var vacancyTableView: UITableView!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var trainTypeLabel: UILabel!
     @IBOutlet var depStnLabel: UILabel!
     @IBOutlet var startVacancyButton: UIButton!
     @IBOutlet var arrStnLabel: UILabel!
-
+    @IBOutlet var adView: UIView!
+    
     /*
      *  TrainDataDelegate
      */
@@ -72,6 +74,8 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         super.viewWillAppear(animated)
         trainTypePicker.reloadInputViews()
         
+        self.navigationController?.toolbarHidden = true
+        
         updateLabels()
     }
     
@@ -101,9 +105,9 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
             
             var viewIdentifier = "StnSelectView"
             if app.type == "5" {
-                viewIdentifier = "StnView"
+                viewIdentifier = "StnSearchView"
             }
-            let stnView = self.storyboard!.instantiateViewControllerWithIdentifier(viewIdentifier) as! UITableViewController
+            let stnView = self.storyboard!.instantiateViewControllerWithIdentifier(viewIdentifier)
             self.navigationController?.pushViewController(stnView, animated: true)
             break
         case 3:
@@ -112,9 +116,9 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
             
             var viewIdentifier = "StnSelectView"
             if app.type == "5" {
-                viewIdentifier = "StnView"
+                viewIdentifier = "StnSearchView"
             }
-            let stnView = self.storyboard!.instantiateViewControllerWithIdentifier(viewIdentifier) as! UITableViewController
+            let stnView = self.storyboard!.instantiateViewControllerWithIdentifier(viewIdentifier)
             self.navigationController?.pushViewController(stnView, animated: true)
             break
         default:
