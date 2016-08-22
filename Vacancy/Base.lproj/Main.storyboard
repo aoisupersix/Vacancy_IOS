@@ -8,10 +8,10 @@
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
-        <!--空席照会-->
+        <!--JR Vacancy inquiry-->
         <scene sceneID="Uhu-fB-K0L">
             <objects>
-                <tableViewController storyboardIdentifier="MainView" title="空席照会" id="Jkh-15-fwS" customClass="ViewController" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MainView" title="JR Vacancy inquiry" id="Jkh-15-fwS" customClass="ViewController" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MainTableView" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="static" style="grouped" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="fEQ-4z-K3Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                             <rect key="contentStretch" x="0.0" y="0.0" width="0.65000000000000002" height="1"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                             <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
-                            <state key="normal" title="照会する"/>
+                            <state key="normal" title="Inquery"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                     <real key="value" value="9"/>
@@ -41,7 +41,7 @@
                             </connections>
                         </button>
                         <sections>
-                            <tableViewSection headerTitle="照会条件を入力してください。" id="Ylo-Fc-dWa">
+                            <tableViewSection headerTitle="Please enter a inquery conditions" id="Ylo-Fc-dWa">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DateCell" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Date" editingAccessoryType="checkmark" rowHeight="80" id="pes-QX-bjY">
                                         <rect key="frame" x="0.0" y="50" width="375" height="80"/>
@@ -50,7 +50,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="乗車日時：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJg-YB-SKT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJg-YB-SKT">
                                                     <rect key="frame" x="8" y="19" width="85" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="BeI-j9-nlM"/>
@@ -87,7 +87,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="列車の種類：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rya-Ot-FMA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Train type：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rya-Ot-FMA">
                                                     <rect key="frame" x="8" y="20" width="96" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="96" id="Q9a-8e-BPZ"/>
@@ -124,8 +124,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="乗車駅：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEH-fD-RA3">
-                                                    <rect key="frame" x="8" y="20" width="64" height="40"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entraining point：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEH-fD-RA3">
+                                                    <rect key="frame" x="8" y="20" width="130" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="09X-oI-fUW"/>
                                                     </constraints>
@@ -134,9 +134,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="高松(賛)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5b-pF-4sd">
-                                                    <rect key="frame" x="47" y="29" width="287" height="21"/>
+                                                    <rect key="frame" x="146" y="29" width="188" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="287" id="2gg-wc-Es1"/>
+                                                        <constraint firstAttribute="width" constant="188" id="Wgg-zb-mw9"/>
                                                         <constraint firstAttribute="height" constant="21" id="ZPE-tM-StU"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -146,6 +146,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="y5b-pF-4sd" firstAttribute="centerY" secondItem="QEH-fD-RA3" secondAttribute="centerY" id="5Pz-6i-x0r"/>
+                                                <constraint firstItem="y5b-pF-4sd" firstAttribute="leading" secondItem="QEH-fD-RA3" secondAttribute="trailing" constant="8" id="6F7-wf-cBm"/>
                                                 <constraint firstItem="y5b-pF-4sd" firstAttribute="centerY" secondItem="e0r-Gz-MHr" secondAttribute="centerY" id="CtO-Y4-H3O"/>
                                                 <constraint firstItem="y5b-pF-4sd" firstAttribute="trailing" secondItem="e0r-Gz-MHr" secondAttribute="trailingMargin" id="Fer-dD-yH0"/>
                                                 <constraint firstItem="QEH-fD-RA3" firstAttribute="leading" secondItem="e0r-Gz-MHr" secondAttribute="leadingMargin" id="k68-78-CRM"/>
@@ -160,8 +161,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下車駅：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5V-0V-aLR">
-                                                    <rect key="frame" x="8" y="20" width="64" height="40"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exit station：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5V-0V-aLR">
+                                                    <rect key="frame" x="8" y="20" width="130" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="Vnf-dc-YnK"/>
                                                     </constraints>
@@ -170,8 +171,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="東京" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsf-Cn-8U2">
-                                                    <rect key="frame" x="300" y="29" width="34" height="21"/>
+                                                    <rect key="frame" x="146" y="29" width="188" height="21"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" constant="188" id="Qi5-EJ-D0g"/>
                                                         <constraint firstAttribute="height" constant="21" id="hzO-DF-1DC"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -184,6 +186,7 @@
                                                 <constraint firstItem="W5V-0V-aLR" firstAttribute="centerY" secondItem="Tsf-Cn-8U2" secondAttribute="centerY" id="Md0-Bp-tdw"/>
                                                 <constraint firstItem="W5V-0V-aLR" firstAttribute="centerY" secondItem="dKS-ag-lcy" secondAttribute="centerY" id="OkD-5f-eRH"/>
                                                 <constraint firstItem="W5V-0V-aLR" firstAttribute="leading" secondItem="dKS-ag-lcy" secondAttribute="leadingMargin" id="Q7I-ek-8hh"/>
+                                                <constraint firstItem="Tsf-Cn-8U2" firstAttribute="leading" secondItem="W5V-0V-aLR" secondAttribute="trailing" constant="8" id="j9E-pl-LgZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

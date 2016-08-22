@@ -41,7 +41,7 @@ class StnSearchViewController: UIViewController, UISearchBarDelegate, UITableVie
         bannerView.delegate = self
         bannerView.rootViewController = self
         let gadRequest:GADRequest = GADRequest()
-        gadRequest.testDevices = [DEVICE_ID]
+        //gadRequest.testDevices = [DEVICE_ID]
         bannerView.loadRequest(gadRequest)
         self.view.addSubview(bannerView)
     }
