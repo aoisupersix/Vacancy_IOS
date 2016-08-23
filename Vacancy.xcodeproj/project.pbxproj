@@ -148,7 +148,6 @@
 		E144E11E1D45F250002FADAA /* superexpress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = superexpress.png; sourceTree = "<group>"; };
 		E144E12B1D462412002FADAA /* ResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		E144E12D1D4628B7002FADAA /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
-		E14CED561D656F6F00B6FB42 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		E14CED571D656F6F00B6FB42 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E165348A1D61D88A00CD60B6 /* selectedMaru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectedMaru.png; sourceTree = "<group>"; };
 		E1686C761D574799001F3AA4 /* nashi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nashi.png; sourceTree = "<group>"; };
@@ -176,7 +175,6 @@
 		E1C92E521D3B8C8B000FC366 /* Vacancy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vacancy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C92E551D3B8C8B000FC366 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1C92E571D3B8C8B000FC366 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E1C92E5A1D3B8C8B000FC366 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1C92E5D1D3B8C8B000FC366 /* Vacancy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vacancy.xcdatamodel; sourceTree = "<group>"; };
 		E1C92E5F1D3B8C8B000FC366 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1C92E621D3B8C8B000FC366 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -190,6 +188,7 @@
 		E1C92E881D3BB202000FC366 /* PopUpDatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpDatePickerView.swift; sourceTree = "<group>"; };
 		E1C92E891D3BB202000FC366 /* PopUpPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpPickerView.swift; sourceTree = "<group>"; };
 		E1C92E8A1D3BB202000FC366 /* PopUpPickerViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpPickerViewBase.swift; sourceTree = "<group>"; };
+		E1CCD4041D6B9E6C00EBE1DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ja; path = ja.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1D862021D648A87008CE032 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E1DAE4201D594C57005C7F7D /* LegendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegendViewController.swift; sourceTree = "<group>"; };
 		E1DAE4221D595BF9005C7F7D /* StnSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnSelectViewController.swift; sourceTree = "<group>"; };
@@ -521,7 +520,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = E1C92E491D3B8C8B000FC366;
@@ -799,8 +797,7 @@
 		E1C92E591D3B8C8B000FC366 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E1C92E5A1D3B8C8B000FC366 /* Base */,
-				E14CED561D656F6F00B6FB42 /* ja */,
+				E1CCD4041D6B9E6C00EBE1DB /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

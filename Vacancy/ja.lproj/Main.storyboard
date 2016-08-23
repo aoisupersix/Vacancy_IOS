@@ -8,10 +8,10 @@
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
-        <!--JR Vacancy inquiry-->
+        <!--空席照会-->
         <scene sceneID="Uhu-fB-K0L">
             <objects>
-                <tableViewController storyboardIdentifier="MainView" title="JR Vacancy inquiry" id="Jkh-15-fwS" customClass="ViewController" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MainView" title="空席照会" id="Jkh-15-fwS" customClass="ViewController" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MainTableView" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="static" style="grouped" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="fEQ-4z-K3Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                             <rect key="contentStretch" x="0.0" y="0.0" width="0.65000000000000002" height="1"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                             <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
-                            <state key="normal" title="Inquery"/>
+                            <state key="normal" title="照会する"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                     <real key="value" value="9"/>
@@ -41,7 +41,7 @@
                             </connections>
                         </button>
                         <sections>
-                            <tableViewSection headerTitle="Please enter a inquery conditions" id="Ylo-Fc-dWa">
+                            <tableViewSection headerTitle="照会条件を入力してください。" id="Ylo-Fc-dWa">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DateCell" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Date" editingAccessoryType="checkmark" rowHeight="80" id="pes-QX-bjY">
                                         <rect key="frame" x="0.0" y="50" width="375" height="80"/>
@@ -50,7 +50,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJg-YB-SKT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="乗車日時：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJg-YB-SKT">
                                                     <rect key="frame" x="8" y="19" width="85" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="BeI-j9-nlM"/>
@@ -87,7 +87,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Train type：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rya-Ot-FMA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="列車の種類：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rya-Ot-FMA">
                                                     <rect key="frame" x="8" y="20" width="96" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="96" id="Q9a-8e-BPZ"/>
@@ -124,7 +124,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entraining point：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEH-fD-RA3">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="乗車駅：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEH-fD-RA3">
                                                     <rect key="frame" x="8" y="20" width="130" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="09X-oI-fUW"/>
@@ -161,7 +161,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exit station：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5V-0V-aLR">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下車駅：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5V-0V-aLR">
                                                     <rect key="frame" x="8" y="20" width="130" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="Vnf-dc-YnK"/>
@@ -1210,7 +1210,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="JR空席照会" id="9lq-nh-F80">
+                    <navigationItem key="navigationItem" title="空席照会 for JR" id="9lq-nh-F80">
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="gKH-fg-Skg">
                             <connections>
                                 <segue destination="cml-86-Q9e" kind="show" id="mxT-dC-6hl"/>
