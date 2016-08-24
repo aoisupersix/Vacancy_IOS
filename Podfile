@@ -10,6 +10,7 @@ target ‘Vacancy’ do
     pod ’SwiftSpinner’
     pod ‘Google-Mobile-Ads-SDK’, ‘~> 7.0’
     pod 'DZNEmptyDataSet'
+    pod 'Eureka' 
 end
 
 target ‘VacancyTests’ do

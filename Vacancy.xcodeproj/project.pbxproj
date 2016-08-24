@@ -77,6 +77,8 @@
 		E1DAE4261D5965B7005C7F7D /* SegmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE4251D5965B7005C7F7D /* SegmentType.swift */; };
 		E1DAE4281D596626005C7F7D /* SectionName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE4271D596626005C7F7D /* SectionName.swift */; };
 		E1DAE42C1D596AFC005C7F7D /* SuperExpressName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE42B1D596AFC005C7F7D /* SuperExpressName.swift */; };
+		E1E6AC081D6D9F5900A95C4F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E6AC071D6D9F5900A95C4F /* SettingViewController.swift */; };
+		E1E6AC0A1D6DA60500A95C4F /* SettingName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E6AC091D6DA60500A95C4F /* SettingName.swift */; };
 		E1E8E8661D61BD4A0019057E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8E8651D61BD4A0019057E /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -209,6 +211,8 @@
 		E1DF04D71D63118E00922F58 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E1DF04D91D63119900922F58 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E1DF04DB1D6311D500922F58 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../../../Downloads/GoogleMobileAdsSdkiOS-7.9.1/GoogleMobileAds.framework"; sourceTree = "<group>"; };
+		E1E6AC071D6D9F5900A95C4F /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		E1E6AC091D6DA60500A95C4F /* SettingName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingName.swift; sourceTree = "<group>"; };
 		E1E8E8651D61BD4A0019057E /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -381,6 +385,7 @@
 				E111945F1D640ECB00DBF598 /* BookMarkRootViewController.swift */,
 				E11194611D64151C00DBF598 /* StnSearchViewController.swift */,
 				E1CCD40A1D6D70AC00EBE1DB /* Vacancy-BridgingHeader.h */,
+				E1E6AC071D6D9F5900A95C4F /* SettingViewController.swift */,
 			);
 			path = Vacancy;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 				E1DAE4271D596626005C7F7D /* SectionName.swift */,
 				E1DAE42B1D596AFC005C7F7D /* SuperExpressName.swift */,
 				E12C31D51D63EB8200BE19B6 /* UnitID.swift */,
+				E1E6AC091D6DA60500A95C4F /* SettingName.swift */,
 			);
 			name = "定数";
 			sourceTree = "<group>";
@@ -743,12 +749,14 @@
 				E1C92E8D1D3BB202000FC366 /* PopUpPickerViewBase.swift in Sources */,
 				E11194621D64151C00DBF598 /* StnSearchViewController.swift in Sources */,
 				E111945C1D6404EB00DBF598 /* MainViewController.swift in Sources */,
+				E1E6AC081D6D9F5900A95C4F /* SettingViewController.swift in Sources */,
 				E1C92E5E1D3B8C8B000FC366 /* Vacancy.xcdatamodeld in Sources */,
 				E113890E1D6041A800C0B0B6 /* BookMarkCell.swift in Sources */,
 				E1C92E8C1D3BB202000FC366 /* PopUpPickerView.swift in Sources */,
 				E1DAE4231D595BF9005C7F7D /* StnSelectViewController.swift in Sources */,
 				E1C92E581D3B8C8B000FC366 /* ViewController.swift in Sources */,
 				E1C92E561D3B8C8B000FC366 /* AppDelegate.swift in Sources */,
+				E1E6AC0A1D6DA60500A95C4F /* SettingName.swift in Sources */,
 				E11388CD1D6017D200C0B0B6 /* SearchSettings.swift in Sources */,
 				E144E12C1D462412002FADAA /* ResultCell.swift in Sources */,
 				E12C31D61D63EB8200BE19B6 /* UnitID.swift in Sources */,

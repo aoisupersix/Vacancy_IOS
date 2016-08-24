@@ -58,9 +58,11 @@ public class ResultView: UITableViewController, TrainDataDelegate {
     /*
      *  TableView
      */
+    //セルの数
     override public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return app.name.count
     }
+    //セルの中身
     override public func tableView(tableView: UITableView, cellForRowAtIndexPath: NSIndexPath) -> UITableViewCell {
         let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let cell = tableView.dequeueReusableCellWithIdentifier("ResultTableViewCell", forIndexPath: cellForRowAtIndexPath) as! ResultCell
@@ -75,6 +77,18 @@ public class ResultView: UITableViewController, TrainDataDelegate {
         cell.granNonSmokeImage.image = UIImage(named: app.grnNoSmoke[cellForRowAtIndexPath.row])
         
         return cell
+    }
+    //セルが表示された時
+    override public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let ud = NSUserDefaults.standardUserDefaults()
+        if ud.objectForKey(S_USE_ANIMATION) as! String == S_TRUE {
+            //スライドイン
+            let slideInTransform = CATransform3DTranslate(CATransform3DIdentity, 310, 15, 0)
+            cell.layer.transform = slideInTransform
+            UIView.animateWithDuration(0.5) { () -> Void in
+                cell.layer.transform = CATransform3DIdentity
+            }
+        }
     }
     /*
      *  再度読み込み

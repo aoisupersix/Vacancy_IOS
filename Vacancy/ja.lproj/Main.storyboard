@@ -1212,6 +1212,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="空席照会 for JR" id="9lq-nh-F80">
                         <barButtonItem key="backBarButtonItem" title="空席照会" id="Mt0-0Z-j8f"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="OzF-oR-Y7m">
+                            <connections>
+                                <segue destination="SUv-Gk-iwX" kind="show" id="oET-fN-JCl"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="gKH-fg-Skg">
                             <connections>
                                 <segue destination="cml-86-Q9e" kind="show" id="mxT-dC-6hl"/>
@@ -1225,6 +1230,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="viO-gm-5aL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="962.5" y="593.5"/>
+        </scene>
+        <!--設定-->
+        <scene sceneID="2gL-ND-fn7">
+            <objects>
+                <viewController id="SUv-Gk-iwX" customClass="SettingViewController" customModule="Vacancy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HzC-DK-cpD"/>
+                        <viewControllerLayoutGuide type="bottom" id="67V-W6-EaC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VH5-Ax-BCd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="設定" id="8UP-RP-pLt"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qtw-Xq-z04" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="981" y="1480"/>
         </scene>
     </scenes>
     <resources>

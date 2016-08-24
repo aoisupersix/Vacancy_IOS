@@ -53,6 +53,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         TrainData.read()
         //標準設定
         setDefault()
+        
+        //設定の標準
+        let userdefaults = NSUserDefaults.standardUserDefaults()
+        let UseAnimation = userdefaults.objectForKey(S_USE_ANIMATION)
+        if UseAnimation == nil {
+            //初回起動
+            userdefaults.setObject(S_TRUE, forKey: S_USE_ANIMATION) //アニメーションを使用する
+        }
         return true
     }
 
