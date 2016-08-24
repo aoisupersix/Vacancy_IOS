@@ -189,6 +189,7 @@
 		E1C92E891D3BB202000FC366 /* PopUpPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpPickerView.swift; sourceTree = "<group>"; };
 		E1C92E8A1D3BB202000FC366 /* PopUpPickerViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpPickerViewBase.swift; sourceTree = "<group>"; };
 		E1CCD4041D6B9E6C00EBE1DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ja; path = ja.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E1CCD40A1D6D70AC00EBE1DB /* Vacancy-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vacancy-BridgingHeader.h"; sourceTree = "<group>"; };
 		E1D862021D648A87008CE032 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E1DAE4201D594C57005C7F7D /* LegendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegendViewController.swift; sourceTree = "<group>"; };
 		E1DAE4221D595BF9005C7F7D /* StnSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnSelectViewController.swift; sourceTree = "<group>"; };
@@ -379,6 +380,7 @@
 				E111945B1D6404EB00DBF598 /* MainViewController.swift */,
 				E111945F1D640ECB00DBF598 /* BookMarkRootViewController.swift */,
 				E11194611D64151C00DBF598 /* StnSearchViewController.swift */,
+				E1CCD40A1D6D70AC00EBE1DB /* Vacancy-BridgingHeader.h */,
 			);
 			path = Vacancy;
 			sourceTree = "<group>";
@@ -916,7 +918,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.wpblog.aoisupersix.Vacancy-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Vacancy/Vacancy-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/Vacancy-BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -937,7 +939,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.wpblog.aoisupersix.Vacancy-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Vacancy/Vacancy-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/Vacancy-BridgingHeader.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

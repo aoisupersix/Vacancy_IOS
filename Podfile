@@ -9,6 +9,7 @@ target ‘Vacancy’ do
     pod ‘RealmSwift’
     pod ’SwiftSpinner’
     pod ‘Google-Mobile-Ads-SDK’, ‘~> 7.0’
+    pod 'DZNEmptyDataSet'
 end
 
 target ‘VacancyTests’ do

@@ -9,8 +9,9 @@
 import UIKit
 import RealmSwift
 import GoogleMobileAds
+import DZNEmptyDataSet
 
-class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITableViewDelegate, UITableViewDataSource {
+class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     /*
      *  AppDelegate
      */
@@ -39,6 +40,15 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(BookMarkRootViewController.cellLongPressed(_:)))
         tableView.addGestureRecognizer(longPressRecognizer)
         
+        //デリゲート
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        
+        //TableViewのセルを見えなくする
+        let footerView = UIView()
+        footerView.backgroundColor = UIColor.blackColor()
+        tableView.tableFooterView = footerView
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -61,6 +71,28 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    /*
+     *  EmptyDataSet
+     */
+//    func imageForEmptyDataSet(scrollView: UIScrollView) -> UIImage {
+//        return UIImage(named: "selectedMaru.png")!
+//    }
+    func titleForEmptyDataSet(scrollView: UIScrollView) -> NSAttributedString {
+        let title = "ブックマークが空です。"
+//        let attributed = [
+//            NSForegroundColorAttributeName: UIColor.brownColor(),
+//            NSFontAttributeName: UIFont(name: "HiraKakuProN-W3", size: 10 ?? UIFont.systemFontSize()),
+//            NSParagraphStyleAttributeName: (NSParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle).alignment = NSTextAlignment.Center,
+//            ]
+        
+        return NSAttributedString(string: title)
+    }
+    func descriptionForEmptyDataSet(scrollView: UIScrollView) -> NSAttributedString {
+        let description = "現在の照会条件をブックマークに追加するには、右上の追加ボタンを押してください。"
+        
+        return NSAttributedString(string: description)
     }
     
     /*
