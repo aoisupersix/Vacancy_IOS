@@ -1211,6 +1211,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="空席照会 for JR" id="9lq-nh-F80">
+                        <barButtonItem key="backBarButtonItem" title="空席照会" id="Mt0-0Z-j8f"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="gKH-fg-Skg">
                             <connections>
                                 <segue destination="cml-86-Q9e" kind="show" id="mxT-dC-6hl"/>
