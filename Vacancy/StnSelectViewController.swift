@@ -155,7 +155,7 @@ class StnSelectViewController: UIViewController, UITableViewDelegate, UITableVie
             (action: UIAlertAction!) -> Void in
             //OKボタンクリック
             self.history.removeAll()
-            if self.segment.selectedSegmentIndex == NO_SELECT {
+            if self.segment.selectedSegmentIndex == NO_SELECT || self.segment.selectedSegmentIndex == HISTORY_SELECT {
                 self.list.removeAll()
             }
             self.addHistory("")
