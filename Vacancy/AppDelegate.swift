@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import RealmSwift
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -53,11 +54,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         TrainData.read()
         //標準設定
         setDefault()
+        //Firebase
+        FIRApp.configure()
         
         //設定の標準
         let userdefaults = NSUserDefaults.standardUserDefaults()
+        let UseStnSelect = userdefaults.objectForKey(S_SUPEREXPRESS_USE_STNSELECT)
         let UseAnimation = userdefaults.objectForKey(S_USE_ANIMATION)
-        if UseAnimation == nil {
+        if UseStnSelect == nil || UseAnimation == nil{
             //初回起動
             userdefaults.setObject(S_TRUE, forKey: S_SUPEREXPRESS_USE_STNSELECT) //新幹線の駅名検索の利用
             userdefaults.setObject(S_TRUE, forKey: S_USE_ANIMATION) //アニメーションを使用する

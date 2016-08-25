@@ -44,7 +44,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>RxSwift.xcscheme</key>
+		<key>RxSwift-iOS9.0.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RxSwift-iOS9.3.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -62,12 +67,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>01103D4880D9F42FE651BFBADA3BF956</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>16FB872D0D2D4BA0F378AB34D47CF95F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>30BC7C51C1BCBE442B563A17FD747082</key>
+		<key>17ADBACF8B112A762AAA07B37F7D7056</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,42 +87,42 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>510628D836B12FF6AA693E89BC9E3ADD</key>
+		<key>929F87CA24E1F8B482764117A511B606</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>59746922A30A588D308F6E0D6AC6492E</key>
+		<key>9A5110C73B4D4B398D5D16BFAB3357DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8ABF1768530DC3083F5656C1001C69F8</key>
+		<key>AF1B4A0CE5C06721D1E6D806F44DD78B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8BF60C619AB424D9A576460DA00A499C</key>
+		<key>AF59D082031B4FEF49442112D6E987CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>94DE61748D63DC7EDC3F7342405C2F43</key>
+		<key>B40C5BE0FE1F4E53E4C56C7AA9D06A54</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A2EA929D8D05EECFAC650844526AC8F2</key>
+		<key>BA4E11E52B3666B0B06654C4856EAE2C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DE27EA00F174BE5A284F547E4F265CBC</key>
+		<key>E2DC27CA6C5BEB4A99E6D8F7F29C2B74</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EF2A20F9EF0934D41BED893CB2B76214</key>
+		<key>EF48BA2A211569687359630E5FD1238C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -8,13 +8,38 @@
 
 import UIKit
 import Eureka
+import GoogleMobileAds
 
-class SettingViewController: FormViewController {
+class SettingViewController: FormViewController, GADBannerViewDelegate {
     
     let userdefaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //設定の標準(何らかの拍子にnilになってた時のため）
+        let userdefaults = NSUserDefaults.standardUserDefaults()
+        let UseStnSelect = userdefaults.objectForKey(S_SUPEREXPRESS_USE_STNSELECT)
+        let UseAnimation = userdefaults.objectForKey(S_USE_ANIMATION)
+        if UseStnSelect == nil || UseAnimation == nil{
+            //初回起動
+            userdefaults.setObject(S_TRUE, forKey: S_SUPEREXPRESS_USE_STNSELECT) //新幹線の駅名検索の利用
+            userdefaults.setObject(S_TRUE, forKey: S_USE_ANIMATION) //アニメーションを使用する
+        }
+        
+        //広告
+        var bannerView: GADBannerView = GADBannerView()
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView.frame.origin = CGPointMake(0, self.view.frame.height - bannerView.frame.height)
+        bannerView.frame.size = CGSizeMake(self.view.frame.width, bannerView.frame.height)
+        // AdMobで発行された広告ユニットIDを設定
+        bannerView.adUnitID = UNIT_ID
+        bannerView.delegate = self
+        bannerView.rootViewController = self
+        let gadRequest:GADRequest = GADRequest()
+        //gadRequest.testDevices = [DEVICE_ID]
+        bannerView.loadRequest(gadRequest)
+        self.view.addSubview(bannerView)
         
         //フォーム
         form +++ Section("照会設定")

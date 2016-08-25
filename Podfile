@@ -13,6 +13,7 @@ target ‘Vacancy’ do
     pod 'Eureka' 
     pod 'NendSDK_iOS'
     pod 'NendSDK_iOS_MediationAdapter'
+    pod 'Firebase'
 end
 
 target ‘VacancyTests’ do

@@ -28,6 +28,7 @@
 		E1344FA31D62DA8B00AD18FB /* Icon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1344FA21D62DA8B00AD18FB /* Icon-40@3x.png */; };
 		E1344FAD1D62DE9600AD18FB /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = E1344FAC1D62DE9600AD18FB /* info.png */; };
 		E1344FAF1D62DE9D00AD18FB /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1344FAE1D62DE9D00AD18FB /* info@2x.png */; };
+		E1407D701D6EAAE50061C8B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1407D6F1D6EAAE50061C8B5 /* GoogleService-Info.plist */; };
 		E144E1201D45F250002FADAA /* granclass.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E1141D45F250002FADAA /* granclass.png */; };
 		E144E1211D45F250002FADAA /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E1151D45F250002FADAA /* green.png */; };
 		E144E1221D45F250002FADAA /* ltdexp.png in Resources */ = {isa = PBXBuildFile; fileRef = E144E1161D45F250002FADAA /* ltdexp.png */; };
@@ -142,6 +143,7 @@
 		E1344FA21D62DA8B00AD18FB /* Icon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@3x.png"; sourceTree = "<group>"; };
 		E1344FAC1D62DE9600AD18FB /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		E1344FAE1D62DE9D00AD18FB /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@2x.png"; sourceTree = "<group>"; };
+		E1407D6F1D6EAAE50061C8B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E144E1141D45F250002FADAA /* granclass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = granclass.png; sourceTree = "<group>"; };
 		E144E1151D45F250002FADAA /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		E144E1161D45F250002FADAA /* ltdexp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ltdexp.png; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 		E1C92E541D3B8C8B000FC366 /* Vacancy */ = {
 			isa = PBXGroup;
 			children = (
+				E1407D6F1D6EAAE50061C8B5 /* GoogleService-Info.plist */,
 				E1DAE4241D596549005C7F7D /* 定数 */,
 				E144E1121D45EFB7002FADAA /* Resource */,
 				E101EAC41D44B9DB003789A5 /* Vacancy.entitlements */,
@@ -617,6 +620,7 @@
 				E1686C831D5747DF001F3AA4 /* nashiW.png in Resources */,
 				E17B02891D3D92CE009A41D1 /* kodama.txt in Resources */,
 				E17B028D1D3D92CE009A41D1 /* SuperExpList.txt in Resources */,
+				E1407D701D6EAAE50061C8B5 /* GoogleService-Info.plist in Resources */,
 				E1344F9B1D62D9D600AD18FB /* Icon-Small@3x.png in Resources */,
 				E1686C851D5747DF001F3AA4 /* smokeW.png in Resources */,
 				E1686C8B1D5749C7001F3AA4 /* maru.png in Resources */,
@@ -929,7 +933,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = Vacancy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.wpblog.aoisupersix.Vacancy-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -950,7 +954,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = Vacancy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.wpblog.aoisupersix.Vacancy-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
