@@ -85,8 +85,10 @@ public class ResultView: UITableViewController, TrainDataDelegate {
             //スライドイン
             let slideInTransform = CATransform3DTranslate(CATransform3DIdentity, 310, 15, 0)
             cell.layer.transform = slideInTransform
+            cell.alpha = 0.2
             UIView.animateWithDuration(0.5) { () -> Void in
                 cell.layer.transform = CATransform3DIdentity
+                cell.alpha = 1.0
             }
         }
     }

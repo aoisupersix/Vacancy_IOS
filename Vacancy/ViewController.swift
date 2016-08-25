@@ -35,14 +35,6 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
      */
     var trainData: TrainData?
     
-    /*
-     *  設定画面へ
-     */
-    @IBAction func goSetting(sender: AnyObject) {
-        let url = NSURL(string:UIApplicationOpenSettingsURLString)
-        UIApplication.sharedApplication().openURL(url!)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,7 +57,7 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         trainTypePicker.setSelectedRow()
 
         trainData = TrainData(dele: self)
-        
+                
         //時刻を1分後に変更
         trainData!.updateDate(NSDate(timeInterval: 60, sinceDate: app.date))
 
@@ -104,7 +96,8 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
             app.stnType = 1
             
             var viewIdentifier = "StnSelectView"
-            if app.type == "5" {
+            let userdefaults = NSUserDefaults.standardUserDefaults()
+            if app.type == "5" || userdefaults.objectForKey(S_SUPEREXPRESS_USE_STNSELECT) as! String == S_FALSE{
                 viewIdentifier = "StnSearchView"
             }
             let stnView = self.storyboard!.instantiateViewControllerWithIdentifier(viewIdentifier)
@@ -115,7 +108,8 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
             app.stnType = 2
             
             var viewIdentifier = "StnSelectView"
-            if app.type == "5" {
+            let userdefaults = NSUserDefaults.standardUserDefaults()
+            if app.type == "5" || userdefaults.objectForKey(S_SUPEREXPRESS_USE_STNSELECT) as! String == S_FALSE{
                 viewIdentifier = "StnSearchView"
             }
             let stnView = self.storyboard!.instantiateViewControllerWithIdentifier(viewIdentifier)

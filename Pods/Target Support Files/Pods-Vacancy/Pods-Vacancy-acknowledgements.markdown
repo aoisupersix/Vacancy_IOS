@@ -44,6 +44,14 @@ SOFTWARE.
 
 Copyright 2011 Google Inc. All Rights Reserved.
 
+## NendSDK_iOS
+
+Copyright 2016 F@N Communications, Inc. All Rights Reserved.
+
+## NendSDK_iOS_MediationAdapter
+
+Copyright 2015 F@N Communications, Inc. All Rights Reserved.
+
 ## Realm
 
 TABLE OF CONTENTS

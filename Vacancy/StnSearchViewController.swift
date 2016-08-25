@@ -132,6 +132,17 @@ class StnSearchViewController: UIViewController, UISearchBarDelegate, UITableVie
         //メイン画面に戻る
         navigationController?.popViewControllerAnimated(true)
     }
+    //セルが表示された時
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let ud = NSUserDefaults.standardUserDefaults()
+        if ud.objectForKey(S_USE_ANIMATION) as! String == S_TRUE {
+            //フェードイン
+            cell.alpha = 0.2
+            UIView.animateWithDuration(0.8) { () -> Void in
+                cell.alpha = 1.0
+            }
+        }
+    }
     
     /*
      *  履歴の読み込み

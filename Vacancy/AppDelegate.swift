@@ -59,6 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let UseAnimation = userdefaults.objectForKey(S_USE_ANIMATION)
         if UseAnimation == nil {
             //初回起動
+            userdefaults.setObject(S_TRUE, forKey: S_SUPEREXPRESS_USE_STNSELECT) //新幹線の駅名検索の利用
             userdefaults.setObject(S_TRUE, forKey: S_USE_ANIMATION) //アニメーションを使用する
         }
         return true
@@ -166,6 +167,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 dep_push = items[index].dep_push
                 arr_stn = items[index].arr_stn
                 arr_push = items[index].arr_push
+            }else {
+                type = "1"
+                dep_stn = "東京"
+                dep_push = "4000"
+                arr_stn = "新大阪"
+                arr_push = "6100"
             }
         }
     }

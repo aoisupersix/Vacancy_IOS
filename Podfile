@@ -11,6 +11,8 @@ target ‘Vacancy’ do
     pod ‘Google-Mobile-Ads-SDK’, ‘~> 7.0’
     pod 'DZNEmptyDataSet'
     pod 'Eureka' 
+    pod 'NendSDK_iOS'
+    pod 'NendSDK_iOS_MediationAdapter'
 end
 
 target ‘VacancyTests’ do

@@ -1212,7 +1212,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="空席照会 for JR" id="9lq-nh-F80">
                         <barButtonItem key="backBarButtonItem" title="空席照会" id="Mt0-0Z-j8f"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="OzF-oR-Y7m">
+                        <barButtonItem key="leftBarButtonItem" title="設定" id="OzF-oR-Y7m">
                             <connections>
                                 <segue destination="SUv-Gk-iwX" kind="show" id="oET-fN-JCl"/>
                             </connections>

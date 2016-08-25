@@ -16,3 +16,13 @@ let S_FALSE = "FALSE"
  *  アニメーションを使用する
  */
 let S_USE_ANIMATION = "USE_ANIMATION"
+
+/*
+ *  新幹線の駅名は駅名リストから選択する
+ */
+let S_SUPEREXPRESS_USE_STNSELECT = "SUPEREXPRESS_USE_STNSELECT"
+
+/*
+ *  起動時の照会条件をデフォルトに戻す
+ */
+let S_STARTUP_SET_DEFAULT = "STARTUP_SET_DEFAULT"
