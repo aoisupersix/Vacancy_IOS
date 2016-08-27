@@ -204,37 +204,44 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
      */
     
     @IBAction func addBookMark(sender: AnyObject) {
-        //確認アラートを表示
-        let alert = UIAlertController(title: "照会条件を追加", message: "現在の照会条件：\n\n\(app.month)月\(app.day)日 \(app.hour):\(app.minute)発\n\(app.trainType[Int(app.type)! - 1])\n\(app.dep_stn) → \(app.arr_stn)\n\nをブックマークに追加します。分かりやすいブックマーク名を入力してください。", preferredStyle: .Alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {
-            (action: UIAlertAction!) -> Void in
-            //OKボタンクリック
-            let textFields:Array<UITextField>? = alert.textFields as Array<UITextField>?
+        let userdefaults = NSUserDefaults.standardUserDefaults()
+        if userdefaults.objectForKey(S_BOOKMARK_AUTOCOMPLETE) as! String == S_FALSE {
+            //確認アラートを表示
+            let alert = UIAlertController(title: "照会条件を追加", message: "現在の照会条件：\n\n\(app.month)月\(app.day)日 \(app.hour):\(app.minute)発\n\(app.trainType[Int(app.type)! - 1])\n\(app.dep_stn) → \(app.arr_stn)\n\nをブックマークに追加します。分かりやすいブックマーク名を入力してください。", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {
+                (action: UIAlertAction!) -> Void in
+                //OKボタンクリック
+                let textFields:Array<UITextField>? = alert.textFields as Array<UITextField>?
+                
+                
+                print(textFields![0].text)
+                if textFields![0].text == ""{
+                    //条件名未入力
+                    let alert = UIAlertController(title: "エラー", message: "ブックマーク名が未入力です。", preferredStyle: .Alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    alert.addAction(defaultAction)
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }else {
+                    //ブックマークに追加
+                    self.addRealm(textFields![0].text!)
+                    self.tableView.reloadData()
+                }
+            })
+            let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil)
             
+            alert.addAction(defaultAction)
+            alert.addAction(cancelAction)
             
-            print(textFields![0].text)
-            if textFields![0].text == ""{
-                //条件名未入力
-                let alert = UIAlertController(title: "エラー", message: "ブックマーク名が未入力です。", preferredStyle: .Alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                alert.addAction(defaultAction)
-                self.presentViewController(alert, animated: true, completion: nil)
-            }else {
-                //ブックマークに追加
-                self.addRealm(textFields![0].text!)
-                self.tableView.reloadData()
-            }
-        })
-        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil)
-        
-        alert.addAction(defaultAction)
-        alert.addAction(cancelAction)
-        
-        alert.addTextFieldWithConfigurationHandler({(text: UITextField!) -> Void in
-            text.placeholder = "ブックマーク名を入力"
-        })
-        
-        self.presentViewController(alert, animated: true, completion: nil)
+            alert.addTextFieldWithConfigurationHandler({(text: UITextField!) -> Void in
+                text.placeholder = "ブックマーク名を入力"
+            })
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+        }else {
+            //簡略入力
+            addRealm("ブックマーク\(Items!.count + 1)")
+            tableView.reloadData()
+        }
     }
     
     /*

@@ -21,9 +21,11 @@ class SettingViewController: FormViewController, GADBannerViewDelegate {
         let userdefaults = NSUserDefaults.standardUserDefaults()
         let UseStnSelect = userdefaults.objectForKey(S_SUPEREXPRESS_USE_STNSELECT)
         let UseAnimation = userdefaults.objectForKey(S_USE_ANIMATION)
-        if UseStnSelect == nil || UseAnimation == nil{
+        let UseAutoComplete = userdefaults.objectForKey(S_BOOKMARK_AUTOCOMPLETE)
+        if UseStnSelect == nil || UseAnimation == nil || UseAutoComplete == nil{
             //初回起動
             userdefaults.setObject(S_TRUE, forKey: S_SUPEREXPRESS_USE_STNSELECT) //新幹線の駅名検索の利用
+            userdefaults.setObject(S_FALSE, forKey: S_BOOKMARK_AUTOCOMPLETE) //ブックマーク追加の簡略化
             userdefaults.setObject(S_TRUE, forKey: S_USE_ANIMATION) //アニメーションを使用する
         }
         
@@ -51,6 +53,16 @@ class SettingViewController: FormViewController, GADBannerViewDelegate {
                         self.userdefaults.setObject(S_TRUE, forKey: S_SUPEREXPRESS_USE_STNSELECT)
                     }else {
                         self.userdefaults.setObject(S_FALSE, forKey: S_SUPEREXPRESS_USE_STNSELECT)
+                    }
+                })
+            <<< SwitchRow(S_BOOKMARK_AUTOCOMPLETE) {
+                $0.title = "ブックマーク追加の簡略化"
+                $0.value = userdefaults.objectForKey(S_BOOKMARK_AUTOCOMPLETE) as! String == S_TRUE ? true : false
+                }.onChange({ (Switchrow) in
+                    if Switchrow.value == true{
+                        self.userdefaults.setObject(S_TRUE, forKey: S_BOOKMARK_AUTOCOMPLETE)
+                    }else {
+                        self.userdefaults.setObject(S_FALSE, forKey: S_BOOKMARK_AUTOCOMPLETE)
                     }
                 })
             <<< ButtonRow(S_STARTUP_SET_DEFAULT) {

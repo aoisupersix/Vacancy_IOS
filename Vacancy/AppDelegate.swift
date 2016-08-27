@@ -64,6 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UseStnSelect == nil || UseAnimation == nil{
             //初回起動
             userdefaults.setObject(S_TRUE, forKey: S_SUPEREXPRESS_USE_STNSELECT) //新幹線の駅名検索の利用
+            userdefaults.setObject(S_FALSE, forKey: S_BOOKMARK_AUTOCOMPLETE) //ブックマーク追加の簡略化
             userdefaults.setObject(S_TRUE, forKey: S_USE_ANIMATION) //アニメーションを使用する
         }
         return true
