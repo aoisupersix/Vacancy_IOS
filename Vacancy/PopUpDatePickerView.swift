@@ -86,7 +86,6 @@ class PopUpDatePickerView: PopUpPickerViewBase {
     }
 
     override func endPicker() {
-        app.date = pickerView.date
         self.datepickerDelegate?.endPicker()
     }
 

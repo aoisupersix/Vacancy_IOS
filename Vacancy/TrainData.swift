@@ -446,6 +446,7 @@ class TrainData {
         
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH時mm分"
+        print("Update: \(formatter.stringFromDate(app.date))")
         let date = formatter.stringFromDate(app.date)
         
         //変数代入

@@ -59,11 +59,12 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         trainData = TrainData(dele: self)
                 
         //時刻を1分後に変更
-        trainData!.updateDate(NSDate(timeInterval: 60, sinceDate: app.date))
+        //trainData!.updateDate(NSDate(timeInterval: 60, sinceDate: app.date))
 
     }
     override func viewWillAppear(animated: Bool){
         super.viewWillAppear(animated)
+        datepicker.pickerView.setDate(app.date, animated: false)
         trainTypePicker.reloadInputViews()
         
         self.navigationController?.toolbarHidden = true
@@ -72,6 +73,7 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
     }
     
     override func viewWillDisappear(animated: Bool) {
+        print("viewDisappear:\(app.day)")
         self.datepicker.endPicker()
         self.trainTypePicker.endPicker()
     }
@@ -88,7 +90,6 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         case 1:
             //列車の種類変更
             self.datepicker.hidePicker()
-
             trainTypePicker.showPicker()
             break
         case 2:
@@ -144,6 +145,7 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
      * 乗車日選択メソッド
      */
     func endPicker(){
+        app.date = datepicker.pickerView.date
         updateLabels()
         datepicker.hidePicker()
     }
@@ -181,6 +183,7 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
      */
     func completeConnection() {
         dispatch_async(dispatch_get_main_queue()){
+            print("app.day=\(self.app.day)")
             let resultView = self.storyboard!.instantiateViewControllerWithIdentifier("ResultView") as! UITableViewController
             self.navigationController?.pushViewController(resultView, animated: true)
         }

@@ -52,6 +52,7 @@ public class ResultView: UITableViewController, TrainDataDelegate {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     override public func viewWillAppear(animated: Bool) {
+        print("viewWillAppear：\(app.day)")
         infoLabel.text = "\(app.month)月\(app.day)日 \(app.hour):\(app.minute)発 \(app.dep_stn) → \(app.arr_stn)"
     }
     
@@ -64,7 +65,6 @@ public class ResultView: UITableViewController, TrainDataDelegate {
     }
     //セルの中身
     override public func tableView(tableView: UITableView, cellForRowAtIndexPath: NSIndexPath) -> UITableViewCell {
-        let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let cell = tableView.dequeueReusableCellWithIdentifier("ResultTableViewCell", forIndexPath: cellForRowAtIndexPath) as! ResultCell
         
         cell.trainInfoLabel.text = "\(app.dep_stn)(\(app.depTime[cellForRowAtIndexPath.row]))　→　\(app.arr_stn)(\(app.arrTime[cellForRowAtIndexPath.row]))"

@@ -44,7 +44,7 @@ class SettingViewController: FormViewController, GADBannerViewDelegate {
         //フォーム
         form +++ Section("照会設定")
             <<< SwitchRow(S_SUPEREXPRESS_USE_STNSELECT) {
-                $0.title = "新幹線の駅名は駅名リストから選択する"
+                $0.title = "新幹線の駅名は駅名リストから選ぶ"
                 $0.value = userdefaults.objectForKey(S_SUPEREXPRESS_USE_STNSELECT) as! String == S_TRUE ? true : false
                 }.onChange({ (Switchrow) in
                     if Switchrow.value == true{
