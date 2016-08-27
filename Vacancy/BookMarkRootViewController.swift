@@ -185,7 +185,6 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
                 (action: UIAlertAction!) -> Void in
                 //削除
                 self.deleteItem(indexPath!.row)
-                self.deleteDefault()
                 self.tableView.reloadData()
             })
             let cancelAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil)
@@ -292,6 +291,11 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
         let items = realm.objects(SearchSettings)
         try! realm.write {
             realm.delete(items[index])
+        }
+        
+        //もしデフォルトだったらそれも削除
+        if index == loadDefault() {
+            deleteDefault()
         }
     }
     
