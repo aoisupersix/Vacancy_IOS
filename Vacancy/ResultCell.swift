@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ResultCell: UITableViewCell{
+open class ResultCell: UITableViewCell{
     @IBOutlet var trainInfoLabel: UILabel!
     @IBOutlet var trainImage: UIImageView!
     @IBOutlet var trainNameLabel: UILabel!

@@ -20,20 +20,20 @@ class PopUpDatePickerView: PopUpPickerViewBase {
     
     var datepickerDelegate: PopUpDatePickerViewDelegate?
     
-    let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let app: AppDelegate = UIApplication.shared.delegate as! AppDelegate
 
     let pickerView: UIDatePicker = {
         let p = UIDatePicker()
-        p.datePickerMode = .DateAndTime
+        p.datePickerMode = .dateAndTime
         p.minuteInterval = 1
-        p.backgroundColor = UIColor.whiteColor()
-        let appdel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        p.setDate(appdel.date, animated: true)
+        p.backgroundColor = UIColor.white
+        let appdel: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        p.setDate(appdel.date as Date, animated: true)
         return p
     }()
 
-    lazy var itemSelected: Driver<NSDate> = {
-        return self.doneButtonItem.rx_tap.asDriver()
+    lazy var itemSelected: Driver<Date> = {
+        return self.doneButtonItem.rx.tap.asDriver()
             .map { [unowned self] _ in
                 self.hidePicker()
                 return self.pickerView.date
@@ -51,7 +51,7 @@ class PopUpDatePickerView: PopUpPickerViewBase {
         initFunc()
     }
 
-    convenience init(min: NSDate?, max: NSDate?, initial: NSDate?) {
+    convenience init(min: Date?, max: Date?, initial: Date?) {
         self.init()
         pickerView.minimumDate = min
         pickerView.maximumDate = max
@@ -65,20 +65,20 @@ class PopUpDatePickerView: PopUpPickerViewBase {
         initFunc()
     }
 
-    private func initFunc() {
-        let screenSize = UIScreen.mainScreen().bounds.size
-        pickerView.bounds = CGRectMake(0, 0, screenSize.width, 216)
-        pickerView.frame = CGRectMake(0, 44, screenSize.width, 216)
+    fileprivate func initFunc() {
+        let screenSize = UIScreen.main.bounds.size
+        pickerView.bounds = CGRect(x: 0, y: 0, width: screenSize.width, height: 216)
+        pickerView.frame = CGRect(x: 0, y: 44, width: screenSize.width, height: 216)
 
         self.addSubview(pickerView)
     }
 
     // MARK: Actions
     override func showPicker() {
-        let screenSize = UIScreen.mainScreen().bounds.size
-        UIView.animateWithDuration(0.2) {
-            self.frame = CGRectMake(0, self.parentViewHeight() - 260.0, screenSize.width, 260.0)
-        }
+        let screenSize = UIScreen.main.bounds.size
+        UIView.animate(withDuration: 0.2, animations: {
+            self.frame = CGRect(x: 0, y: self.parentViewHeight() - 260.0, width: screenSize.width, height: 260.0)
+        }) 
     }
 
     override func cancelPicker() {

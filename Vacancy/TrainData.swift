@@ -11,7 +11,7 @@ import SwiftSpinner
 
 protocol TrainDataDelegate {
     func completeConnection()   //通信成功し、結果が返ってきた際のdelegate
-    func showAlert(title: String, mes: String)  //通信失敗、もしくは結果がエラーの際のdelegate
+    func showAlert(_ title: String, mes: String)  //通信失敗、もしくは結果がエラーの際のdelegate
 }
 
 class TrainData {
@@ -61,12 +61,12 @@ class TrainData {
     /*
      *  appdelegate
      */
-    let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let app: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
     /*
      *  日付のバックアップ
      */
-    var dateBackup: NSDate?
+    var dateBackup: Date?
     
     init(dele: TrainDataDelegate) {
         delegate = dele
@@ -77,13 +77,13 @@ class TrainData {
      */
     static func read(){
         //Pushcode読み込み
-        let csvBundle = NSBundle.mainBundle().pathForResource("pushcode", ofType: "csv")
+        let csvBundle = Bundle.main.path(forResource: "pushcode", ofType: "csv")
         do {
-            var csvData: String = try String(contentsOfFile: csvBundle!, encoding: NSUTF8StringEncoding)
-            csvData = csvData.stringByReplacingOccurrencesOfString("\r", withString: "")
-            let csvArray = csvData.componentsSeparatedByString("\n")
+            var csvData: String = try String(contentsOfFile: csvBundle!, encoding: String.Encoding.utf8)
+            csvData = csvData.replacingOccurrences(of: "\r", with: "")
+            let csvArray = csvData.components(separatedBy: "\n")
             for line in csvArray {
-                let parts = line.componentsSeparatedByString(",")
+                let parts = line.components(separatedBy: ",")
                 pushcode[parts[0]] = parts[1]
             }
         } catch let error as NSError {
@@ -92,10 +92,10 @@ class TrainData {
         
         //駅名リスト読み込み
         for index in 0..<SUPEREXPRESS_NAME.count {
-            let txtBundle = NSBundle.mainBundle().pathForResource(SUPEREXPRESS_NAME[index], ofType: "txt")
+            let txtBundle = Bundle.main.path(forResource: SUPEREXPRESS_NAME[index], ofType: "txt")
             do {
-                let listData: String = try String(contentsOfFile: txtBundle!, encoding: NSUTF8StringEncoding)
-                let list = listData.componentsSeparatedByString("\n")
+                let listData: String = try String(contentsOfFile: txtBundle!, encoding: String.Encoding.utf8)
+                let list = listData.components(separatedBy: "\n")
                 for line in list {
                     stnList[index].append(line)
                 }
@@ -105,10 +105,10 @@ class TrainData {
         }
         
         //特急名読み込み
-        var txtBundle = NSBundle.mainBundle().pathForResource("LtdExpList", ofType: "txt")
+        var txtBundle = Bundle.main.path(forResource: "LtdExpList", ofType: "txt")
         do {
-            let listData: String = try String(contentsOfFile: txtBundle!, encoding: NSUTF8StringEncoding)
-            let list = listData.componentsSeparatedByString("\n")
+            let listData: String = try String(contentsOfFile: txtBundle!, encoding: String.Encoding.utf8)
+            let list = listData.components(separatedBy: "\n")
             for line in list {
                 ltdExpList.append(line)
             }
@@ -117,10 +117,10 @@ class TrainData {
         }
         
         //快速名読み込み
-        txtBundle = NSBundle.mainBundle().pathForResource("RapidList", ofType: "txt")
+        txtBundle = Bundle.main.path(forResource: "RapidList", ofType: "txt")
         do {
-            let listData: String = try String(contentsOfFile: txtBundle!, encoding: NSUTF8StringEncoding)
-            let list = listData.componentsSeparatedByString("\n")
+            let listData: String = try String(contentsOfFile: txtBundle!, encoding: String.Encoding.utf8)
+            let list = listData.components(separatedBy: "\n")
             for line in list {
                 rapidList.append(line)
             }
@@ -142,21 +142,21 @@ class TrainData {
         
         //URL作成
         let urlString = "http://www1.jr.cyberstation.ne.jp/csws/Vacancy.do?script=0&month=\(app.month)&day=\(app.day)&hour=\(app.hour)&minute=\(app.minute)&train=\(app.type)&dep_stn=\(dep_stn)&arr_stn=\(arr_stn)&dep_stnpb=\(app.dep_push)&arr_stnpb=\(app.arr_push)"
-        let request = NSMutableURLRequest(URL: NSURL(string: urlString.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLFragmentAllowedCharacterSet() )!)!)
+        var request = URLRequest(url: URL(string: urlString.addingPercentEncoding( withAllowedCharacters: CharacterSet.urlFragmentAllowed )!)!)
         
         //設定
-        print(urlString.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLFragmentAllowedCharacterSet() )!)
-        request.HTTPMethod = "POST"
+        print(urlString.addingPercentEncoding( withAllowedCharacters: CharacterSet.urlFragmentAllowed )!)
+        request.httpMethod = "POST"
         request.addValue("http://www1.jr.cyberstation.ne.jp/csws/Vacancy.do", forHTTPHeaderField: "Referer")
-        app.url = request.URL
+        app.url = request.url
         
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {data, response, error in
+        let task = URLSession.shared.dataTask(with: request, completionHandler: {data, response, error in
             if (error == nil) {
                 /*
                  *  通信成功
                  */
                 //print(NSString(data: data!, encoding: NSShiftJISStringEncoding))
-                self.setResult(NSString(data: data!, encoding: NSShiftJISStringEncoding)! as String)
+                self.setResult(NSString(data: data!, encoding: String.Encoding.shiftJIS.rawValue)! as String)
                 
                 sleep(1)
                 SwiftSpinner.hide()
@@ -199,10 +199,10 @@ class TrainData {
     /*
      *  駅名のカッコを削除
      */
-    func deleteKakko(stn: String) -> String {
+    func deleteKakko(_ stn: String) -> String {
         var change = stn
-        if (stn.rangeOfString("(") != nil) {
-            change = stn.substringToIndex(stn.endIndex.advancedBy(-3))
+        if (stn.range(of: "(") != nil) {
+            change = stn.substring(to: stn.characters.index(stn.endIndex, offsetBy: -3))
         }
         return change
     }
@@ -210,16 +210,16 @@ class TrainData {
     /*
      *  HTMLセット
      */
-    func setResult(res: String) {
+    func setResult(_ res: String) {
         
         //結果確認
-        if res.containsString("ただいま、受け付け時間外のため、ご希望の情報の照会はできません。"){
+        if res.contains("ただいま、受け付け時間外のため、ご希望の情報の照会はできません。"){
             documentType = 1
-        }else if res.containsString("該当区間を運転している空席照会可能な列車はありません。") {
+        }else if res.contains("該当区間を運転している空席照会可能な列車はありません。") {
             documentType = 2
-        }else if res.containsString("ご希望の乗車日の空席状況は照会できません。") {
+        }else if res.contains("ご希望の乗車日の空席状況は照会できません。") {
             documentType = 3
-        }else if res.containsString("ご希望の情報はお取り扱いできません。") {
+        }else if res.contains("ご希望の情報はお取り扱いできません。") {
             documentType = 4
         }else {
             documentType = 0
@@ -242,108 +242,108 @@ class TrainData {
         app.greSmoke.removeAll()
         app.grnNoSmoke.removeAll()
         
-        var pos = result!.rangeOfString(TrainData.searchTrainName) //最初
+        var pos = result!.range(of: TrainData.searchTrainName) //最初
         var parts = result!
 
         if app.type == "3" || app.type == "4" {
             //東北新幹線は喫煙席が存在しない
-            while(pos != nil && parts.substringWithRange(pos!.endIndex..<pos!.endIndex.advancedBy(1)) != "グ"){
+            while(pos != nil && parts.substring(with: pos!.upperBound..<parts.index(pos!.upperBound, offsetBy: 1)) != "グ"){
                 
-                parts = parts.substringFromIndex(pos!.endIndex)   //HTMLを分解
+                parts = parts.substring(from: pos!.upperBound)   //HTMLを分解
                 
                 //列車名取得
-                app.name.append(parts.substringWithRange(parts.startIndex..<parts.rangeOfString(TrainData.searchNameEnd)!.endIndex.advancedBy(-1)))
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchNameEnd)!.endIndex)  //HTMLを分解
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchTrainVacancy)!.endIndex)
+                app.name.append(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1)))
+                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
+                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
                 
                 //列車アイコン
                 app.trainIcon.append(changeIcon(app.name[app.name.count - 1]))
                 
                 //出発時刻取得
-                app.depTime.append(parts.substringWithRange(parts.startIndex..<parts.rangeOfString(TrainData.searchNameEnd)!.endIndex.advancedBy(-1)))
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchNameEnd)!.endIndex)  //HTMLを分解
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchTrainVacancy)!.endIndex)
+                app.depTime.append(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1)))
+                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
+                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
                 
                 //到着時刻取得
-                app.arrTime.append(parts.substringWithRange(parts.startIndex..<parts.rangeOfString(TrainData.searchNameEnd)!.endIndex.advancedBy(-1)))
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchNameEnd)!.endIndex)  //HTMLを分解
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchTrainVacancy)!.endIndex)
+                app.arrTime.append(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1)))
+                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
+                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
                 
                 //禁煙指定席取得
-                app.resNoSmoke.append(changeRes(parts.substringWithRange(parts.startIndex..<parts.rangeOfString(TrainData.searchNameEnd)!.endIndex.advancedBy(-1))))
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchNameEnd)!.endIndex)  //HTMLを分解
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchTrainVacancy)!.endIndex)
+                app.resNoSmoke.append(changeRes(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1))))
+                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
+                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
                 
                 //喫煙指定席(未設定)
                 app.resSmoke.append(changeRes("-"))
                 
                 //禁煙グリーン取得
-                app.greNoSmoke.append(changeRes(parts.substringWithRange(parts.startIndex..<parts.rangeOfString(TrainData.searchNameEnd)!.endIndex.advancedBy(-1))))
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchNameEnd)!.endIndex)  //HTMLを分解
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchTrainVacancy)!.endIndex)
+                app.greNoSmoke.append(changeRes(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1))))
+                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
+                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
                 
                 //喫煙グリーン(未設定)
                 app.greSmoke.append(changeRes("-"))
                 
                 //グランクラス
-                app.grnNoSmoke.append(changeRes(parts.substringWithRange(parts.startIndex..<parts.rangeOfString(TrainData.searchNameEnd)!.endIndex.advancedBy(-1))))
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchNameEnd)!.endIndex)  //HTMLを分解
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchTrainVacancy)!.endIndex)
+                app.grnNoSmoke.append(changeRes(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1))))
+                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
+                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
                 
                 //pos更新
-                pos = parts.rangeOfString(TrainData.searchTrainName)
+                pos = parts.range(of: TrainData.searchTrainName)
             }
 
             
         }else{
             //東北新幹線以外の列車にはグランクラスが存在しない
-            while(pos != nil && parts.substringWithRange(pos!.endIndex..<pos!.endIndex.advancedBy(1)) != "グ"){
+            while(pos != nil && parts.substring(with: pos!.upperBound..<parts.index(pos!.upperBound, offsetBy: 1)) != "グ"){
 
-                parts = parts.substringFromIndex(pos!.endIndex)   //HTMLを分解
+                parts = parts.substring(from: pos!.upperBound)   //HTMLを分解
                 
                 //列車名取得
-                app.name.append(parts.substringWithRange(parts.startIndex..<parts.rangeOfString(TrainData.searchNameEnd)!.endIndex.advancedBy(-1)))
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchNameEnd)!.endIndex)  //HTMLを分解
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchTrainVacancy)!.endIndex)
+                app.name.append(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1)))
+                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
+                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
                 
                 //列車アイコン
                 app.trainIcon.append(changeIcon(app.name[app.name.count - 1]))
                 
                 //出発時刻取得
-                app.depTime.append(parts.substringWithRange(parts.startIndex..<parts.rangeOfString(TrainData.searchNameEnd)!.endIndex.advancedBy(-1)))
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchNameEnd)!.endIndex)  //HTMLを分解
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchTrainVacancy)!.endIndex)
+                app.depTime.append(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1)))
+                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
+                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
 
                 //到着時刻取得
-                app.arrTime.append(parts.substringWithRange(parts.startIndex..<parts.rangeOfString(TrainData.searchNameEnd)!.endIndex.advancedBy(-1)))
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchNameEnd)!.endIndex)  //HTMLを分解
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchTrainVacancy)!.endIndex)
+                app.arrTime.append(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1)))
+                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
+                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
 
                 //禁煙指定席取得
-                app.resNoSmoke.append(changeRes(parts.substringWithRange(parts.startIndex..<parts.rangeOfString(TrainData.searchNameEnd)!.endIndex.advancedBy(-1))))
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchNameEnd)!.endIndex)  //HTMLを分解
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchTrainVacancy)!.endIndex)
+                app.resNoSmoke.append(changeRes(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1))))
+                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
+                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
                 
                 //喫煙指定席取得
-                app.resSmoke.append(changeRes(parts.substringWithRange(parts.startIndex..<parts.rangeOfString(TrainData.searchNameEnd)!.endIndex.advancedBy(-1))))
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchNameEnd)!.endIndex)  //HTMLを分解
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchTrainVacancy)!.endIndex)
+                app.resSmoke.append(changeRes(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1))))
+                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
+                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
                 
                 //禁煙グリーン取得
-                app.greNoSmoke.append(changeRes(parts.substringWithRange(parts.startIndex..<parts.rangeOfString(TrainData.searchNameEnd)!.endIndex.advancedBy(-1))))
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchNameEnd)!.endIndex)  //HTMLを分解
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchTrainVacancy)!.endIndex)
+                app.greNoSmoke.append(changeRes(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1))))
+                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
+                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
                 
                 //喫煙グリーン取得
-                app.greSmoke.append(changeRes(parts.substringWithRange(parts.startIndex..<parts.rangeOfString(TrainData.searchNameEnd)!.endIndex.advancedBy(-1))))
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchNameEnd)!.endIndex)  //HTMLを分解
-                parts = parts.substringFromIndex(parts.rangeOfString(TrainData.searchTrainVacancy)!.endIndex)
+                app.greSmoke.append(changeRes(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1))))
+                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
+                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
                 
                 //グランクラス(未設定)
                 app.grnNoSmoke.append(changeRes("-"))
                 
                 //pos更新
-                pos = parts.rangeOfString(TrainData.searchTrainName)
+                pos = parts.range(of: TrainData.searchTrainName)
                 print("pos:\(pos)")
             }
             
@@ -385,7 +385,7 @@ class TrainData {
     /*
      *  空席情報をリソースに変換
      */
-    func changeRes(str: String) -> String {
+    func changeRes(_ str: String) -> String {
         var res = ""
         switch(str){
             case "-":
@@ -413,18 +413,18 @@ class TrainData {
     /*
      *  列車のアイコンを指定
      */
-    func changeIcon(trainName: String) -> String {
+    func changeIcon(_ trainName: String) -> String {
         var res = ""
         if app.type == "5" {
             //在来線の場合
             for line in TrainData.ltdExpList {
-                if trainName.containsString(line) {
+                if trainName.contains(line) {
                     res = "ltdexp.png"
                     break
                 }
             }
             for line in TrainData.rapidList {
-                if trainName.containsString(line) {
+                if trainName.contains(line) {
                     res = "rapid.png"
                     break
                 }
@@ -439,20 +439,20 @@ class TrainData {
     /*
      *  時刻を更新
      */
-    func updateDate(date: NSDate) {
+    func updateDate(_ date: Date) {
         //appに代入
-        dateBackup = app.date
+        dateBackup = app.date as Date
         app.date = date
         
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH時mm分"
-        print("Update: \(formatter.stringFromDate(app.date))")
-        let date = formatter.stringFromDate(app.date)
+        print("Update: \(formatter.string(from: app.date as Date))")
+        let date = formatter.string(from: app.date as Date)
         
         //変数代入
-        app.month = date.substringWithRange(date.startIndex.advancedBy(5)..<date.endIndex.advancedBy(-10))
-        app.day = date.substringWithRange(date.startIndex.advancedBy(8)..<date.endIndex.advancedBy(-7))
-        app.hour = date.substringWithRange(date.startIndex.advancedBy(11)..<date.endIndex.advancedBy(-4))
-        app.minute = date.substringWithRange(date.startIndex.advancedBy(14)..<date.endIndex.advancedBy(-1))
+        app.month = date.substring(with: date.characters.index(date.startIndex, offsetBy: 5)..<date.characters.index(date.endIndex, offsetBy: -10))
+        app.day = date.substring(with: date.characters.index(date.startIndex, offsetBy: 8)..<date.characters.index(date.endIndex, offsetBy: -7))
+        app.hour = date.substring(with: date.characters.index(date.startIndex, offsetBy: 11)..<date.characters.index(date.endIndex, offsetBy: -4))
+        app.minute = date.substring(with: date.characters.index(date.startIndex, offsetBy: 14)..<date.characters.index(date.endIndex, offsetBy: -1))
     }
 }

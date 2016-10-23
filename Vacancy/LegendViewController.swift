@@ -13,7 +13,7 @@ class LegendViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         navigationController?.setToolbarHidden(true, animated: true)
     }
     override func didReceiveMemoryWarning() {

@@ -54,7 +54,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>RxTests.xcscheme</key>
+		<key>RxTest.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -67,11 +67,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>01103D4880D9F42FE651BFBADA3BF956</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>16FB872D0D2D4BA0F378AB34D47CF95F</key>
 		<dict>
 			<key>primary</key>
@@ -82,7 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4332352E97A37C729DC7D9B3B8A4BB15</key>
+		<key>77E904BF270234E94FC338660C2AD1C9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>873B1A0D84F1FF2C0ECD8A2440705B43</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,7 +97,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AF1B4A0CE5C06721D1E6D806F44DD78B</key>
+		<key>A4B41E41C57FA874DA0D6D2100F3C0A9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AB1037E55504BA883216604F84DD0E93</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,12 +117,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BA4E11E52B3666B0B06654C4856EAE2C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E2DC27CA6C5BEB4A99E6D8F7F29C2B74</key>
+		<key>E22062A36F3E75E882033F84C9ABCA39</key>
 		<dict>
 			<key>primary</key>
 			<true/>

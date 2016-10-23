@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ResultView: UITableViewController, TrainDataDelegate {
+open class ResultView: UITableViewController, TrainDataDelegate {
     
     @IBOutlet var resultTableView: UITableView!
     @IBOutlet var infoLabel: UILabel!
@@ -22,9 +22,9 @@ public class ResultView: UITableViewController, TrainDataDelegate {
     /*
      *  appdelegate
      */
-    let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let app: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    override public func viewDidLoad(){
+    override open func viewDidLoad(){
         super.viewDidLoad()
         
         trainData = TrainData(dele: self)
@@ -34,24 +34,24 @@ public class ResultView: UITableViewController, TrainDataDelegate {
          */
         let refresh = UIRefreshControl()
         refresh.attributedTitle = NSAttributedString(string: "読み込み中")
-        refresh.tintColor = UIColor.blueColor()
-        refresh.addTarget(self, action: #selector(ResultView.refreshTable), forControlEvents: UIControlEvents.ValueChanged)
+        refresh.tintColor = UIColor.blue
+        refresh.addTarget(self, action: #selector(ResultView.refreshTable), for: UIControlEvents.valueChanged)
         self.refreshControl = refresh
     }
-    override public func viewDidAppear(animated: Bool) {
+    override open func viewDidAppear(_ animated: Bool) {
         self.navigationController?.setToolbarHidden(false, animated: true)
     }
     func refreshTable() {
         trainData!.updateDate(app.date)
         trainData!.post()
     }
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    @IBAction func goBack(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func goBack(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
-    override public func viewWillAppear(animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear：\(app.day)")
         infoLabel.text = "\(app.month)月\(app.day)日 \(app.hour):\(app.minute)発 \(app.dep_stn) → \(app.arr_stn)"
     }
@@ -60,69 +60,69 @@ public class ResultView: UITableViewController, TrainDataDelegate {
      *  TableView
      */
     //セルの数
-    override public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return app.name.count
     }
     //セルの中身
-    override public func tableView(tableView: UITableView, cellForRowAtIndexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ResultTableViewCell", forIndexPath: cellForRowAtIndexPath) as! ResultCell
+    override open func tableView(_ tableView: UITableView, cellForRowAt cellForRowAtIndexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultTableViewCell", for: cellForRowAtIndexPath) as! ResultCell
         
-        cell.trainInfoLabel.text = "\(app.dep_stn)(\(app.depTime[cellForRowAtIndexPath.row]))　→　\(app.arr_stn)(\(app.arrTime[cellForRowAtIndexPath.row]))"
-        cell.trainImage.image = UIImage(named: app.trainIcon[cellForRowAtIndexPath.row])
-        cell.trainNameLabel.text = app.name[cellForRowAtIndexPath.row]
-        cell.resNonSmokeImage.image = UIImage(named: app.resNoSmoke[cellForRowAtIndexPath.row])
-        cell.resSmokeImage.image = UIImage(named: app.resSmoke[cellForRowAtIndexPath.row])
-        cell.greNonSmokeImage.image = UIImage(named: app.greNoSmoke[cellForRowAtIndexPath.row])
-        cell.greSmokeImage.image = UIImage(named: app.greSmoke[cellForRowAtIndexPath.row])
-        cell.granNonSmokeImage.image = UIImage(named: app.grnNoSmoke[cellForRowAtIndexPath.row])
+        cell.trainInfoLabel.text = "\(app.dep_stn)(\(app.depTime[(cellForRowAtIndexPath as NSIndexPath).row]))　→　\(app.arr_stn)(\(app.arrTime[(cellForRowAtIndexPath as NSIndexPath).row]))"
+        cell.trainImage.image = UIImage(named: app.trainIcon[(cellForRowAtIndexPath as NSIndexPath).row])
+        cell.trainNameLabel.text = app.name[(cellForRowAtIndexPath as NSIndexPath).row]
+        cell.resNonSmokeImage.image = UIImage(named: app.resNoSmoke[(cellForRowAtIndexPath as NSIndexPath).row])
+        cell.resSmokeImage.image = UIImage(named: app.resSmoke[(cellForRowAtIndexPath as NSIndexPath).row])
+        cell.greNonSmokeImage.image = UIImage(named: app.greNoSmoke[(cellForRowAtIndexPath as NSIndexPath).row])
+        cell.greSmokeImage.image = UIImage(named: app.greSmoke[(cellForRowAtIndexPath as NSIndexPath).row])
+        cell.granNonSmokeImage.image = UIImage(named: app.grnNoSmoke[(cellForRowAtIndexPath as NSIndexPath).row])
         
         return cell
     }
     //セルが表示された時
-    override public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        let ud = NSUserDefaults.standardUserDefaults()
-        if ud.objectForKey(S_USE_ANIMATION) as! String == S_TRUE {
+    override open func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let ud = UserDefaults.standard
+        if ud.object(forKey: S_USE_ANIMATION) as! String == S_TRUE {
             //スライドイン
             let slideInTransform = CATransform3DTranslate(CATransform3DIdentity, 310, 15, 0)
             cell.layer.transform = slideInTransform
             cell.alpha = 0.2
-            UIView.animateWithDuration(0.5) { () -> Void in
+            UIView.animate(withDuration: 0.5, animations: { () -> Void in
                 cell.layer.transform = CATransform3DIdentity
                 cell.alpha = 1.0
-            }
+            }) 
         }
     }
     /*
      *  再度読み込み
      */
-    @IBAction func sendUrl(sender: AnyObject) {
+    @IBAction func sendUrl(_ sender: AnyObject) {
         trainData!.updateDate(app.date)
         trainData!.post()
     }
     /* 
      *  時間変更
      */
-    @IBAction func before_day(sender: AnyObject) {
-        trainData!.updateDate(NSDate(timeInterval: -60*60*24, sinceDate: app.date))
+    @IBAction func before_day(_ sender: AnyObject) {
+        trainData!.updateDate(Date(timeInterval: -60*60*24, since: app.date))
         trainData!.post()
     }
-    @IBAction func before_hour(sender: AnyObject) {
-        trainData!.updateDate(NSDate(timeInterval: -60*60, sinceDate: app.date))
+    @IBAction func before_hour(_ sender: AnyObject) {
+        trainData!.updateDate(Date(timeInterval: -60*60, since: app.date))
         trainData!.post()
     }
-    @IBAction func after_hour(sender: AnyObject) {
-        trainData!.updateDate(NSDate(timeInterval: 60*60, sinceDate: app.date))
+    @IBAction func after_hour(_ sender: AnyObject) {
+        trainData!.updateDate(Date(timeInterval: 60*60, since: app.date))
         trainData!.post()
     }
-    @IBAction func after_day(sender: AnyObject) {
-        trainData!.updateDate(NSDate(timeInterval: 60*60*24, sinceDate: app.date))
+    @IBAction func after_day(_ sender: AnyObject) {
+        trainData!.updateDate(Date(timeInterval: 60*60*24, since: app.date))
         trainData!.post()
     }
     /*
      *  TrainDataDelegate
      */
     func completeConnection() {
-        dispatch_async(dispatch_get_main_queue()){
+        DispatchQueue.main.async{
             print("Complete!")
             self.resultTableView.reloadData()
             self.infoLabel.text = "\(self.app.month)月\(self.app.day)日 \(self.app.hour):\(self.app.minute)発 \(self.app.dep_stn) → \(self.app.arr_stn)"
@@ -130,14 +130,14 @@ public class ResultView: UITableViewController, TrainDataDelegate {
 
         }
     }
-    func showAlert(title: String, mes: String) {
-        dispatch_async(dispatch_get_main_queue()){
+    func showAlert(_ title: String, mes: String) {
+        DispatchQueue.main.async{
             self.refreshControl?.endRefreshing()
             
-            let alert = UIAlertController(title: title, message: mes, preferredStyle: .Alert)
-            let defaultAction = UIAlertAction(title: "了解", style: .Default, handler: nil)
+            let alert = UIAlertController(title: title, message: mes, preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "了解", style: .default, handler: nil)
             alert.addAction(defaultAction)
-            self.presentViewController(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
             
             print(self.trainData!.dateBackup!)
             //Dateを戻しておく

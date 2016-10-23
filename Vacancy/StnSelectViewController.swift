@@ -26,7 +26,7 @@ class StnSelectViewController: UIViewController, UITableViewDelegate, UITableVie
     /*
      *  appdelegate
      */
-    let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let app: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     /*
      *  新幹線の種類
      */
@@ -38,18 +38,18 @@ class StnSelectViewController: UIViewController, UITableViewDelegate, UITableVie
         //広告
         var bannerView: GADBannerView = GADBannerView()
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        bannerView.frame.origin = CGPointMake(0, self.view.frame.height - bannerView.frame.height)
-        bannerView.frame.size = CGSizeMake(self.view.frame.width, bannerView.frame.height)
+        bannerView.frame.origin = CGPoint(x: 0, y: self.view.frame.height - bannerView.frame.height)
+        bannerView.frame.size = CGSize(width: self.view.frame.width, height: bannerView.frame.height)
         // AdMobで発行された広告ユニットIDを設定
         bannerView.adUnitID = UNIT_ID
         bannerView.delegate = self
         bannerView.rootViewController = self
         let gadRequest:GADRequest = GADRequest()
         //gadRequest.testDevices = [DEVICE_ID]
-        bannerView.loadRequest(gadRequest)
+        bannerView.load(gadRequest)
         self.view.addSubview(bannerView)
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         //新幹線の種類を設定
         type = SUPEREXPRESS_NAME[Int(app.type)! - 1]
         
@@ -63,55 +63,55 @@ class StnSelectViewController: UIViewController, UITableViewDelegate, UITableVie
     /*
      *  セグメントが変更された
      */
-    @IBAction func segmentChanged(sender: AnyObject) {
+    @IBAction func segmentChanged(_ sender: AnyObject) {
         updateList()
         tableView.reloadData()
     }
     /*
      *  TableView
      */
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }
     
     // セルの内容を変更
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "Cell")
 
-        cell.textLabel?.text = list[indexPath.row]
-        cell.textLabel?.textColor = UIColor.blueColor()
-        cell.textLabel?.font = UIFont.boldSystemFontOfSize(UIFont.labelFontSize())
-        cell.accessoryType = .DisclosureIndicator
+        cell.textLabel?.text = list[(indexPath as NSIndexPath).row]
+        cell.textLabel?.textColor = UIColor.blue
+        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
+        cell.accessoryType = .disclosureIndicator
         
         return cell
     }
     //セル選択
-    func tableView(table: UITableView, didSelectRowAtIndexPath indexPath:NSIndexPath) {
+    func tableView(_ table: UITableView, didSelectRowAt indexPath:IndexPath) {
         if app.stnType == 1{
             //出発駅の場合
-            app.dep_stn = list[indexPath.row]
+            app.dep_stn = list[(indexPath as NSIndexPath).row]
             app.dep_push = TrainData.pushcode[app.dep_stn]!
         }else if app.stnType == 2 {
             //到着駅の場合
-            app.arr_stn = list[indexPath.row]
+            app.arr_stn = list[(indexPath as NSIndexPath).row]
             app.arr_push = TrainData.pushcode[app.arr_stn]!
         }
         //履歴に追加
-        addHistory(list[indexPath.row])
+        addHistory(list[(indexPath as NSIndexPath).row])
         
         
         //メイン画面に戻る
-        navigationController?.popViewControllerAnimated(true)
+        _ = navigationController?.popViewController(animated: true)
     }
     //セルが表示された時
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        let ud = NSUserDefaults.standardUserDefaults()
-        if ud.objectForKey(S_USE_ANIMATION) as! String == S_TRUE {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let ud = UserDefaults.standard
+        if ud.object(forKey: S_USE_ANIMATION) as! String == S_TRUE {
             //フェードイン
             cell.alpha = 0.2
-            UIView.animateWithDuration(0.8) { () -> Void in
+            UIView.animate(withDuration: 0.8, animations: { () -> Void in
                 cell.alpha = 1.0
-            }
+            }) 
         }
     }
     
@@ -135,8 +135,8 @@ class StnSelectViewController: UIViewController, UITableViewDelegate, UITableVie
      */
     func loadHistory() {
         showList()
-        let defaults = NSUserDefaults.standardUserDefaults()
-        let stnhist = defaults.objectForKey("stn_\(type)_history")
+        let defaults = UserDefaults.standard
+        let stnhist = defaults.object(forKey: "stn_\(type)_history")
         if stnhist as? [String] != nil {
             history = (stnhist as? [String])!
         }
@@ -144,25 +144,25 @@ class StnSelectViewController: UIViewController, UITableViewDelegate, UITableVie
     /*
      *  履歴の追加
      */
-    func addHistory(str: String) {
+    func addHistory(_ str: String) {
         //重複していたら削除
-        if let pos = history.indexOf(str){
-            history.removeAtIndex(pos)
+        if let pos = history.index(of: str){
+            history.remove(at: pos)
         }
         //追加
         if str != "" {
-            history.insert(str, atIndex: 0)
+            history.insert(str, at: 0)
         }
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(history, forKey: "stn_\(type)_history")
+        let defaults = UserDefaults.standard
+        defaults.set(history, forKey: "stn_\(type)_history")
         showList()
     }
     /*
      *  履歴の削除
      */
-    @IBAction func deleteHistory(sender: AnyObject) {
-        let alert = UIAlertController(title: "確認", message: "駅名の履歴を削除します。よろしいですか？", preferredStyle: .Alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {
+    @IBAction func deleteHistory(_ sender: AnyObject) {
+        let alert = UIAlertController(title: "確認", message: "駅名の履歴を削除します。よろしいですか？", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: {
             (action: UIAlertAction!) -> Void in
             //OKボタンクリック
             self.history.removeAll()
@@ -172,13 +172,13 @@ class StnSelectViewController: UIViewController, UITableViewDelegate, UITableVie
             self.addHistory("")
             self.tableView.reloadData()
         })
-        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: {
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: {
             (action: UIAlertAction) -> Void in
             //キャンセルボタンクリック
         })
         alert.addAction(defaultAction)
         alert.addAction(cancelAction)
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
     //デバッグ用　中身表示

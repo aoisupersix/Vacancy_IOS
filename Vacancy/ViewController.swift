@@ -17,7 +17,7 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
     var datepicker: PopUpDatePickerView!
     var trainTypePicker: PopUpPickerView!
 
-    let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let app: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
     /*
      *  UI OUTLET
@@ -44,7 +44,7 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         datepicker = PopUpDatePickerView()
         trainTypePicker = PopUpPickerView()
         
-        if let window = UIApplication.sharedApplication().keyWindow {
+        if let window = UIApplication.shared.keyWindow {
             window.addSubview(datepicker)
             window.addSubview(trainTypePicker)
         } else {
@@ -62,18 +62,18 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
         //trainData!.updateDate(NSDate(timeInterval: 60, sinceDate: app.date))
 
     }
-    override func viewWillAppear(animated: Bool){
+    override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
-        datepicker.pickerView.setDate(app.date, animated: false)
+        datepicker.pickerView.setDate(app.date as Date, animated: false)
         trainTypePicker.pickerView.selectRow(Int(app.type)! - 1, inComponent: 0, animated: true)
         trainTypePicker.reloadInputViews()
         
-        self.navigationController?.toolbarHidden = true
+        self.navigationController?.isToolbarHidden = true
         
         updateLabels()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         print("viewDisappear:\(app.day)")
         self.datepicker.endPicker()
         self.trainTypePicker.endPicker()
@@ -81,8 +81,8 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
     /*
      *  TableViewCell選択
      */
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        switch indexPath.row{
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        switch (indexPath as NSIndexPath).row{
         case 0:
             //乗車日設定
             self.trainTypePicker.hidePicker()
@@ -98,11 +98,11 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
             app.stnType = 1
             
             var viewIdentifier = "StnSelectView"
-            let userdefaults = NSUserDefaults.standardUserDefaults()
-            if app.type == "5" || userdefaults.objectForKey(S_SUPEREXPRESS_USE_STNSELECT) as! String == S_FALSE{
+            let userdefaults = UserDefaults.standard
+            if app.type == "5" || userdefaults.object(forKey: S_SUPEREXPRESS_USE_STNSELECT) as! String == S_FALSE{
                 viewIdentifier = "StnSearchView"
             }
-            let stnView = self.storyboard!.instantiateViewControllerWithIdentifier(viewIdentifier)
+            let stnView = self.storyboard!.instantiateViewController(withIdentifier: viewIdentifier)
             self.navigationController?.pushViewController(stnView, animated: true)
             break
         case 3:
@@ -110,11 +110,11 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
             app.stnType = 2
             
             var viewIdentifier = "StnSelectView"
-            let userdefaults = NSUserDefaults.standardUserDefaults()
-            if app.type == "5" || userdefaults.objectForKey(S_SUPEREXPRESS_USE_STNSELECT) as! String == S_FALSE{
+            let userdefaults = UserDefaults.standard
+            if app.type == "5" || userdefaults.object(forKey: S_SUPEREXPRESS_USE_STNSELECT) as! String == S_FALSE{
                 viewIdentifier = "StnSearchView"
             }
-            let stnView = self.storyboard!.instantiateViewControllerWithIdentifier(viewIdentifier)
+            let stnView = self.storyboard!.instantiateViewController(withIdentifier: viewIdentifier)
             self.navigationController?.pushViewController(stnView, animated: true)
             break
         default:
@@ -127,9 +127,9 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
      */
     func updateLabels(){
         //乗車日
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH時mm分"
-        let date = formatter.stringFromDate(app.date)
+        let date = formatter.string(from: app.date as Date)
         dateLabel.text = date
 
         trainData!.updateDate(app.date)
@@ -157,16 +157,16 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
     /*
      *  列車の種類選択メソッド
      */
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponentsInPickerView(_ pickerView: UIPickerView) -> Int {
         return 1
     }
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return app.trainType.count
     }
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return app.trainType[row]
     }
-    func pickerView(pickerView: UIPickerView, didSelect numbers: [Int]) {
+    func pickerView(_ pickerView: UIPickerView, didSelect numbers: [Int]) {
         let type = String(numbers[0] + 1)
         print(pickerView)
         app.type = type
@@ -175,7 +175,7 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
     /*
      *  Post送信
      */
-    @IBAction func postVacancy(sender: AnyObject) {
+    @IBAction func postVacancy(_ sender: AnyObject) {
         trainData!.post()
     }
 
@@ -183,21 +183,21 @@ class ViewController: UITableViewController, PopUpDatePickerViewDelegate, PopUpP
      *  通信成功し、結果あり(delegate)
      */
     func completeConnection() {
-        dispatch_async(dispatch_get_main_queue()){
+        DispatchQueue.main.async{
             print("app.day=\(self.app.day)")
-            let resultView = self.storyboard!.instantiateViewControllerWithIdentifier("ResultView") as! UITableViewController
+            let resultView = self.storyboard!.instantiateViewController(withIdentifier: "ResultView") as! UITableViewController
             self.navigationController?.pushViewController(resultView, animated: true)
         }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    func showAlert(title: String, mes: String){
-        dispatch_async(dispatch_get_main_queue()){
-            let alert = UIAlertController(title: title, message: mes, preferredStyle: .Alert)
-            let defaultAction = UIAlertAction(title: "了解", style: .Default, handler: nil)
+    func showAlert(_ title: String, mes: String){
+        DispatchQueue.main.async{
+            let alert = UIAlertController(title: title, message: mes, preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "了解", style: .default, handler: nil)
             alert.addAction(defaultAction)
-            self.presentViewController(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }

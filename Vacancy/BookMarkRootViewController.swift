@@ -15,12 +15,12 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
     /*
      *  AppDelegate
      */
-    let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let app: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var Items: Results<SearchSettings>? {
         do {
             let realm = try Realm()
-            return realm.objects(SearchSettings)
+            return realm.objects(SearchSettings.self)
         }catch {
             print("Realmエラー")
         }
@@ -46,27 +46,27 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
         
         //TableViewのセルを見えなくする
         let footerView = UIView()
-        footerView.backgroundColor = UIColor.blackColor()
+        footerView.backgroundColor = UIColor.black
         tableView.tableFooterView = footerView
         
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
-        navigationController!.toolbarHidden = true
+        navigationController!.isToolbarHidden = true
         
         //広告
         var bannerView: GADBannerView = GADBannerView()
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        bannerView.frame.origin = CGPointMake(0, self.view.frame.height - bannerView.frame.height)
-        bannerView.frame.size = CGSizeMake(self.view.frame.width, bannerView.frame.height)
+        bannerView.frame.origin = CGPoint(x: 0, y: self.view.frame.height - bannerView.frame.height)
+        bannerView.frame.size = CGSize(width: self.view.frame.width, height: bannerView.frame.height)
         // AdMobで発行された広告ユニットIDを設定
         bannerView.adUnitID = UNIT_ID
         bannerView.delegate = self
         bannerView.rootViewController = self
         let gadRequest:GADRequest = GADRequest()
         //gadRequest.testDevices = [DEVICE_ID]
-        bannerView.loadRequest(gadRequest)
+        bannerView.load(gadRequest)
         self.view.addSubview(bannerView)
     }
     override func didReceiveMemoryWarning() {
@@ -79,7 +79,7 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
 //    func imageForEmptyDataSet(scrollView: UIScrollView) -> UIImage {
 //        return UIImage(named: "selectedMaru.png")!
 //    }
-    func titleForEmptyDataSet(scrollView: UIScrollView) -> NSAttributedString {
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString {
         let title = "ブックマークが空です。"
 //        let attributed = [
 //            NSForegroundColorAttributeName: UIColor.brownColor(),
@@ -89,7 +89,7 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
         
         return NSAttributedString(string: title)
     }
-    func descriptionForEmptyDataSet(scrollView: UIScrollView) -> NSAttributedString {
+    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString {
         let description = "現在の照会条件をブックマークに追加するには、右上の追加ボタンを押してください。"
         
         return NSAttributedString(string: description)
@@ -98,29 +98,29 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
     /*
      *  TableViewメソッド
      */
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("Realm:\(Items!.count)")
         return Items!.count
     }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("BookMarkCell") as! BookMarkCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BookMarkCell") as! BookMarkCell
         
         //Realmデータを整形
         let bookmark = Items?[indexPath.row]
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH:mm発"
-        let date = formatter.stringFromDate(bookmark!.date)
+        let date = formatter.string(from: bookmark!.date)
         
         cell.bookMarkTitleLabel.text = bookmark!.name
         cell.bookMarkMsgLabel.text = "\(date) \(bookmark!.dep_stn) → \(bookmark!.arr_stn)"
-        if loadDefault() == indexPath.row {
+        if loadDefault() == (indexPath as NSIndexPath).row {
             cell.bookMarkCheckImage.image = UIImage(named: "selectedMaru.png")
         }else {
             cell.bookMarkCheckImage.image = UIImage(named: "maru.png")
         }
         return cell
     }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let bookmark = Items?[indexPath.row]
         
         //データをセット
@@ -131,21 +131,21 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
         app.arr_stn = (bookmark?.arr_stn)!
         app.arr_push = (bookmark?.arr_push)!
         
-        navigationController?.popViewControllerAnimated(true)
+        _ = navigationController?.popViewController(animated: true)
     }
     //長押し時のイベント
-    func cellLongPressed(recognizer: UILongPressGestureRecognizer) {
-        let point = recognizer.locationInView(tableView)
-        let indexPath = tableView.indexPathForRowAtPoint(point)
+    func cellLongPressed(_ recognizer: UILongPressGestureRecognizer) {
+        let point = recognizer.location(in: tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
         
-        if recognizer.state == UIGestureRecognizerState.Began && indexPath != nil {
-            print("longPress:\(indexPath!.row)")
-            let alert = UIAlertController(title: "ブックマークを編集", message: "", preferredStyle: .ActionSheet)
-            let changeName = UIAlertAction(title: "ブックマーク名を変更", style: .Default, handler: {
+        if recognizer.state == UIGestureRecognizerState.began && indexPath != nil {
+            print("longPress:\((indexPath! as NSIndexPath).row)")
+            let alert = UIAlertController(title: "ブックマークを編集", message: "", preferredStyle: .actionSheet)
+            let changeName = UIAlertAction(title: "ブックマーク名を変更", style: .default, handler: {
                 (action: UIAlertAction!) -> Void in
                 //名前変更
-                let alert = UIAlertController(title: "ブックマーク名を変更", message: "変更するブックマーク名を入力してください。", preferredStyle: .Alert)
-                let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: .Default, handler: {
+                let alert = UIAlertController(title: "ブックマーク名を変更", message: "変更するブックマーク名を入力してください。", preferredStyle: .alert)
+                let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: {
                     (action: UIAlertAction!) -> Void in
                     //OKボタンクリック
                     let textFields:Array<UITextField>? = alert.textFields as Array<UITextField>?
@@ -153,48 +153,48 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
                     print(textFields![0].text)
                     if textFields![0].text == ""{
                         //条件名未入力
-                        let alert = UIAlertController(title: "エラー", message: "ブックマーク名が未入力です。", preferredStyle: .Alert)
-                        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                        let alert = UIAlertController(title: "エラー", message: "ブックマーク名が未入力です。", preferredStyle: .alert)
+                        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                         alert.addAction(defaultAction)
-                        self.presentViewController(alert, animated: true, completion: nil)
+                        self.present(alert, animated: true, completion: nil)
                     }else {
                         //名前を変更
-                        self.changeName(indexPath!.row, name: textFields![0].text!)
+                        self.changeName((indexPath! as NSIndexPath).row, name: textFields![0].text!)
                         self.tableView.reloadData()
                     }
                 })
-                let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil)
+                let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
                 
                 alert.addAction(defaultAction)
                 alert.addAction(cancelAction)
                 
-                alert.addTextFieldWithConfigurationHandler({(text: UITextField!) -> Void in
-                    text.text = self.loadName(indexPath!.row)
+                alert.addTextField(configurationHandler: {(text: UITextField!) -> Void in
+                    text.text = self.loadName((indexPath! as NSIndexPath).row)
                 })
                 
-                self.presentViewController(alert, animated: true, completion: nil)
+                self.present(alert, animated: true, completion: nil)
                 
             })
-            let setDefault = UIAlertAction(title: "起動時の照会条件に設定", style: .Default, handler: {
+            let setDefault = UIAlertAction(title: "起動時の照会条件に設定", style: .default, handler: {
                 (action: UIAlertAction) -> Void in
                 //標準設定に設定
-                self.setDefault(indexPath!.row)
+                self.setDefault((indexPath! as NSIndexPath).row)
                 self.tableView.reloadData()
             })
-            let deleteBook = UIAlertAction(title: "削除", style: .Destructive, handler: {
+            let deleteBook = UIAlertAction(title: "削除", style: .destructive, handler: {
                 (action: UIAlertAction!) -> Void in
                 //削除
-                self.deleteItem(indexPath!.row)
+                self.deleteItem((indexPath! as NSIndexPath).row)
                 self.tableView.reloadData()
             })
-            let cancelAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
             
             alert.addAction(changeName)
             alert.addAction(setDefault)
             alert.addAction(deleteBook)
             alert.addAction(cancelAction)
             
-            self.presentViewController(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -202,12 +202,12 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
      *  現在の条件をブックマークに追加
      */
     
-    @IBAction func addBookMark(sender: AnyObject) {
-        let userdefaults = NSUserDefaults.standardUserDefaults()
-        if userdefaults.objectForKey(S_BOOKMARK_AUTOCOMPLETE) as! String == S_FALSE {
+    @IBAction func addBookMark(_ sender: AnyObject) {
+        let userdefaults = UserDefaults.standard
+        if userdefaults.object(forKey: S_BOOKMARK_AUTOCOMPLETE) as! String == S_FALSE {
             //確認アラートを表示
-            let alert = UIAlertController(title: "照会条件を追加", message: "現在の照会条件：\n\n\(app.month)月\(app.day)日 \(app.hour):\(app.minute)発\n\(app.trainType[Int(app.type)! - 1])\n\(app.dep_stn) → \(app.arr_stn)\n\nをブックマークに追加します。分かりやすいブックマーク名を入力してください。", preferredStyle: .Alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {
+            let alert = UIAlertController(title: "照会条件を追加", message: "現在の照会条件：\n\n\(app.month)月\(app.day)日 \(app.hour):\(app.minute)発\n\(app.trainType[Int(app.type)! - 1])\n\(app.dep_stn) → \(app.arr_stn)\n\nをブックマークに追加します。分かりやすいブックマーク名を入力してください。", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: {
                 (action: UIAlertAction!) -> Void in
                 //OKボタンクリック
                 let textFields:Array<UITextField>? = alert.textFields as Array<UITextField>?
@@ -216,26 +216,26 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
                 print(textFields![0].text)
                 if textFields![0].text == ""{
                     //条件名未入力
-                    let alert = UIAlertController(title: "エラー", message: "ブックマーク名が未入力です。", preferredStyle: .Alert)
-                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    let alert = UIAlertController(title: "エラー", message: "ブックマーク名が未入力です。", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                     alert.addAction(defaultAction)
-                    self.presentViewController(alert, animated: true, completion: nil)
+                    self.present(alert, animated: true, completion: nil)
                 }else {
                     //ブックマークに追加
                     self.addRealm(textFields![0].text!)
                     self.tableView.reloadData()
                 }
             })
-            let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil)
+            let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
             
             alert.addAction(defaultAction)
             alert.addAction(cancelAction)
             
-            alert.addTextFieldWithConfigurationHandler({(text: UITextField!) -> Void in
+            alert.addTextField(configurationHandler: {(text: UITextField!) -> Void in
                 text.placeholder = "ブックマーク名を入力"
             })
             
-            self.presentViewController(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
         }else {
             //簡略入力
             addRealm("ブックマーク\(Items!.count + 1)")
@@ -246,20 +246,20 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
     /*
      *  照会条件を削除
      */
-    @IBAction func deleteAll(sender: AnyObject) {
-        let alert = UIAlertController(title: "確認", message: "ブックマークを全て削除します。\nよろしいですか?", preferredStyle: .Alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {
+    @IBAction func deleteAll(_ sender: AnyObject) {
+        let alert = UIAlertController(title: "確認", message: "ブックマークを全て削除します。\nよろしいですか?", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: {
             (action: UIAlertAction!) -> Void in
             //OKボタンクリック
             self.deleteAllBookMarks()
             self.deleteDefault()
             self.tableView.reloadData()
         })
-        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil)
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
         alert.addAction(defaultAction)
         alert.addAction(cancelAction)
         
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
     /*
@@ -267,7 +267,7 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
      */
     
     //追加
-    func addRealm(bookName: String) {
+    func addRealm(_ bookName: String) {
         let model = SearchSettings(value: ["name": bookName, "date": app.date, "type": app.type, "dep_stn": app.dep_stn, "dep_push": app.dep_push, "arr_stn": app.arr_stn, "arr_push": app.arr_push])
         let realm = try! Realm()
         
@@ -277,18 +277,18 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
     }
     
     //名前変更
-    func changeName(index: Int, name: String) {
+    func changeName(_ index: Int, name: String) {
         let realm = try! Realm()
-        let items = realm.objects(SearchSettings)
+        let items = realm.objects(SearchSettings.self)
         try! realm.write {
             items[index].name = name
         }
     }
     
     //一つ削除
-    func deleteItem(index: Int) {
+    func deleteItem(_ index: Int) {
         let realm = try! Realm()
-        let items = realm.objects(SearchSettings)
+        let items = realm.objects(SearchSettings.self)
         try! realm.write {
             realm.delete(items[index])
         }
@@ -302,7 +302,7 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
     //全削除
     func deleteAllBookMarks() {
         let realm = try! Realm()
-        let items = realm.objects(SearchSettings)
+        let items = realm.objects(SearchSettings.self)
         for item in items {
             try! realm.write {
                 realm.delete(item)
@@ -315,7 +315,7 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
         var index = -1
         
         let realm = try! Realm()
-        let setting = realm.objects(Setting)
+        let setting = realm.objects(Setting.self)
         if setting.count == 1 {
             index = setting[0].defaultBookMark
         }
@@ -324,17 +324,17 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
     }
     
     //名前読み込み
-    func loadName(index: Int) -> String {
+    func loadName(_ index: Int) -> String {
         let realm = try! Realm()
-        let name = realm.objects(SearchSettings)[index].name
+        let name = realm.objects(SearchSettings.self)[index].name
         
         return name
     }
     //標準設定に指定
-    func setDefault(index: Int) {
+    func setDefault(_ index: Int) {
         print("標準設定:\(index)")
         let realm = try! Realm()
-        let setting = realm.objects(Setting)
+        let setting = realm.objects(Setting.self)
         if setting.count == 1 {
             try! realm.write {
                 setting[0].defaultBookMark = index
@@ -351,7 +351,7 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
     //標準設定を削除
     func deleteDefault() {
         let realm = try! Realm()
-        let setting = realm.objects(Setting)
+        let setting = realm.objects(Setting.self)
         try! realm.write {
             realm.delete(setting)
         }

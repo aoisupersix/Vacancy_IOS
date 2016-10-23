@@ -4,19 +4,26 @@
 use_frameworks!
 
 target ‘Vacancy’ do
-    pod 'RxSwift',    '~> 2.0'
-    pod 'RxCocoa',    '~> 2.0'
+    pod 'RxSwift',    '3.0.0-rc.1'
+    pod 'RxCocoa',    '3.0.0-rc.1'
     pod ‘RealmSwift’
     pod ’SwiftSpinner’
-    pod ‘Google-Mobile-Ads-SDK’, ‘~> 7.0’
+    pod ‘Google-Mobile-Ads-SDK’
     pod 'DZNEmptyDataSet'
-    pod 'Eureka' 
-    pod 'NendSDK_iOS'
-    pod 'NendSDK_iOS_MediationAdapter'
+    pod 'Eureka', '~> 2.0.0-beta.1'
     pod 'Firebase'
 end
 
 target ‘VacancyTests’ do
-    pod 'RxBlocking', '~> 2.0'
-    pod 'RxTests',    '~> 2.0'
+    pod 'RxBlocking', '3.0.0-rc.1'
+    pod 'RxTest',     '3.0.0-rc.1'
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '3.0'
+      config.build_settings['MACOSX_DEPLOYMENT_TARGET'] = '10.10'
+    end
+  end
 end

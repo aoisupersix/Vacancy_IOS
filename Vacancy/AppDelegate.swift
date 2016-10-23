@@ -15,9 +15,9 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var date: NSDate = NSDate() //乗車日時保存用
+    var date: Date = Date() //乗車日時保存用
     var stnType = 0 //駅設定用
-    var url: NSURL? //URL
+    var url: URL? //URL
     
     //列車の種類
     let trainType = ["東海道・山陽・九州新幹線", "東海道新幹線(こだま)", "北海道・東北・秋田・山形新幹線", "上越・長野新幹線", "在来線列車"]
@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var greSmoke: [String] = []
     var grnNoSmoke: [String] = []
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //データ読み込み
         TrainData.read()
@@ -58,37 +58,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         
         //設定の標準
-        let userdefaults = NSUserDefaults.standardUserDefaults()
-        let UseStnSelect = userdefaults.objectForKey(S_SUPEREXPRESS_USE_STNSELECT)
-        let UseAnimation = userdefaults.objectForKey(S_USE_ANIMATION)
+        let userdefaults = UserDefaults.standard
+        let UseStnSelect = userdefaults.object(forKey: S_SUPEREXPRESS_USE_STNSELECT)
+        let UseAnimation = userdefaults.object(forKey: S_USE_ANIMATION)
         if UseStnSelect == nil || UseAnimation == nil{
             //初回起動
-            userdefaults.setObject(S_TRUE, forKey: S_SUPEREXPRESS_USE_STNSELECT) //新幹線の駅名検索の利用
-            userdefaults.setObject(S_FALSE, forKey: S_BOOKMARK_AUTOCOMPLETE) //ブックマーク追加の簡略化
-            userdefaults.setObject(S_TRUE, forKey: S_USE_ANIMATION) //アニメーションを使用する
+            userdefaults.set(S_TRUE, forKey: S_SUPEREXPRESS_USE_STNSELECT) //新幹線の駅名検索の利用
+            userdefaults.set(S_FALSE, forKey: S_BOOKMARK_AUTOCOMPLETE) //ブックマーク追加の簡略化
+            userdefaults.set(S_TRUE, forKey: S_USE_ANIMATION) //アニメーションを使用する
         }
         return true
     }
 
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
@@ -96,31 +96,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Core Data stack
 
-    lazy var applicationDocumentsDirectory: NSURL = {
+    lazy var applicationDocumentsDirectory: URL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "jp.gr.java-conf.aoisupersix.Vacancy" in the application's documents Application Support directory.
-        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return urls[urls.count-1]
     }()
 
     lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-        let modelURL = NSBundle.mainBundle().URLForResource("Vacancy", withExtension: "momd")!
-        return NSManagedObjectModel(contentsOfURL: modelURL)!
+        let modelURL = Bundle.main.url(forResource: "Vacancy", withExtension: "momd")!
+        return NSManagedObjectModel(contentsOf: modelURL)!
     }()
 
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
         // Create the coordinator and store
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("SingleViewCoreData.sqlite")
+        let url = self.applicationDocumentsDirectory.appendingPathComponent("SingleViewCoreData.sqlite")
         var failureReason = "There was an error creating or loading the application's saved data."
         do {
-            try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
+            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
         } catch {
             // Report any error we got.
             var dict = [String: AnyObject]()
-            dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
-            dict[NSLocalizedFailureReasonErrorKey] = failureReason
+            dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data" as AnyObject?
+            dict[NSLocalizedFailureReasonErrorKey] = failureReason as AnyObject?
 
             dict[NSUnderlyingErrorKey] = error as NSError
             let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
@@ -136,7 +136,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var managedObjectContext: NSManagedObjectContext = {
         // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
         let coordinator = self.persistentStoreCoordinator
-        var managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
     }()
@@ -159,12 +159,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setDefault() {
         let realm = try! Realm()
-        let setting = realm.objects(Setting)
+        let setting = realm.objects(Setting.self)
         if setting.count == 1 {
             let index = setting[0].defaultBookMark
             if index != -1 {
                 //標準設定あり
-                let items = realm.objects(SearchSettings)
+                let items = realm.objects(SearchSettings.self)
                 //セット
                 date = items[index].date
                 type = items[index].type
