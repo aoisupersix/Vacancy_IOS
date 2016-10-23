@@ -158,7 +158,9 @@ class TrainData {
                 //print(NSString(data: data!, encoding: NSShiftJISStringEncoding))
                 self.setResult(NSString(data: data!, encoding: String.Encoding.shiftJIS.rawValue)! as String)
                 
-                sleep(1)
+                let random : Double = Double(arc4random_uniform(10))
+                let sleepTime = 0.2 + random / 10
+                sleep(UInt32(sleepTime))
                 SwiftSpinner.hide()
                 
                 switch(self.documentType){
