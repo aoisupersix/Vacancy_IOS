@@ -63,6 +63,7 @@
 		E1829CD01D6E3B00005BD003 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = E1829CCF1D6E3B00005BD003 /* setting.png */; };
 		E1829CD21D6E3F60005BD003 /* setting32.png in Resources */ = {isa = PBXBuildFile; fileRef = E1829CD11D6E3F60005BD003 /* setting32.png */; };
 		E196C20A1D5FD14800635F7F /* RapidList.txt in Resources */ = {isa = PBXBuildFile; fileRef = E196C2091D5FD14800635F7F /* RapidList.txt */; };
+		E19FAAD41E3E05DB000805A4 /* ResultRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19FAAD31E3E05DB000805A4 /* ResultRegex.swift */; };
 		E1C92E561D3B8C8B000FC366 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E551D3B8C8B000FC366 /* AppDelegate.swift */; };
 		E1C92E581D3B8C8B000FC366 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E571D3B8C8B000FC366 /* ViewController.swift */; };
 		E1C92E5B1D3B8C8B000FC366 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C92E591D3B8C8B000FC366 /* Main.storyboard */; };
@@ -195,6 +196,7 @@
 		E1829CD11D6E3F60005BD003 /* setting32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting32.png; sourceTree = "<group>"; };
 		E18628DD1D5F1B1200972A2C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E196C2091D5FD14800635F7F /* RapidList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RapidList.txt; sourceTree = "<group>"; };
+		E19FAAD31E3E05DB000805A4 /* ResultRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultRegex.swift; sourceTree = "<group>"; };
 		E1C92E521D3B8C8B000FC366 /* Vacancy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vacancy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C92E551D3B8C8B000FC366 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1C92E571D3B8C8B000FC366 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -483,6 +485,7 @@
 				E1DAE42B1D596AFC005C7F7D /* SuperExpressName.swift */,
 				E12C31D51D63EB8200BE19B6 /* UnitID.swift */,
 				E1E6AC091D6DA60500A95C4F /* SettingName.swift */,
+				E19FAAD31E3E05DB000805A4 /* ResultRegex.swift */,
 			);
 			name = "定数";
 			sourceTree = "<group>";
@@ -846,6 +849,7 @@
 				E111945C1D6404EB00DBF598 /* MainViewController.swift in Sources */,
 				E1E6AC081D6D9F5900A95C4F /* SettingViewController.swift in Sources */,
 				E1C92E5E1D3B8C8B000FC366 /* Vacancy.xcdatamodeld in Sources */,
+				E19FAAD41E3E05DB000805A4 /* ResultRegex.swift in Sources */,
 				E113890E1D6041A800C0B0B6 /* BookMarkCell.swift in Sources */,
 				E1C92E8C1D3BB202000FC366 /* PopUpPickerView.swift in Sources */,
 				E1DAE4231D595BF9005C7F7D /* StnSelectViewController.swift in Sources */,

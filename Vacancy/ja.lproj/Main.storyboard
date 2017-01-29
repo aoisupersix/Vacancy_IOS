@@ -296,7 +296,7 @@
                                         <rect key="frame" x="0.0" y="266" width="375" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aDB-4u-bsD" id="h7i-ab-mre">
-                                            <frame key="frameInset" width="375" height="86"/>
+                                            <frame key="frameInset" width="375" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rapid.png" translatesAutoresizingMaskIntoConstraints="NO" id="kfZ-Rd-J91">
@@ -339,7 +339,7 @@
                                         <rect key="frame" x="0.0" y="381" width="375" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BRi-IA-tKF" id="hVz-m1-ngK">
-                                            <frame key="frameInset" width="375" height="86"/>
+                                            <frame key="frameInset" width="375" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reserved.png" translatesAutoresizingMaskIntoConstraints="NO" id="1JD-3f-wvD">
@@ -661,7 +661,7 @@
                         </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ResultTableViewCell" selectionStyle="blue" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="ResultTableViewCell" rowHeight="332" id="M8G-Nf-lhY" customClass="ResultCell" customModule="Vacancy" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="164" width="375" height="332"/>
+                                <rect key="frame" x="0.0" y="163.5" width="375" height="332"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M8G-Nf-lhY" id="czc-ep-Big">
                                     <frame key="frameInset" width="375" height="332"/>
@@ -1038,7 +1038,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="bookMarkTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H4P-jC-yQY">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="BookMarkCell" selectionStyle="blue" showsReorderControl="YES" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BookMarkCell" rowHeight="66" id="vNb-ao-aVG" customClass="BookMarkCell" customModule="Vacancy" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="BookMarkCell" selectionStyle="blue" showsReorderControl="YES" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BookMarkCell" rowHeight="66" id="vNb-ao-aVG" customClass="BookMarkCell" customModule="Vacancy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="122" width="383" height="66"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vNb-ao-aVG" id="z8L-oa-d9z">

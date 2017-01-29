@@ -98,7 +98,6 @@ class TrainData {
                 let list = listData.components(separatedBy: "\n")
                 for line in list {
                     stnList[index].append(line)
-                    print(line)
                 }
             } catch let error as NSError {
                 print(error.localizedDescription)
@@ -245,112 +244,103 @@ class TrainData {
         app.greSmoke.removeAll()
         app.grnNoSmoke.removeAll()
         
-        var pos = result!.range(of: TrainData.searchTrainName) //最初
-        var parts = result!
-
+        let regex = Regex(self.result!)    //正規表現 -> regex.swift
+        
         if app.type == "3" || app.type == "4" {
-            //東北新幹線は喫煙席が存在しない
-            while(pos != nil && parts.substring(with: pos!.upperBound..<parts.index(pos!.upperBound, offsetBy: 1)) != "グ"){
-                
-                parts = parts.substring(from: pos!.upperBound)   //HTMLを分解
-                
-                //列車名取得
-                app.name.append(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1)))
-                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
-                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
-                
-                //列車アイコン
+            //東北新幹線の場合
+            //喫煙席は存在しない
+            
+            //列車名と列車アイコン取得
+            let trainName = regex.matches(pattern: REGEX_TOHOKU, range: CAP_TOHOKU_NAME)
+            for nam in trainName! {
+                app.name.append(nam)
                 app.trainIcon.append(changeIcon(app.name[app.name.count - 1]))
-                
-                //出発時刻取得
-                app.depTime.append(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1)))
-                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
-                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
-                
-                //到着時刻取得
-                app.arrTime.append(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1)))
-                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
-                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
-                
-                //禁煙指定席取得
-                app.resNoSmoke.append(changeRes(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1))))
-                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
-                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
-                
-                //喫煙指定席(未設定)
+            }
+            
+            //出発時刻取得
+            let depTime = regex.matches(pattern: REGEX_TOHOKU, range: CAP_TOHOKU_DEPTIME)
+            for dep in depTime! {
+                app.depTime.append(dep)
+            }
+            
+            //到着時刻取得
+            let arrTime = regex.matches(pattern: REGEX_TOHOKU, range: CAP_TOHOKU_ARRTIME)
+            for arr in arrTime! {
+                app.arrTime.append(arr)
+            }
+            
+            //指定席取得
+            let reserved = regex.matches(pattern: REGEX_TOHOKU, range: CAP_TOHOKU_RESERVED)
+            for res in reserved! {
+                app.resNoSmoke.append(changeRes(res))
                 app.resSmoke.append(changeRes("-"))
-                
-                //禁煙グリーン取得
-                app.greNoSmoke.append(changeRes(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1))))
-                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
-                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
-                
-                //喫煙グリーン(未設定)
+            }
+            
+            //グリーン車取得
+            let green = regex.matches(pattern: REGEX_TOHOKU, range: CAP_TOHOKU_GREEN)
+            for gre in green! {
+                app.greNoSmoke.append(changeRes(gre))
                 app.greSmoke.append(changeRes("-"))
-                
-                //グランクラス
-                app.grnNoSmoke.append(changeRes(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1))))
-                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
-                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
-                
-                //pos更新
-                pos = parts.range(of: TrainData.searchTrainName)
+            }
+            
+            //グランクラス取得
+            let granclass = regex.matches(pattern: REGEX_TOHOKU, range: CAP_TOHOKU_GRAN)
+            for grn in granclass! {
+                app.grnNoSmoke.append(changeRes(grn))
             }
 
-            
         }else{
-            //東北新幹線以外の列車にはグランクラスが存在しない
-            while(pos != nil && parts.substring(with: pos!.upperBound..<parts.index(pos!.upperBound, offsetBy: 1)) != "グ"){
-
-                parts = parts.substring(from: pos!.upperBound)   //HTMLを分解
-                
-                //列車名取得
-                app.name.append(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1)))
-                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
-                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
-                
-                //列車アイコン
+            //それ以外の列車の場合
+            //グランクラスは存在しない
+            
+            //列車名と列車アイコン取得
+            let trainName = regex.matches(pattern: REGEX_ELSE, range: CAP_TOHOKU_NAME)
+            for nam in trainName! {
+                app.name.append(nam)
                 app.trainIcon.append(changeIcon(app.name[app.name.count - 1]))
-                
-                //出発時刻取得
-                app.depTime.append(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1)))
-                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
-                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
-
-                //到着時刻取得
-                app.arrTime.append(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1)))
-                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
-                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
-
-                //禁煙指定席取得
-                app.resNoSmoke.append(changeRes(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1))))
-                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
-                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
-                
-                //喫煙指定席取得
-                app.resSmoke.append(changeRes(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1))))
-                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
-                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
-                
-                //禁煙グリーン取得
-                app.greNoSmoke.append(changeRes(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1))))
-                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
-                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
-                
-                //喫煙グリーン取得
-                app.greSmoke.append(changeRes(parts.substring(with: parts.startIndex..<parts.index(parts.range(of: TrainData.searchNameEnd)!.upperBound, offsetBy: -1))))
-                parts = parts.substring(from: parts.range(of: TrainData.searchNameEnd)!.upperBound)  //HTMLを分解
-                parts = parts.substring(from: parts.range(of: TrainData.searchTrainVacancy)!.upperBound)
-                
-                //グランクラス(未設定)
-                app.grnNoSmoke.append(changeRes("-"))
-                
-                //pos更新
-                pos = parts.range(of: TrainData.searchTrainName)
-                print("pos:\(pos)")
             }
             
+            //出発時刻取得
+            let depTime = regex.matches(pattern: REGEX_ELSE, range: CAP_ELSE_DEPTIME)
+            for dep in depTime! {
+                app.depTime.append(dep)
+            }
+            
+            //到着時刻取得
+            let arrTime = regex.matches(pattern: REGEX_ELSE, range: CAP_ELSE_ARRTIME)
+            for arr in arrTime! {
+                app.arrTime.append(arr)
+            }
+            
+            //禁煙指定席取得
+            let reservedNs = regex.matches(pattern: REGEX_ELSE, range: CAP_ELSE_RESERVED_NONSMOKE)
+            for resNs in reservedNs! {
+                app.resNoSmoke.append(changeRes(resNs))
+            }
+            
+            //喫煙指定席取得
+            let reservedS = regex.matches(pattern: REGEX_ELSE, range: CAP_ELSE_RESERVED_SMOKE)
+            for resS in reservedS! {
+                app.resSmoke.append(changeRes(resS))
+            }
+
+            
+            //禁煙グリーン車取得
+            let greenNs = regex.matches(pattern: REGEX_ELSE, range: CAP_ELSE_GREEN_NONSMOKE)
+            for greNs in greenNs! {
+                app.greNoSmoke.append(changeRes(greNs))
+            }
+            
+            //喫煙グリーン車取得
+            let greenS = regex.matches(pattern: REGEX_ELSE, range: CAP_ELSE_GREEN_SMOKE)
+            for greS in greenS! {
+                app.greSmoke.append(changeRes(greS))
+                //グランクラスも未設定にする
+                app.grnNoSmoke.append(changeRes("-"))
+            }
         }
+        
+        
         //デバッグ用表示
         print("******列車名******")
         for nam in app.name {
@@ -384,15 +374,8 @@ class TrainData {
         for nam in app.grnNoSmoke {
             print(nam)
         }
-        
-        //デバッグここから
-        let regex = Regex(self.result!)
-        let trainName = regex.matches(pattern: "(?-i)<tr>\\s*\\n\\s*<td align=\"left\">(.+)<\\/td>", range: 1)
-        print("Regex Test")
-        for nam in trainName! {
-            print(nam)
-        }
     }
+    
     /*
      *  空席情報をリソースに変換
      */
