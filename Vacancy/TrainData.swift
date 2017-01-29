@@ -98,6 +98,7 @@ class TrainData {
                 let list = listData.components(separatedBy: "\n")
                 for line in list {
                     stnList[index].append(line)
+                    print(line)
                 }
             } catch let error as NSError {
                 print(error.localizedDescription)

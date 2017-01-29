@@ -50,7 +50,7 @@
                                             <frame key="frameInset" width="350" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="乗車日時：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJg-YB-SKT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="乗車日時：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJg-YB-SKT">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="BeI-j9-nlM"/>
                                                         <constraint firstAttribute="width" constant="85" id="pm0-Pp-qOp"/>
@@ -85,9 +85,9 @@
                                             <frame key="frameInset" width="350" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="列車の種類：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rya-Ot-FMA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="列車の種類：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rya-Ot-FMA">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="96" id="Q9a-8e-BPZ"/>
+                                                        <constraint firstAttribute="width" constant="99" id="Q9a-8e-BPZ"/>
                                                         <constraint firstAttribute="height" constant="40" id="YBi-0w-ovB"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
@@ -107,7 +107,7 @@
                                                 <constraint firstItem="Rya-Ot-FMA" firstAttribute="leading" secondItem="N0x-cJ-HoC" secondAttribute="leadingMargin" id="3ER-qW-jQB"/>
                                                 <constraint firstItem="Rya-Ot-FMA" firstAttribute="centerY" secondItem="N0x-cJ-HoC" secondAttribute="centerY" id="Evo-1f-kto"/>
                                                 <constraint firstItem="Rya-Ot-FMA" firstAttribute="centerY" secondItem="cbq-2x-3ia" secondAttribute="centerY" id="igJ-zD-hWy"/>
-                                                <constraint firstItem="cbq-2x-3ia" firstAttribute="leading" secondItem="Rya-Ot-FMA" secondAttribute="trailing" constant="1" id="k3H-pI-M3W"/>
+                                                <constraint firstItem="cbq-2x-3ia" firstAttribute="leading" secondItem="Rya-Ot-FMA" secondAttribute="trailing" constant="-2" id="k3H-pI-M3W"/>
                                                 <constraint firstItem="cbq-2x-3ia" firstAttribute="trailing" secondItem="N0x-cJ-HoC" secondAttribute="trailingMargin" id="xV1-Xn-CBe"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -203,7 +203,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vND-Wd-Ktf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1307.5" y="-531.5"/>
+            <point key="canvasLocation" x="1306.4000000000001" y="-532.0839580209896"/>
         </scene>
         <!--凡例-->
         <scene sceneID="K3P-dJ-mpK">
