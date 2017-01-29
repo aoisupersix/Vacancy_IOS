@@ -569,7 +569,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Aoi Tanaka";
 				TargetAttributes = {
 					E1C92E511D3B8C8B000FC366 = {
