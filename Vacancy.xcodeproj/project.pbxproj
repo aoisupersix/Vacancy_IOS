@@ -74,6 +74,7 @@
 		E1C92E8B1D3BB202000FC366 /* PopUpDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E881D3BB202000FC366 /* PopUpDatePickerView.swift */; };
 		E1C92E8C1D3BB202000FC366 /* PopUpPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E891D3BB202000FC366 /* PopUpPickerView.swift */; };
 		E1C92E8D1D3BB202000FC366 /* PopUpPickerViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C92E8A1D3BB202000FC366 /* PopUpPickerViewBase.swift */; };
+		E1D7F4CA1DD185AA00745E72 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D7F4C91DD185AA00745E72 /* Regex.swift */; };
 		E1D862031D648A87008CE032 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1D862021D648A87008CE032 /* Settings.bundle */; };
 		E1DAE4211D594C57005C7F7D /* LegendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE4201D594C57005C7F7D /* LegendViewController.swift */; };
 		E1DAE4231D595BF9005C7F7D /* StnSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DAE4221D595BF9005C7F7D /* StnSelectViewController.swift */; };
@@ -99,6 +100,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = E1C92E511D3B8C8B000FC366;
 			remoteInfo = Vacancy;
+		};
+		E1D7F4CF1DD19A7D00745E72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1D7F4CB1DD19A7C00745E72 /* Regex.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E1E83BDE1DD08493004A2FAF;
+			remoteInfo = Regex;
+		};
+		E1D7F4DB1DD19B2400745E72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1D7F4D71DD19B2400745E72 /* Regex.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E1E83BDE1DD08493004A2FAF;
+			remoteInfo = Regex;
 		};
 		E1DF04B91D63065400922F58 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -198,6 +213,11 @@
 		E1C92E8A1D3BB202000FC366 /* PopUpPickerViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpPickerViewBase.swift; sourceTree = "<group>"; };
 		E1CCD4041D6B9E6C00EBE1DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ja; path = ja.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1CCD40A1D6D70AC00EBE1DB /* Vacancy-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vacancy-BridgingHeader.h"; sourceTree = "<group>"; };
+		E1D7F4C91DD185AA00745E72 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		E1D7F4CB1DD19A7C00745E72 /* Regex.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Regex.xcodeproj; path = ../Regex/Regex.xcodeproj; sourceTree = "<group>"; };
+		E1D7F4D51DD19B2400745E72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1D7F4D61DD19B2400745E72 /* Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		E1D7F4D71DD19B2400745E72 /* Regex.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Regex.xcodeproj; sourceTree = "<group>"; };
 		E1D862021D648A87008CE032 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E1DAE4201D594C57005C7F7D /* LegendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegendViewController.swift; sourceTree = "<group>"; };
 		E1DAE4221D595BF9005C7F7D /* StnSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StnSelectViewController.swift; sourceTree = "<group>"; };
@@ -252,6 +272,8 @@
 		0A6873C00F053AE1CBEAC401 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E1D7F4D31DD19B2400745E72 /* Regex */,
+				E1D7F4CB1DD19A7C00745E72 /* Regex.xcodeproj */,
 				E1DF04DB1D6311D500922F58 /* GoogleMobileAds.framework */,
 				E1DF04D91D63119900922F58 /* SystemConfiguration.framework */,
 				E1DF04D71D63118E00922F58 /* StoreKit.framework */,
@@ -366,6 +388,7 @@
 		E1C92E541D3B8C8B000FC366 /* Vacancy */ = {
 			isa = PBXGroup;
 			children = (
+				E1D7F4C91DD185AA00745E72 /* Regex.swift */,
 				E1407D6F1D6EAAE50061C8B5 /* GoogleService-Info.plist */,
 				E1DAE4241D596549005C7F7D /* 定数 */,
 				E144E1121D45EFB7002FADAA /* Resource */,
@@ -415,6 +438,41 @@
 				E1C92E7A1D3B8C8C000FC366 /* Info.plist */,
 			);
 			path = VacancyUITests;
+			sourceTree = "<group>";
+		};
+		E1D7F4CC1DD19A7C00745E72 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1D7F4D01DD19A7D00745E72 /* Regex.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E1D7F4D31DD19B2400745E72 /* Regex */ = {
+			isa = PBXGroup;
+			children = (
+				E1D7F4D41DD19B2400745E72 /* Regex */,
+				E1D7F4D71DD19B2400745E72 /* Regex.xcodeproj */,
+			);
+			name = Regex;
+			path = ../Regex;
+			sourceTree = "<group>";
+		};
+		E1D7F4D41DD19B2400745E72 /* Regex */ = {
+			isa = PBXGroup;
+			children = (
+				E1D7F4D51DD19B2400745E72 /* Info.plist */,
+				E1D7F4D61DD19B2400745E72 /* Regex.swift */,
+			);
+			path = Regex;
+			sourceTree = "<group>";
+		};
+		E1D7F4D81DD19B2400745E72 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1D7F4DC1DD19B2400745E72 /* Regex.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		E1DAE4241D596549005C7F7D /* 定数 */ = {
@@ -550,6 +608,14 @@
 					ProductGroup = E1DF04B51D63065400922F58 /* Products */;
 					ProjectRef = E1DF04B41D63065400922F58 /* Framework.xcodeproj */;
 				},
+				{
+					ProductGroup = E1D7F4D81DD19B2400745E72 /* Products */;
+					ProjectRef = E1D7F4D71DD19B2400745E72 /* Regex.xcodeproj */;
+				},
+				{
+					ProductGroup = E1D7F4CC1DD19A7C00745E72 /* Products */;
+					ProjectRef = E1D7F4CB1DD19A7C00745E72 /* Regex.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -561,6 +627,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		E1D7F4D01DD19A7D00745E72 /* Regex.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Regex.framework;
+			remoteRef = E1D7F4CF1DD19A7D00745E72 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E1D7F4DC1DD19B2400745E72 /* Regex.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Regex.framework;
+			remoteRef = E1D7F4DB1DD19B2400745E72 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		E1DF04BA1D63065400922F58 /* Reachability.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -781,6 +861,7 @@
 				E1DAE4261D5965B7005C7F7D /* SegmentType.swift in Sources */,
 				E1C92E8B1D3BB202000FC366 /* PopUpDatePickerView.swift in Sources */,
 				E144E12E1D4628B7002FADAA /* ResultView.swift in Sources */,
+				E1D7F4CA1DD185AA00745E72 /* Regex.swift in Sources */,
 				E1DAE4281D596626005C7F7D /* SectionName.swift in Sources */,
 				E1DAE42C1D596AFC005C7F7D /* SuperExpressName.swift in Sources */,
 				E101EABD1D40E712003789A5 /* TrainData.swift in Sources */,

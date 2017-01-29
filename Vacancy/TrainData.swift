@@ -383,6 +383,14 @@ class TrainData {
         for nam in app.grnNoSmoke {
             print(nam)
         }
+        
+        //デバッグここから
+        let regex = Regex(self.result!)
+        let trainName = regex.matches(pattern: "(?-i)<tr>\\s*\\n\\s*<td align=\"left\">(.+)<\\/td>", range: 1)
+        print("Regex Test")
+        for nam in trainName! {
+            print(nam)
+        }
     }
     /*
      *  空席情報をリソースに変換
