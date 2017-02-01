@@ -150,7 +150,6 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
                     //OKボタンクリック
                     let textFields:Array<UITextField>? = alert.textFields as Array<UITextField>?
                     
-                    print(textFields![0].text)
                     if textFields![0].text == ""{
                         //条件名未入力
                         let alert = UIAlertController(title: "エラー", message: "ブックマーク名が未入力です。", preferredStyle: .alert)
@@ -212,8 +211,6 @@ class BookMarkRootViewController: UIViewController, GADBannerViewDelegate, UITab
                 //OKボタンクリック
                 let textFields:Array<UITextField>? = alert.textFields as Array<UITextField>?
                 
-                
-                print(textFields![0].text)
                 if textFields![0].text == ""{
                     //条件名未入力
                     let alert = UIAlertController(title: "エラー", message: "ブックマーク名が未入力です。", preferredStyle: .alert)

@@ -189,7 +189,7 @@ class TrainData {
                     break
                 }
             } else {
-                print(error)
+                //print(error ?? <#default value#>)
                 SwiftSpinner.hide()
                 self.delegate.showAlert("接続エラー", mes: "ネットワークに接続できないか、サーバーがダウンしている可能性があります。")
                 print("CONNECT ERROR")
