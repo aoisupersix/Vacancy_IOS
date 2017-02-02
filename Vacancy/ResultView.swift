@@ -92,6 +92,7 @@ open class ResultView: UITableViewController, TrainDataDelegate {
             }) 
         }
     }
+    
     /*
      *  再度読み込み
      */
